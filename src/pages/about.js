@@ -5,7 +5,7 @@ import WhyChooseUs from "@/components/WhyChooseUs";
 import ExpertiseSection from "@/components/ExpertiseSection";
 import TeamSection from "@/components/TeamSection";
 import Head from "next/head";
-import FAQSection from "@/components/FAQSection";
+import FaqSection from "@/components/FaqSection";
 
 const serviceFaqs = [
   {
@@ -144,7 +144,7 @@ const AboutPage = () => {
           <TeamSection />
         </section>
 
-        <FAQSection
+        <FaqSection
           title="Frequently Asked Questions — About Yuvabe Studios"
           faqs={serviceFaqs}
         />

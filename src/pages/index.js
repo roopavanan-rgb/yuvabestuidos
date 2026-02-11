@@ -9,8 +9,7 @@ import ProjectCarousel from "@/components/ProjectCarousel";
 import ClientLogoSlider from "@/components/ClientLogoSlider";
 import ServiceCard from "@/components/ServiceCard";
 import VideoCarousel from "@/components/VideoCarousel";
-import FAQSection from "@/components/FaqSection";
-
+import FaqSection from "@/components/FaqSection";
 
 const homeFaqs = [
   {
@@ -281,7 +280,7 @@ export default function Home() {
           <Call />
         </section>
 
-        <FAQSection
+        <FaqSection
           title="Frequently Asked Questions (FAQ)"
           description="Here’s everything you need to know about how we work and what makes us different."
           faqs={homeFaqs}

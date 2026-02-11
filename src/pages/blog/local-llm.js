@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { FaTwitter, FaLinkedin, FaFacebook, FaLink } from "react-icons/fa";
 import { NextSeo } from "next-seo";
-import FAQSection from "@/components/FaqSection";
+import FaqSection from "@/components/FaqSection";
 
 const localFaqs = [
   {
@@ -647,7 +647,7 @@ print(response)`)
             </div>
           </section>
 
-          <FAQSection
+          <FaqSection
             title="Frequently Asked Questions (FAQ)"
             description="Here’s Few things you need to know about LLM"
             faqs={localFaqs}
