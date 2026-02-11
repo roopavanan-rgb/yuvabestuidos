@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://yuvabestudios.com
+
+# Sitemaps
+Sitemap: https://yuvabestudios.com/sitemap.xml

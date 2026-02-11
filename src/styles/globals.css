@@ -1,0 +1,173 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* globals.css */
+/* Define Clash Display font with different font weights */
+@font-face {
+  font-family: 'Clash Display';
+  src: url('/fonts/clash-display/ClashDisplayMedium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Clash Display';
+  src: url('/fonts/clash-display/ClashDisplayBold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Clash Display';
+  src: url('/fonts/clash-display/ClashDisplaySemibold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Clash Display';
+  src: url('/fonts/clash-display/ClashDisplayLight.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Clash Display';
+  src: url('/fonts/clash-display/ClashDisplayExtralight.woff2') format('woff2');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Clash Display';
+  src: url('/fonts/clash-display/ClashDisplayRegular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+/* Define Gilroy font with different font weights */
+
+/* Gilroy - Regular */
+@font-face {
+    font-family: 'Gilroy';
+    src: url('/fonts/gilroy/Gilroy-Regular.ttf') format('opentype');
+    font-weight: 400;
+    /* Regular */
+    font-style: normal;
+}
+
+/* Gilroy - Medium */
+@font-face {
+    font-family: 'Gilroy';
+    src: url('/fonts/gilroy/Gilroy-Medium.ttf') format('opentype');
+    font-weight: 500;
+    /* Medium */
+    font-style: normal;
+}
+
+/* Gilroy - SemiBold */
+@font-face {
+    font-family: 'Gilroy';
+    src: url('/fonts/gilroy/Gilroy-SemiBold.ttf') format('opentype');
+    font-weight: 600;
+    /* SemiBold */
+    font-style: normal;
+}
+
+/* Gilroy - Bold */
+@font-face {
+    font-family: 'Gilroy';
+    src: url('/fonts/gilroy/Gilroy-Bold.ttf') format('opentype');
+    font-weight: 700;
+    /* Bold */
+    font-style: normal;
+}
+
+.bg-hero-gradient {
+  background: linear-gradient(92.26deg, #5829C7 -1.6%, rgba(88, 41, 199, 0) 174.96%);
+  box-shadow: inset 0px -4px 35px rgba(189, 189, 189, 0.1), inset 0px 4px 35px rgba(189, 189, 189, 0.1);
+}
+
+
+
+/* Carousel styles */
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
+/* Custom styles */
+.label-card {
+  width: 284px;
+  height: 312px;
+}
+
+.team-card {
+  width: 208px;
+  height: 312px;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.slick-slide {
+  display: flex;
+  justify-content: center;
+}
+
+
+/* Create a marquee effect for continuous scrolling */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  animation: marquee 15s linear infinite; /* Adjust timing for speed */
+}
+
+@media (max-width: 768px) {
+  video {
+    width: 180%; /* Video width for mobile */
+    max-width: 180%;
+  }
+}
+
+@media (min-width: 769px) {
+  video {
+    width: 120%; /* Video width for desktop */
+    max-width: 120%;
+  }
+}
+
+  .order-1 {
+    margin-bottom: 20px;
+  }
+
+ 
+
+@keyframes waterFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.water-gradient {
+  background-size: 200% 200%;
+  animation: waterFlow 4s linear infinite;
+}

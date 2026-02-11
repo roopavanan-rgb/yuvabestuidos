@@ -1,0 +1,18 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Ensure that requests for static files and directories are served directly
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # Explicitly handle specific routes for a multipage site
+  RewriteRule ^about$ /about.html [L]
+  RewriteRule ^work$ /work.html [L]
+  RewriteRule ^career$ /career.html [L]
+  RewriteRule ^contact$ /contact.html [L]
+
+  # Redirect all other requests to Next.js (fallback to index.html)
+  RewriteRule ^(.*)$ /index.html [L]
+</IfModule>
