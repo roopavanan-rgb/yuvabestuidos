@@ -1,8 +1,12 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, FreeMode } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/free-mode";
 
 const teamMembers = [
   {
@@ -11,12 +15,7 @@ const teamMembers = [
     category: "Digital Marketing",
     imagePath: "/images/team/priya.webp",
   },
-  {
-    name: "Vicky",
-    role: "UI/UX & Graphic Designer",
-    category: "Digital Marketing",
-    imagePath: "/images/team/vicky.webp",
-  },
+
   {
     name: "Sagar",
     role: "UI/UX Designer & Web Developer",
@@ -83,19 +82,13 @@ const teamMembers = [
     category: "Digital Marketing",
     imagePath: "/images/team/karthik.webp",
   },
-  {
-    name: "Yogesh",
-    role: "UI/UX Designer",
-    category: "Digital Marketing",
-    imagePath: "/images/team/yogesh.webp",
-  },
+
   {
     name: "Anupama",
     role: "AI/ML Mentor",
     category: "AI/ML",
     imagePath: "/images/team/anupama.webp",
   },
-
   {
     name: "Keerthana",
     role: "AI/ML Developer",
@@ -114,19 +107,13 @@ const teamMembers = [
     category: "AI/ML",
     imagePath: "/images/team/thamaraikannan.webp",
   },
-
   {
     name: "Arun Kumar",
     role: "AI/ML Developer",
     category: "AI/ML",
     imagePath: "/images/team/arunkumar.webp",
   },
-  {
-    name: "Shri Jayaram",
-    role: "AI/ML Developer",
-    category: "AI/ML",
-    imagePath: "/images/team/shri.webp",
-  },
+
   {
     name: "Abinesh Kumar",
     role: "AI/ML Developer",
@@ -293,54 +280,41 @@ const teamMembers = [
 
 export default function TeamSection() {
   const digitalMarketingTeam = teamMembers.filter(
-    (member) => member.category === "Digital Marketing"
+    (m) => m.category === "Digital Marketing",
   );
-  const aiMlTeam = teamMembers.filter((member) => member.category === "AI/ML");
+  const aiMlTeam = teamMembers.filter((m) => m.category === "AI/ML");
   const marketResearchTeam = teamMembers.filter(
-    (member) => member.category === "Market Research"
+    (m) => m.category === "Market Research",
   );
 
-  // Slider settings for Digital Marketing
-  const digitalSettings = {
-    infinite: true,
-    speed: 2000,
-    cssEase: "ease-in-out",
-    slidesToShow: 6,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 0,
-    pauseOnHover: false,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-        },
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 2,
-        },
-      },
-      {
-        breakpoint: 464,
-        settings: {
-          slidesToShow: 1.5,
-        },
-      },
-    ],
-  };
+  const TeamCard = ({ member }) => (
+    <div className="px-2 py-4 h-full flex justify-center">
+      <div className="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col w-full max-w-[210px] h-[280px]">
+        {/* IMAGE */}
+        <div className="relative w-full h-[75%]">
+          <Image
+            src={member.imagePath}
+            alt={member.name}
+            fill
+            className="object-cover"
+            sizes="(max-width:728px) 50vw, (max-width:1280px) 25vw, 210px"
+            priority
+          />
+        </div>
 
-  const aiMlSettings = {
-    ...digitalSettings,
-    rtl: true,
-  };
+        {/* CONTENT */}
+        <div className="flex flex-col justify-end flex-1 px-3 py-2 text-left">
+          <h3 className="text-sm sm:text-base font-semibold text-gray-800 leading-tight truncate">
+            {member.name}
+          </h3>
 
-  const marketResearchSettings = {
-    ...digitalSettings,
-    rtl: false,
-  };
+          <p className="text-md font-secondary text-gray-600 leading-snug line-clamp-2">
+            {member.role}
+          </p>
+        </div>
+      </div>
+    </div>
+  );
 
   return (
     <section className="py-16 bg-gray-50 relative">
@@ -348,120 +322,104 @@ export default function TeamSection() {
         <h2 className="text-2xl md:text-5xl font-medium text-gray-800">
           Our Incredible Team
         </h2>
-        <p className="text-xl md:text-2xl font-secondary font-semibold text-[#3500F0] mt-2">
-          Meet the creative minds, strategists, engineers, designers, and
-          researchers who power Yuvabe Studios.
-        </p>
       </div>
 
-      {/* Digital Marketing Team Carousel */}
+      {/* DIGITAL */}
       <div className="relative w-full mb-12">
-        <div className="absolute left-[-10px] top-[50%] w-[280px] h-[320px] transform -translate-y-1/2 bg-purple-300/50 border-violet-200 rounded-xl shadow-lg p-6 text-white font-medium text-4xl flex items-center justify-center z-20 backdrop-blur-lg border border-purple-200/50 hidden lg:flex">
+        <div className="absolute left-[-10px] top-[50%] w-[280px] h-[320px] transform -translate-y-1/2 bg-purple-300/50 border-violet-200 rounded-xl shadow-lg p-6 text-white font-medium text-4xl flex items-center justify-center z-20 backdrop-blur-lg border border-purple-200/50 hidden  xl:flex">
           Digital <br />
           Marketing
         </div>
 
-        <Slider {...digitalSettings} className="overflow-hidden">
-          {digitalMarketingTeam.map((member, index) => (
-            <div key={index} className="px-2 py-6">
-              <div
-                className="bg-white rounded-lg shadow-lg text-left flex flex-col justify-between"
-                style={{ width: "208px", height: "312px" }}
-              >
-                <div className="rounded-t-lg overflow-hidden h-[70%]">
-                  <Image
-                    src={member.imagePath}
-                    alt={member.name}
-                    width={208}
-                    height={218}
-                    priority
-                    className="object-cover h-full w-full"
-                    quality={100}
-                  />
-                </div>
-                <div className="px-4 py-3">
-                  <h3 className="text-lg font-semibold text-gray-800">
-                    {member.name}
-                  </h3>
-                  <p className="text-gray-600">{member.role}</p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </Slider>
+        <Swiper
+          modules={[Autoplay, FreeMode]}
+          freeMode
+          loop
+          speed={4000}
+          allowTouchMove={false}
+          autoplay={{ delay: 0 }}
+          breakpoints={{
+            0: { slidesPerView: 1.2, spaceBetween: 12 },
+            480: { slidesPerView: 2 },
+            640: { slidesPerView: 2.5 },
+            768: { slidesPerView: 3 },
+            1024: { slidesPerView: 4 },
+            1280: { slidesPerView: 6 },
+          }}
+          className="ticker-swiper"
+        >
+          {[...digitalMarketingTeam, ...digitalMarketingTeam].map(
+            (member, index) => (
+              <SwiperSlide key={index}>
+                <TeamCard member={member} />
+              </SwiperSlide>
+            ),
+          )}
+        </Swiper>
       </div>
 
-      {/* AI/ML Team Carousel */}
-      <div className="relative w-full overflow-hidden">
-        <div className="absolute right-[-10px] top-[50%] w-[280px] h-[320px] transform -translate-y-1/2 bg-[#F04E2733]/20 rounded-xl shadow-lg p-6 text-white font-medium text-4xl  items-center justify-center z-20 backdrop-blur-lg border border-orange-200/50 hidden lg:flex">
+      {/* AI ML REVERSE */}
+      <div className="relative w-full mb-12">
+        <div className="absolute right-[-10px] top-[50%] w-[280px] h-[320px] transform -translate-y-1/2 bg-[#F04E2733]/20 rounded-xl shadow-lg p-6 text-white font-medium text-4xl  items-center justify-center z-20 backdrop-blur-lg border border-orange-200/50 hidden xl:flex">
           AI/ML
         </div>
-
-        <Slider {...aiMlSettings} className="overflow-hidden">
-          {aiMlTeam.map((member, index) => (
-            <div key={index} className="px-2 py-6">
-              <div
-                className="bg-white rounded-lg shadow-lg text-left flex flex-col justify-between"
-                style={{ width: "208px", height: "312px" }}
-              >
-                <div className="rounded-t-lg overflow-hidden h-[70%]">
-                  <Image
-                    src={member.imagePath}
-                    alt={member.name}
-                    width={208}
-                    height={218}
-                    priority
-                    className="object-cover h-full w-full"
-                    quality={100}
-                  />
-                </div>
-                <div className="px-4 py-3">
-                  <h3 className="text-lg font-semibold text-gray-800">
-                    {member.name}
-                  </h3>
-                  <p className="text-gray-600">{member.role}</p>
-                </div>
-              </div>
-            </div>
+        <Swiper
+          modules={[Autoplay, FreeMode]}
+          freeMode
+          loop
+          speed={4000}
+          allowTouchMove={false}
+          autoplay={{ delay: 0, reverseDirection: true }}
+          breakpoints={{
+            0: { slidesPerView: 1.2, spaceBetween: 12 },
+            480: { slidesPerView: 2 },
+            640: { slidesPerView: 2.5 },
+            768: { slidesPerView: 3 },
+            1024: { slidesPerView: 4 },
+            1280: { slidesPerView: 6 },
+          }}
+          className="ticker-swiper"
+        >
+          {[...aiMlTeam, ...aiMlTeam].map((member, index) => (
+            <SwiperSlide key={index}>
+              <TeamCard member={member} />
+            </SwiperSlide>
           ))}
-        </Slider>
+        </Swiper>{" "}
       </div>
 
-      {/* Market Research Team Carousel */}
-      <div className="relative w-full mb-12 mt-12">
-        <div className="absolute left-[-10px] top-[50%] w-[280px] h-[320px] transform -translate-y-1/2 bg-green-300/50 border-green-200 rounded-xl shadow-lg p-6 text-white font-medium text-4xl flex items-center justify-center z-20 backdrop-blur-lg border border-green-200/50 hidden lg:flex">
+      {/* MARKET */}
+      <div className="relative w-full mb-12">
+        <div className="absolute left-[-10px] top-[50%] w-[280px] h-[320px] transform -translate-y-1/2 bg-green-300/50 border-green-200 rounded-xl shadow-lg p-6 text-white font-medium text-4xl flex items-center justify-center z-20 backdrop-blur-lg border border-green-200/50 hidden xl:flex">
           Market <br />
           Research
         </div>
 
-        <Slider {...marketResearchSettings} className="overflow-hidden">
-          {marketResearchTeam.map((member, index) => (
-            <div key={index} className="px-2 py-6">
-              <div
-                className="bg-white rounded-lg shadow-lg text-left flex flex-col justify-between"
-                style={{ width: "208px", height: "312px" }}
-              >
-                <div className="rounded-t-lg overflow-hidden h-[70%]">
-                  <Image
-                    src={member.imagePath}
-                    alt={member.name}
-                    width={208}
-                    height={218}
-                    priority
-                    className="object-cover h-full w-full"
-                    quality={100}
-                  />
-                </div>
-                <div className="px-4 py-3">
-                  <h3 className="text-lg font-semibold text-gray-800">
-                    {member.name}
-                  </h3>
-                  <p className="text-gray-600">{member.role}</p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </Slider>
+        <Swiper
+          modules={[Autoplay, FreeMode]}
+          freeMode
+          loop
+          speed={4000}
+          allowTouchMove={false}
+          autoplay={{ delay: 0 }}
+          breakpoints={{
+            0: { slidesPerView: 1.2, spaceBetween: 12 },
+            480: { slidesPerView: 2 },
+            640: { slidesPerView: 2.5 },
+            768: { slidesPerView: 3 },
+            1024: { slidesPerView: 4 },
+            1280: { slidesPerView: 6 },
+          }}
+          className="ticker-swiper"
+        >
+          {[...marketResearchTeam, ...marketResearchTeam].map(
+            (member, index) => (
+              <SwiperSlide key={index}>
+                <TeamCard member={member} />
+              </SwiperSlide>
+            ),
+          )}
+        </Swiper>
       </div>
     </section>
   );

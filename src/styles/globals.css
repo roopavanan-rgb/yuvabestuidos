@@ -171,3 +171,7 @@
   background-size: 200% 200%;
   animation: waterFlow 4s linear infinite;
 }
+
+.ticker-swiper .swiper-wrapper {
+  transition-timing-function: linear !important;
+}

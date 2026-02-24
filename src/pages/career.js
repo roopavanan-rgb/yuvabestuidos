@@ -122,7 +122,6 @@ export default function Careers() {
         </header>
 
         {/* Filter Section */}
-        {/* Filter Section */}
         <div className="flex flex-col md:flex-row justify-between items-center mb-6 mx-2 md:mx-24 gap-4 relative">
           {/* Mobile Filter Button */}
           <div className="md:hidden w-full relative">
@@ -258,11 +257,14 @@ function AccordionItem({ job }) {
           )}
         </div>
         <div className="text-end md:text-start ">
-          <BsArrowUpRightCircle
-            className={`text-lg md:text-2xl ${
-              isOpen ? "text-[#FFCA2D]" : "text-[#757575]"
-            }`}
-          />
+          <div className="flex flex-col items-end">
+            <BsArrowUpRightCircle
+              className={`text-lg md:text-2xl ${
+                isOpen ? "text-[#FFCA2D]" : "text-[#757575]"
+              }`}
+            />
+          </div>
+
           <p
             className={`text-xs md:text-sm mt-1 ${
               isOpen ? "text-[#FFCA2D]" : "text-[#757575]"

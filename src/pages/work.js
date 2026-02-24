@@ -192,8 +192,8 @@ export default function WorkPage() {
                   transition={{ duration: 0.6, delay: index * 0.2 }}
                 >
                   {/* Project Card */}
-                  <div className="bg-white shadow-lg border border-purple-300 rounded-lg p-4 w-[100%] sm:w-[417.55px] mx-auto sm:h-[420px] h-auto">
-                    <div className="relative w-full max-w-[95%] sm:max-w-[372px] h-[194px] sm:h-[258px] mx-auto rounded-lg overflow-hidden mb-4">
+                  <div className="bg-white shadow-lg border border-purple-300 rounded-lg p-4 w-[100%] sm:w-[417.55px] mx-auto sm:h-[440px] h-auto">
+                    <div className="relative w-full max-w-[95%] sm:max-w-[372px] h-[194px] sm:h-[268px] mx-auto rounded-lg overflow-hidden mb-4">
                       <Image
                         src={project.imageSrc}
                         alt={project.title}
@@ -254,7 +254,7 @@ export default function WorkPage() {
                   transition={{ duration: 0.6, delay: index * 0.2 }}
                 >
                   {/* Card Container */}
-                  <div className="bg-white shadow-lg border border-blue-300 rounded-lg p-4 w-[100%] sm:w-[417.55px] mx-auto sm:h-[420px] h-auto">
+                  <div className="bg-white shadow-lg border border-blue-300 rounded-lg p-4 w-[100%] sm:w-[417.55px] mx-auto sm:h-[440px] h-auto">
                     <div className="relative w-full max-w-[95%] sm:max-w-[372px] h-[194px] sm:h-[258px] mx-auto rounded-lg overflow-hidden mb-4">
                       <Image
                         src={project.imageSrc}
