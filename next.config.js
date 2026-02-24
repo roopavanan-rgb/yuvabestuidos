@@ -1,6 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "export",
   images: {
     unoptimized: true,
     formats: ["image/webp", "image/avif"],
@@ -10,4 +9,4 @@ const nextConfig = {
   trailingSlash: true,
 };
 
-module.exports = nextConfig
+module.exports = nextConfig;

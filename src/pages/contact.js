@@ -1,17 +1,76 @@
 import { motion } from "framer-motion";
 import { FiMail, FiPhone, FiMapPin, FiSend } from "react-icons/fi";
 import Head from "next/head";
-import { useForm, ValidationError } from "@formspree/react";
 import ReCAPTCHA from "react-google-recaptcha";
 import { useState } from "react";
 
 const Contact = () => {
   const [captchaDone, setCaptchaDone] = useState(false);
-  const [state, handleSubmit] = useForm("meoqwqra");
+  const [captchaToken, setCaptchaToken] = useState(null);
 
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+
+  const [errors, setErrors] = useState({});
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const validate = () => {
+    const newErrors = {};
+
+    if (!form.name) newErrors.name = "Name required";
+    if (!form.email) newErrors.email = "Email required";
+    if (!form.phone) newErrors.phone = "Phone required";
+    if (!form.message) newErrors.message = "Message required";
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!captchaDone) {
+      alert("Please complete the reCAPTCHA.");
+      return;
+    }
+
+    if (!validate()) return;
+
+    setLoading(true);
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ...form,
+          captchaToken,
+        }),
+      });
+
+      if (!res.ok) throw new Error();
+
+      setSuccess(true);
+      setForm({ name: "", email: "", phone: "", message: "" });
+    } catch {
+      alert("Something went wrong.");
+    }
+
+    setLoading(false);
+  };
   // Handle reCAPTCHA success
   const handleCaptchaChange = (token) => {
     setCaptchaDone(true);
+    setCaptchaToken(token);
   };
 
   return (
@@ -122,58 +181,52 @@ const Contact = () => {
               <input
                 type="text"
                 name="name"
+                value={form.name}
+                onChange={handleChange}
                 placeholder="Your Name"
                 required
                 className="w-full border border-gray-300 p-4 rounded-lg focus:outline-none focus:border-indigo-500"
               />
-              <ValidationError
-                prefix="Name"
-                field="name"
-                errors={state.errors}
-              />
+              {errors.name && <p className="text-red-500">{errors.name}</p>}
 
               <input
                 type="email"
                 name="email"
+                value={form.email}
+                onChange={handleChange}
                 placeholder="email@example.com"
                 required
                 className="w-full border border-gray-300 p-4 rounded-lg focus:outline-none focus:border-indigo-500"
               />
-              <ValidationError
-                prefix="Email"
-                field="email"
-                errors={state.errors}
-              />
+              {errors.email && <p className="text-red-500">{errors.email}</p>}
 
               <input
                 type="tel"
                 name="phone"
+                value={form.phone}
+                onChange={handleChange}
                 placeholder="+91 99999 99999"
                 required
                 className="w-full border border-gray-300 p-4 rounded-lg focus:outline-none focus:border-indigo-500"
               />
-              <ValidationError
-                prefix="Phone"
-                field="phone"
-                errors={state.errors}
-              />
+              {errors.phone && <p className="text-red-500">{errors.phone}</p>}
 
               <textarea
                 name="message"
+                value={form.message}
+                onChange={handleChange}
                 placeholder="Your Message"
                 required
                 className="w-full border border-gray-300 p-4 rounded-lg focus:outline-none focus:border-indigo-500"
                 rows="4"
               ></textarea>
-              <ValidationError
-                prefix="Message"
-                field="message"
-                errors={state.errors}
-              />
+              {errors.message && (
+                <p className="text-red-500">{errors.message}</p>
+              )}
 
               {/* Google reCAPTCHA */}
               <ReCAPTCHA
-                sitekey="6LduyJQqAAAAAFUf1YGFhoKAppjYnpeBhR2rYUQr"
+                sitekey="6Ldk_XUsAAAAAOEKKzOGmR5DoPYd0TxK2qwDb3tm"
                 onChange={handleCaptchaChange}
               />
 
@@ -182,7 +235,7 @@ const Contact = () => {
                 {captchaDone ? (
                   <button
                     type="submit"
-                    disabled={state.submitting}
+                    disabled={loading}
                     className="w-full flex justify-between items-center bg-transparent border-2 border-violet-600 text-violet-800 font-semibold py-3 rounded-lg hover:bg-violet-200 transition"
                   >
                     <span className="ml-4">Send</span>
@@ -200,7 +253,7 @@ const Contact = () => {
               </div>
 
               {/* Thank You Message */}
-              {state.succeeded && (
+              {success && (
                 <p className="text-green-600 text-lg mt-4">
                   Thanks for your message! We’ll get back to you shortly.
                 </p>
