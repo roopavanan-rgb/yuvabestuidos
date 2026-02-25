@@ -4,6 +4,30 @@ import Link from "next/link";
 import Image from "next/image";
 import { FaTwitter, FaLinkedin, FaFacebook, FaLink } from "react-icons/fa";
 import { NextSeo } from "next-seo";
+import FaqSection from "@/components/FaqSection";
+
+const objectdetectionFaqs = [
+  {
+    question: "What is AI-powered object detection?",
+    answer:
+      "RunAI-powered object detection is a computer vision technique that identifies and classifies objects within images using trained machine learning models.",
+  },
+  {
+    question: " Can object detection be built using Flutter?",
+    answer:
+      "Yes. Flutter can capture images and display results, while AI inference is handled by a backend such as FastAPI.",
+  },
+  {
+    question: "Why use FastAPI for AI inference?",
+    answer:
+      "FastAPI is lightweight, fast, and well-suited for serving machine learning models through APIs.",
+  },
+  {
+    question: "Can this system scale to real-world applications?",
+    answer:
+      "Yes. The modular architecture allows models like YOLO or EfficientNet to replace simpler classifiers as needs grow.",
+  },
+];
 
 export default function objectdetection() {
   return (
@@ -63,8 +87,8 @@ export default function objectdetection() {
       {/* Meta Info */}
       <div className="max-w-6xl mx-auto px-6 text-black text-sm mb-4">
         <p>
-          Published on <span className="text-gray-800">October 7, 2025</span>{" "}
-          · 7 mins read
+          Published on <span className="text-gray-800">October 7, 2025</span> ·
+          7 mins read
         </p>
       </div>
 
@@ -86,9 +110,20 @@ export default function objectdetection() {
         </p>
 
         {/* Author field */}
-        <p className="text-[16px] font-medium text-gray-500">
+        <p className="text-[16px] font-medium text-gray-500 mb-4">
           – By <span className="text-[#5829C7]">Hariprasath</span>, AI/ML
           Developer, Yuvabe Studios
+        </p>
+
+        <h3 className="text-xl font-medium font-secondary text-gray-800">
+          Answer Summary:
+        </h3>
+        <p className="text-lg  text-black font-secondary mb-4">
+          AI-powered object detection allows mobile apps to identify and
+          classify objects from images in real time. By combining Flutter for
+          the frontend and FastAPI for the backend, developers can build
+          scalable, real-world object detection systems using pre-trained AI
+          models with minimal infrastructure.
         </p>
       </div>
 
@@ -115,9 +150,9 @@ export default function objectdetection() {
         >
           {/* Introduction Section */}
           <section className=" rounded-2xl mb-12">
-            <h3 className="text-3xl font-medium font-primary text-[#5829C7] mb-6">
-              Introduction{" "}
-            </h3>
+            <h2 className="text-3xl font-medium font-primary text-[#5829C7] mb-6">
+              Why AI-Powered Object Detection Matters{" "}
+            </h2>
             <p className="text-md  text-black font-secondary">
               From autonomous cars identifying pedestrians to e-commerce apps
               recommending products from photos,
@@ -149,7 +184,7 @@ export default function objectdetection() {
 
           <section className="mb-12">
             <h2 className="text-3xl font-medium font-primary text-[#5829C7] mb-6">
-              How Object Detection Works
+              How AI Object Detection Works
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
@@ -183,29 +218,71 @@ export default function objectdetection() {
                   thousands of images.
                 </p>
 
-                <h3 className="text-3xl font-medium font-primary text-[#5829C7] my-6">
-                  Technologies We Used
-                </h3>
+                <h2 className="text-3xl font-medium font-primary text-[#5829C7] my-6">
+                  Technologies We Used in This Project
+                </h2>
                 <p className="mb-2 font-secondary text-lg text-black">
                   To keep things simple yet powerful, we combined the following
                   stack:
                 </p>
                 <ul className="list-disc pl-6 space-y-2 font-secondary text-black">
                   <li>
-                    <strong>Flutter: (smaller variants):</strong> For the mobile
-                    frontend (UI + camera integration).
+                    <strong>
+                      Flutter for Mobile Frontend (Camera Integration):
+                    </strong>{" "}
+                    For the mobile frontend (UI + camera integration).{" "}
+                    <a
+                      href="https://pub.dev/packages/camera"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-600 underline"
+                    >
+                      Flutter Camera Package
+                    </a>
                   </li>
+
                   <li>
-                    <strong>FastAPI: (smaller variants):</strong> A lightweight,
-                    high-performance Python backend for serving the AI model.
+                    <strong>FastAPI for AI Backend:</strong> A lightweight,
+                    high-performance Python backend for serving the AI model.{" "}
+                    <a
+                      href="https://fastapi.tiangolo.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-600 underline"
+                    >
+                      FastAPI Documentation
+                    </a>
                   </li>
+
                   <li>
-                    <strong>Florence-2-base: (smaller variants):</strong> A
-                    pre-trained model used for object classification.
+                    <strong>Florence-2-base for Object Classification:</strong>{" "}
+                    A pre-trained model used for object classification.{" "}
+                    <a
+                      href="https://huggingface.co/microsoft/Florence-2"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-600 underline"
+                    >
+                      Florence-2 on Hugging Face
+                    </a>
                   </li>
+
                   <li>
-                    <strong>HTTP Requests: (smaller variants):</strong> To send
-                    captured images from Flutter to the backend.
+                    <strong>YOLO for Object Detection:</strong> Real-time object
+                    detection model used alongside classification.{" "}
+                    <a
+                      href="https://docs.ultralytics.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-600 underline"
+                    >
+                      YOLO Documentation
+                    </a>
+                  </li>
+
+                  <li>
+                    <strong>HTTP Communication Between App and Backend:</strong>{" "}
+                    To send captured images from Flutter to the backend.
                   </li>
                 </ul>
                 <p className="text-black mt-4">
@@ -235,9 +312,9 @@ export default function objectdetection() {
               communicates with a FastAPI backend for AI-powered image
               classification.
             </p>
-            <h4 className="text-xl font-medium font-primary text-black mt-6 mb-2">
+            <h3 className="text-xl font-medium font-primary text-black mt-6 mb-2">
               Step 1: Add Dependencies
-            </h4>
+            </h3>
             <p className="mb-2 font-secondary ">
               In your <code className="text-green-600">pubspec.yaml</code> file,
               add:
@@ -270,9 +347,9 @@ export default function objectdetection() {
                 install the packages.
               </p>
             </div>
-            <h4 className="text-xl font-medium font-primary text-black mt-6 mb-2">
+            <h3 className="text-xl font-medium font-primary text-black mt-6 mb-2">
               Step 2: Implement Camera Functionality
-            </h4>
+            </h3>
             <p className="mb-2 font-secondary">
               We use the <strong>Flutter camera package </strong> to capture and
               send images for processing.Here’s how to initialize and use the
@@ -421,9 +498,9 @@ Future<void> captureAndProcessImage() async {
                 after classification.
               </p>
             </div>
-            <h4 className="text-3xl font-medium font-primary text-[#5829C7] my-6">
-              Implement API Service
-            </h4>
+            <h2 className="text-3xl font-medium font-primary text-[#5829C7] my-6">
+              Backend AI Inference with FastAPI
+            </h2>
             <p className="mb-2 font-secondary font-regular">
               On the backend, <strong>FastAPI handles the AI inference.</strong>{" "}
               Flutter communicates with this backend via the{" "}
@@ -485,9 +562,9 @@ Future<void> captureAndProcessImage() async {
             </p>
             <hr className="my-6 border-gray-300" />
             <div className="mb-6">
-              <h3 className="text-3xl font-medium font-primary text-[#5829C7] mb-6">
+              <h2 className="text-3xl font-medium font-primary text-[#5829C7] mb-6">
                 Final Thoughts: Why This Matters Beyond the Demo
-              </h3>
+              </h2>
               <p className="text-black font-secondary text-md mb-4">
                 This project demonstrates more than just code — it shows how
                 real-time object detection in Flutter is no longer limited to
@@ -496,9 +573,9 @@ Future<void> captureAndProcessImage() async {
                 AI-powered apps in days, not months.
               </p>
 
-              <h4 className="text-2xl font-medium font-primary text-[#5829C7] mb-4">
-                How You Could Take This Further
-              </h4>
+              <h2 className="text-2xl font-medium font-primary text-[#5829C7] mb-4">
+                Taking Object Detection Beyond the Demo
+              </h2>
 
               <ul className="list-disc list-inside space-y-2 text-black font-secondary text-[16px">
                 <li>
@@ -537,6 +614,12 @@ Future<void> captureAndProcessImage() async {
             </Link>{" "}
           </p>
 
+          <FaqSection
+            title="Frequently Asked Questions (FAQ)"
+            description="Here’s Few things you need to know about Object Detection System"
+            faqs={objectdetectionFaqs}
+          />
+
           {/* Share Section */}
           <div className="border-t pt-6 mt-10">
             <h4 className="text-lg font-semibold text-gray-800 mb-4">
@@ -545,7 +628,7 @@ Future<void> captureAndProcessImage() async {
             <div className="flex flex-wrap gap-4">
               {/* Twitter/X */}
               <a
-                href="https://twitter.com/intent/tweet?url=https://yourdomain.com/blog/local-llm&text=Check%20out%20this%20article%20about%20Running%20LLMs%20Locally!"
+                href="https://twitter.com/intent/tweet?url=https://www.yuvabestudios.com/blog/object-detection-system-in-flutter&text=Check%20out%20this%20article%20about%20Running%20LLMs%20Locally!"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center space-x-2 px-4 py-2 bg-black text-white rounded-lg hover:opacity-80 transition"
@@ -556,7 +639,7 @@ Future<void> captureAndProcessImage() async {
 
               {/* LinkedIn */}
               <a
-                href="https://www.linkedin.com/sharing/share-offsite/?url=https://yourdomain.com/blog/local-llm"
+                href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.yuvabestudios.com/blog/object-detection-system-in-flutter"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center space-x-2 px-4 py-2 bg-blue-700 text-white rounded-lg hover:opacity-80 transition"
@@ -567,7 +650,7 @@ Future<void> captureAndProcessImage() async {
 
               {/* Facebook */}
               <a
-                href="https://www.facebook.com/sharer/sharer.php?u=https://yourdomain.com/blog/local-llm"
+                href="https://www.facebook.com/sharer/sharer.php?u=https://www.yuvabestudios.com/blog/object-detection-system-in-flutter"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center space-x-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:opacity-80 transition"
@@ -580,7 +663,7 @@ Future<void> captureAndProcessImage() async {
               <button
                 onClick={() => {
                   navigator.clipboard.writeText(
-                    "https://yourdomain.com/blog/local-llm"
+                    "https://www.yuvabestudios.com/blog/object-detection-system-in-flutter/",
                   );
                   alert("Link copied to clipboard!");
                 }}

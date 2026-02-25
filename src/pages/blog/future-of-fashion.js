@@ -5,7 +5,7 @@ import Image from "next/image";
 import { FaTwitter, FaLinkedin, FaFacebook, FaLink } from "react-icons/fa";
 import { NextSeo } from "next-seo";
 
-export default function LocalLLM() {
+export default function FutureOfFashion() {
   return (
     <div className="bg-gray-50 min-h-screen">
       <NextSeo
@@ -64,8 +64,8 @@ export default function LocalLLM() {
       {/* Meta Info */}
       <div className="max-w-6xl mx-auto px-6 text-black text-sm mb-4">
         <p>
-          Published on <span className="text-gray-800">October 21, 2025</span>{" "}
-          · 8 min read
+          Published on <span className="text-gray-800">October 21, 2025</span> ·
+          8 min read
         </p>
       </div>
 
@@ -86,9 +86,20 @@ export default function LocalLLM() {
         </p>
 
         {/* Author field */}
-        <p className="text-[16px] font-medium text-gray-500">
+        <p className="text-[16px] font-medium text-gray-500 mb-4">
           – By <span className="text-[#5829C7]">Arthi</span>, Market Researcher,
           Yuvabe Studios
+        </p>
+
+        <h3 className="text-xl font-medium font-secondary text-gray-800">
+          Answer Summary:
+        </h3>
+        <p className="text-lg  text-black font-secondary mb-4">
+          AI-powered object detection allows mobile apps to identify and
+          classify objects from images in real time. By combining Flutter for
+          the frontend and FastAPI for the backend, developers can build
+          scalable, real-world object detection systems using pre-trained AI
+          models with minimal infrastructure.
         </p>
       </div>
 
@@ -189,7 +200,8 @@ export default function LocalLLM() {
             </h2>
             <p className="text-gray-600 mb-6 font-secondary text-base md:text-lg leading-relaxed">
               Yuvabe Studios has developed a 6-step methodology to predict
-              emerging fashion movements 3–6 months before they hit mainstream:{" "}
+              emerging fashion movements 3–6 months before they hit
+              mainstream:{" "}
             </p>
 
             <article className="mb-4">
@@ -645,7 +657,7 @@ export default function LocalLLM() {
               <button
                 onClick={() => {
                   navigator.clipboard.writeText(
-                    "https://yourdomain.com/blog/local-llm"
+                    "https://yourdomain.com/blog/local-llm",
                   );
                   alert("Link copied to clipboard!");
                 }}

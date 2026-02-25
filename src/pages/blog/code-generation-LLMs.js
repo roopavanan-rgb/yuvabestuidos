@@ -4,8 +4,37 @@ import Link from "next/link";
 import Image from "next/image";
 import { FaTwitter, FaLinkedin, FaFacebook, FaLink } from "react-icons/fa";
 import { NextSeo } from "next-seo";
+import FaqSection from "@/components/FaqSection";
 
-export default function LocalLLM() {
+const codegenerationFaqs = [
+  {
+    question: "What are LLMs in software development?",
+    answer:
+      "LLMs, or Large Language Models, are AI systems trained on large code and text datasets that help developers generate, debug, and understand code using natural language prompts.",
+  },
+  {
+    question: "How do LLMs help developers code faster?",
+    answer:
+      "LLMs automate repetitive tasks like boilerplate generation, CRUD operations, and scaffolding, allowing developers to focus on logic and problem-solving.",
+  },
+  {
+    question: "Is GitHub Copilot powered by LLMs?",
+    answer:
+      "Yes. GitHub Copilot uses large language models trained on public code to provide context-aware code suggestions directly inside the editor.",
+  },
+  {
+    question: "Can LLMs replace developers?",
+    answer:
+      "No. LLMs assist developers but do not replace human reasoning, architectural thinking, or business understanding. They amplify productivity rather than replace expertise.",
+  },
+  {
+    question: "How do businesses benefit from LLM-powered development?",
+    answer:
+      "Businesses benefit through faster product launches, reduced engineering costs, improved code quality, and more efficient development workflows.",
+  },
+];
+
+export default function CodeGenerationLLMs() {
   return (
     <div className="bg-gray-50 min-h-screen">
       <NextSeo
@@ -88,9 +117,20 @@ export default function LocalLLM() {
         </p>
 
         {/* Author field */}
-        <p className="text-[16px] font-medium text-gray-500">
+        <p className="text-[16px] font-medium text-gray-500 mb-4">
           – By <span className="text-[#5829C7]">Mohamed Safiq S</span>, AI/ML
           Developer, Yuvabe Studios
+        </p>
+
+        <h3 className="text-xl font-medium font-secondary text-gray-800">
+          Answer Summary:
+        </h3>
+        <p className="text-lg  text-black font-secondary mb-4">
+          Large Language Models are transforming everyday software development
+          by automating repetitive coding tasks, accelerating prototyping, and
+          improving debugging workflows. By acting as intelligent coding
+          assistants, LLMs help developers build faster, reduce errors, and
+          deliver higher-quality software with less effort.
         </p>
       </div>
 
@@ -118,7 +158,7 @@ export default function LocalLLM() {
           {/* Introduction Section */}
           <section className=" rounded-2xl mb-8">
             <h3 className="text-xl md:text-3xl font-medium font-primary text-[#5829C7] mb-6">
-              A New Era of Coding
+              A New Era of Coding with Large Language Models
             </h3>
             <p className="text-md  text-black font-secondary">
               Not long ago, I&apos;d spend hours debugging boilerplate code or
@@ -143,15 +183,14 @@ export default function LocalLLM() {
 
           <section className="mb-12">
             <h2 className="text-xl md:text-3xl font-medium font-primary text-[#5829C7] mb-6">
-              From Boilerplate to Breakthroughs: How LLMs Supercharge My
-              Workflow
+              How LLMs Improve Everyday Developer Workflows
             </h2>
             <p className="mb-4 font-secondary text-md text-black">
               Instead of wrestling with boilerplate code or repetitive patterns,
               I use LLMs to do:
             </p>
             <h4 className="text-xl font-medium text-[#5829C7] mt-6 mb-2">
-              1. Rapid Prototyping
+              1. Rapid Prototyping with LLMs
             </h4>
             <p className="text-md  text-black font-secondary">
               One of the most significant benefits of AI-assisted code
@@ -182,7 +221,7 @@ export default function LocalLLM() {
               />
             </div>
             <h2 className="text-xl font-medium text-[#5829C7] mt-6 mb-2">
-              2. Automating Repetitive Tasks
+              2. Automating Repetitive Development Tasks Using LLMs
             </h2>
             <p className="mb-4 font-secondary text-md text-black ">
               Some tasks in development feel like déjà vu — writing CRUD
@@ -290,7 +329,7 @@ async def delete_user(user_id: str):
             </div>
             {/* Step-3 */}
             <h2 className="text-xl font-medium font-secondary text-[#5829C7] mb-6 mt-8">
-              3. GitHub Copilot in Action – Tab Completion Magic
+              3. GitHub Copilot and Context-Aware Code Completion
             </h2>
             <p className="mb-4 text-black">
               GitHub Copilot sits in your editor and predicts the next lines of
@@ -314,7 +353,7 @@ async def delete_user(user_id: str):
               <button
                 onClick={() =>
                   navigator.clipboard.writeText(
-                    `def get_users_from_db(collection):`
+                    `def get_users_from_db(collection):`,
                   )
                 }
                 className="absolute top-2 right-2 bg-black text-white text-xs px-2 py-1 rounded hover:bg-gray-600"
@@ -342,7 +381,7 @@ async def delete_user(user_id: str):
     async for user in collection.find({}):
         users.append(user)
     return users
-`
+`,
                   )
                 }
                 className="absolute top-2 right-2 bg-black text-white text-xs px-2 py-1 rounded hover:bg-gray-600"
@@ -368,7 +407,7 @@ async def delete_user(user_id: str):
               <button
                 onClick={() =>
                   navigator.clipboard.writeText(
-                    `def get_users_from_db(collection):`
+                    `def get_users_from_db(collection):`,
                   )
                 }
                 className="absolute top-2 right-2 bg-black text-white text-xs px-2 py-1 rounded hover:bg-gray-600"
@@ -396,7 +435,7 @@ async def delete_user(user_id: str):
               faster delivery without compromising quality.
             </p>
             <h2 className="text-xl md:text-3xl font-medium font-primary text-[#5829C7] mb-6 mt-8">
-              Debugging and Learning
+              Debugging, Learning, and Reasoning with LLMs
             </h2>
             <p className="mb-4">
               While building a dashboard that fetches multiple datasets, I asked
@@ -521,33 +560,37 @@ async def delete_user(user_id: str):
 
             {/* Highlight Box */}
             <div className="bg-blue-50 border-l-4 border-blue-400 p-6 rounded-xl shadow-sm">
-            <h3 className="font-secondary text-lg md:text-2xl font-semibold text-gray-900 mb-4">
-                3 Quick Wins with LLMs for Businesses
-            </h3>
+              <h3 className="font-secondary text-lg md:text-2xl font-semibold text-gray-900 mb-4">
+                Business Benefits of Using LLMs in Software Development
+              </h3>
 
-            <ul className="font-secondary list-disc list-inside text-xl  text-gray-700 leading-relaxed">
-              <li>
-                <span className="font-semibold">Faster Time-to-Market:</span>{" "}
-                Launch products and features weeks sooner by using LLMs to automate prototyping, scaffolding, and repetitive coding.
-
-              </li>
-              <li>
-                <span className="font-semibold">
-                  Reduced Development Costs:
-                </span>{" "}
-                Cut unnecessary engineering hours — let AI handle boilerplate while your team focuses on solving unique business problems.
-              </li>
-              <li>
-                <span className="font-semibold">Smarter Teams, Better Output:</span> Use
-                LLMs act as both assistants and learning tools, helping developers debug faster, learn new frameworks on the fly, and consistently deliver cleaner, more reliable code.
-              </li>
-            </ul>
-          </div>
-            
+              <ul className="font-secondary list-disc list-inside text-xl  text-gray-700 leading-relaxed">
+                <li>
+                  <span className="font-semibold">Faster Time-to-Market:</span>{" "}
+                  Launch products and features weeks sooner by using LLMs to
+                  automate prototyping, scaffolding, and repetitive coding.
+                </li>
+                <li>
+                  <span className="font-semibold">
+                    Reduced Development Costs:
+                  </span>{" "}
+                  Cut unnecessary engineering hours — let AI handle boilerplate
+                  while your team focuses on solving unique business problems.
+                </li>
+                <li>
+                  <span className="font-semibold">
+                    Smarter Teams, Better Output:
+                  </span>{" "}
+                  Use LLMs act as both assistants and learning tools, helping
+                  developers debug faster, learn new frameworks on the fly, and
+                  consistently deliver cleaner, more reliable code.
+                </li>
+              </ul>
+            </div>
           </section>
 
           <h2 className="text-xl md:text-3xl font-medium font-primary text-[#5829C7] mb-6">
-            Final Thoughts: AI as a Creative Partner
+            Final Thoughts: LLMs as Creative Development Partners
           </h2>
 
           {/* Full-width Image */}
@@ -604,6 +647,12 @@ async def delete_user(user_id: str):
             </p>
           </section>
 
+          <FaqSection
+            title="Frequently Asked Questions (FAQ)"
+            description="Here’s Few things you need to know about Code Generation with LLMs"
+            faqs={codegenerationFaqs}
+          />
+
           {/* Share Section */}
           <div className="border-t pt-6 mt-10">
             <h4 className="text-lg font-semibold text-gray-800 mb-4">
@@ -647,7 +696,7 @@ async def delete_user(user_id: str):
               <button
                 onClick={() => {
                   navigator.clipboard.writeText(
-                    "https://yourdomain.com/blog/local-llm"
+                    "https://yourdomain.com/blog/local-llm",
                   );
                   alert("Link copied to clipboard!");
                 }}

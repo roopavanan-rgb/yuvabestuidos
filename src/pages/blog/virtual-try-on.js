@@ -4,8 +4,37 @@ import Link from "next/link";
 import Image from "next/image";
 import { FaTwitter, FaLinkedin, FaFacebook, FaLink } from "react-icons/fa";
 import { NextSeo } from "next-seo";
+import FaqSection from "@/components/FaqSection";
 
-export default function LocalLLM() {
+const virtualtryonFaqs = [
+  {
+    question: "What is Virtual Try-On in fashion?",
+    answer:
+      "Virtual Try-On uses AI and AR to let users digitally preview clothing on their body using images or live camera input.",
+  },
+  {
+    question: "How does AI improve virtual try-on accuracy?",
+    answer:
+      "AI models use computer vision, segmentation, and diffusion techniques to align garments realistically with different body types.",
+  },
+  {
+    question: "Can startups build Virtual Try-On apps?",
+    answer:
+      "Yes. Using frameworks like Next.js and APIs such as Pixelcut, startups can prototype VTO apps quickly without training models from scratch.",
+  },
+  {
+    question: "Does Virtual Try-On reduce fashion returns?",
+    answer:
+      "Yes. By helping customers visualize fit and style before purchase, VTO significantly reduces return rates and waste.",
+  },
+  {
+    question: "How does Yuvabe Studios work with fashion AI?",
+    answer:
+      "Yuvabe Studios designs AI-powered fashion solutions including virtual try-on, generative visuals, and predictive trend tools tailored for real business use.",
+  },
+];
+
+export default function VirtualTryOn() {
   return (
     <div className="bg-gray-50 min-h-screen">
       <NextSeo
@@ -87,9 +116,19 @@ export default function LocalLLM() {
         </p>
 
         {/* Author field */}
-        <p className="text-[16px] font-medium text-gray-500">
+        <p className="text-[16px] font-medium text-gray-500 mb-4">
           – By <span className="text-[#5829C7]">Keerthana</span>, AI/ML
           Developer, Yuvabe Studios
+        </p>
+
+        <h3 className="text-xl font-medium font-secondary text-gray-800">
+          Answer Summary:
+        </h3>
+        <p className="text-lg  text-black font-secondary mb-4">
+          Virtual Try-On (VTO) uses AI and AR to let shoppers preview clothing
+          digitally before purchase. This blog explains why VTO matters for
+          fashion e-commerce, the AI technologies behind it, and how to build a
+          simple virtual try-on app using Next.js and Pixelcut API.
         </p>
       </div>
 
@@ -127,20 +166,21 @@ export default function LocalLLM() {
             </p>
             <ul className="list-disc list-inside space-y-2 text-black font-secondary text-[16px]">
               <li>
-                <strong>Confidence:</strong> Customers can preview styles before
-                purchase, leading to higher conversions.
+                <strong>Confidence in Online Shopping:</strong> Customers can
+                preview styles before purchase, leading to higher conversions.
               </li>
               <li>
-                <strong>Engagement:</strong>Like Instagram filters, VTO lets
-                shoppers play with multiple looks in minutes.
+                <strong>Higher Engagement and Conversion:</strong>Like Instagram
+                filters, VTO lets shoppers play with multiple looks in minutes.
               </li>
               <li>
-                <strong>Sustainability:</strong> Fewer returns mean lower carbon
-                footprints and reduced textile waste.
+                <strong>Sustainability Through Fewer Returns:</strong> Fewer
+                returns mean lower carbon footprints and reduced textile waste.
               </li>
               <li>
-                <strong>Innovation:</strong>From AR filters to metaverse
-                wearables, VTO is shaping the future of fashion.
+                <strong>Innovation in Fashion and Metaverse Commerce:</strong>
+                From AR filters to metaverse wearables, VTO is shaping the
+                future of fashion.
               </li>
             </ul>
             <p className="text-black font-secondary mt-4 text-lg">
@@ -152,7 +192,7 @@ export default function LocalLLM() {
 
           <div className="mb-6">
             <h3 className="text-xl md:text-3xl font-medium font-primary text-[#5829C7] mb-6">
-              Research Driving Modern VTO
+              Research Driving Modern Virtual Try-On
             </h3>
             <p className="text-black font-secondary text-lg mb-4">
               Recent breakthroughs in AI and computer vision have taken virtual
@@ -161,16 +201,43 @@ export default function LocalLLM() {
             <ul className="list-disc list-inside space-y-2 text-black font-secondary text-[16px]">
               <li>
                 <strong>Outfit Anyone:</strong> Flexible try-on across body
-                types and garment styles.
+                types and garment styles.{" "}
+                <a
+                  href="https://arxiv.org"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 underline"
+                >
+                  Paper Link
+                </a>
               </li>
+
               <li>
                 <strong>TryOnDiffusion:</strong> Diffusion models with parallel
-                UNets for detail + warping.
+                UNets for detail + warping.{" "}
+                <a
+                  href="https://arxiv.org"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 underline"
+                >
+                  Paper Link
+                </a>
               </li>
+
               <li>
                 <strong>StableVITON:</strong> Solves semantic alignment between
-                body and garment.
+                body and garment.{" "}
+                <a
+                  href="https://github.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 underline"
+                >
+                  GitHub Repository
+                </a>
               </li>
+
               <li>
                 <strong>DCI-VTON:</strong> Conditional inpainting for
                 ultra-high-resolution outputs.
@@ -193,7 +260,7 @@ export default function LocalLLM() {
 
           <div className="my-8">
             <h3 className="text-xl md:text-3xl font-medium font-primary text-[#5829C7] mb-4">
-              The Technology Behind It
+              The Technology Behind Virtual Try-On
             </h3>
             <p className="text-black font-secondary text-lg mb-4">
               Recent breakthroughs in AI and computer vision have taken virtual
@@ -201,20 +268,20 @@ export default function LocalLLM() {
             </p>
             <ul className="list-disc list-inside space-y-2 text-black font-secondary text-[16px]">
               <li>
-                <strong>Augmented Reality (AR):</strong> Overlays digital
-                clothing on your real-time image.
+                <strong>Augmented Reality for Real-Time Overlay:</strong>{" "}
+                Overlays digital clothing on your real-time image.
               </li>
               <li>
-                <strong>3D Body Scanning:</strong> Creates accurate models of
-                your body for perfect fit visualization.
+                <strong>3D Body Scanning and Fit Estimation:</strong> Creates
+                accurate models of your body for perfect fit visualization.
               </li>
               <li>
-                <strong>Artificial Intelligence:</strong> Improves
+                <strong>Artificial Intelligence for Realism:</strong> Improves
                 recommendations and realism by learning your preferences.
               </li>
               <li>
-                <strong>Computer Vision:</strong> Tracks movement so clothes
-                adjust naturally when you move on camera.
+                <strong>Computer Vision for Movement Tracking:</strong> Tracks
+                movement so clothes adjust naturally when you move on camera.
               </li>
             </ul>
             <p className="text-black font-secondary mt-4 text-lg">
@@ -232,20 +299,20 @@ export default function LocalLLM() {
             </p>
             <ul className="list-disc list-inside space-y-2 text-black font-secondary text-[16px]">
               <li>
-                <strong>Image Capture / Upload:</strong> Customer uploads a
+                <strong>Image Capture or Upload:</strong> Customer uploads a
                 photo or uses the camera.
               </li>
               <li>
-                <strong>Body Detection:</strong> AI identifies the person in the
-                image.
+                <strong>Body Detection Using AI:</strong> AI identifies the
+                person in the image.
               </li>
               <li>
-                <strong>Garment Overlay:</strong> Clothing is aligned and placed
-                realistically.
+                <strong>Garment Alignment and Overlay:</strong> Clothing is
+                aligned and placed realistically.
               </li>
               <li>
-                <strong>Result Display:</strong> Final try-on image is shown or
-                downloaded.
+                <strong>Final Try-On Result Display:</strong> Final try-on image
+                is shown or downloaded.
               </li>
             </ul>
             <p className="text-black font-secondary mt-4 text-lg">
@@ -257,9 +324,9 @@ export default function LocalLLM() {
           </div>
 
           <div className="my-8">
-            <h3 className="text-xl md:text-3xl font-medium font-secondary text-[#5829C7] mb-4">
-              Our Experiment: Building a VTO App at Yuvabe Studios
-            </h3>
+            <h2 className="text-xl md:text-3xl font-medium font-secondary text-[#5829C7] mb-4">
+              Our Experiment at Yuvabe Studios
+            </h2>
             <p className="text-black font-secondary text-lg mb-4">
               To demonstrate how accessible this tech has become, we built a
               <strong> simple VTO app</strong> using Next.js and the{" "}
@@ -275,23 +342,54 @@ export default function LocalLLM() {
           </div>
 
           <div className="my-8">
-            <h3 className="text-xl md:text-3xl font-medium font-primary text-[#5829C7] mb-4">
-              The Stack We Used
-            </h3>
-            <ul className="list-disc list-inside space-y-2 text-black font-secondary text-[16px">
+            <h2 className="text-xl md:text-3xl font-medium font-primary text-[#5829C7] mb-4">
+              Technology Stack Used
+            </h2>
+            <ul className="list-disc list-inside space-y-2 text-black font-secondary text-[16px]">
               <li>
-                <strong>Next.js (React framework): </strong> Front-end for
-                interactivity.
+                <strong>
+                  Next.js for Front-End Interactivity (React framework):
+                </strong>{" "}
+                Front-end for interactivity.{" "}
+                <a
+                  href="https://nextjs.org"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 underline"
+                >
+                  Next.js
+                </a>
               </li>
+
               <li>
-                <strong>Pixelcut Free API:</strong> AI-powered garment fitting.
+                <strong>Pixelcut Free API for Garment Fitting:</strong>{" "}
+                AI-powered garment fitting.{" "}
+                <a
+                  href="https://www.pixelcut.ai"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 underline"
+                >
+                  Pixelcut API
+                </a>
               </li>
+
               <li>
-                <strong>Tailwind CSS:</strong> Clean, responsive design.
+                <strong>Tailwind CSS for Responsive UI:</strong> Clean,
+                responsive design.{" "}
+                <a
+                  href="https://tailwindcss.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 underline"
+                >
+                  Tailwind CSS
+                </a>
               </li>
+
               <li>
-                <strong>Node.js API routes / Vercel:</strong> Secure backend
-                calls to Pixelcut API.
+                <strong>Node.js and Vercel for Secure API Calls:</strong> Secure
+                backend calls to Pixelcut API.
               </li>
             </ul>
             <p className="text-black font-secondary mt-4">
@@ -303,7 +401,7 @@ export default function LocalLLM() {
 
           <section className="my-12">
             <h2 className="text md:text-3xl font-medium font-primary text-[#5829C7] mb-6">
-              Setting Up the Virtual Try-On App in{" "}
+              Building the Virtual Try-On App in Next.js
               <Link
                 href="https://nextjs.org/"
                 target="_blank"
@@ -314,7 +412,7 @@ export default function LocalLLM() {
               </Link>
             </h2>
             <h4 className="text-xl font-medium text-gray-900 mt-6 mb-2">
-              1. Frontend
+              1. Frontend Implementation
             </h4>
             <p className="font-secondary mb-2">
               We built a form where users can input person and garment image
@@ -398,7 +496,7 @@ export default function Home() {
               </button>
             </div>
             <h4 className="text-xl font-medium text-gray-900 mt-6 mb-2">
-              2. API Route (Server-Side)
+              2. Server-Side API Route
             </h4>
             <p className="mb-4 font-secondary">
               Next.js API routes securely call Pixelcut Free API with your key:
@@ -558,7 +656,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           </section>
 
           <h2 className="text-3xl font-medium font-secondary text-[#5829C7] mb-6">
-            Outcomes :{" "}
+            Outcomes and Real-World Applications :{" "}
           </h2>
 
           {/* Full-width Image */}
@@ -589,6 +687,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             privacy-first, and built for real business growth.
           </p>
 
+          <FaqSection
+            title="Frequently Asked Questions (FAQ)"
+            description="Here’s Few things you need to know about Virtual Try-On"
+            faqs={virtualtryonFaqs}
+          />
+
           {/* Share Section */}
           <div className="border-t pt-6 mt-10">
             <h4 className="text-lg font-semibold text-gray-800 mb-4">
@@ -597,7 +701,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             <div className="flex flex-wrap gap-4">
               {/* Twitter/X */}
               <a
-                href="https://twitter.com/intent/tweet?url=https://yourdomain.com/blog/local-llm&text=Check%20out%20this%20article%20about%20Running%20LLMs%20Locally!"
+                href="https://twitter.com/intent/tweet?url=https://www.yuvabestudios.com/blog/virtual-try-on&text=Check%20out%20this%20article%20about%20Running%20LLMs%20Locally!"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center space-x-2 px-4 py-2 bg-black text-white rounded-lg hover:opacity-80 transition"
@@ -608,7 +712,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
               {/* LinkedIn */}
               <a
-                href="https://www.linkedin.com/sharing/share-offsite/?url=https://yourdomain.com/blog/local-llm"
+                href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.yuvabestudios.com/blog/virtual-try-on"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center space-x-2 px-4 py-2 bg-blue-700 text-white rounded-lg hover:opacity-80 transition"
@@ -619,7 +723,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
               {/* Facebook */}
               <a
-                href="https://www.facebook.com/sharer/sharer.php?u=https://yourdomain.com/blog/local-llm"
+                href="https://www.facebook.com/sharer/sharer.php?u=https://www.yuvabestudios.com/blog/virtual-try-on"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center space-x-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:opacity-80 transition"
@@ -632,7 +736,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
               <button
                 onClick={() => {
                   navigator.clipboard.writeText(
-                    "https://yourdomain.com/blog/local-llm"
+                    "https://www.yuvabestudios.com/blog/virtual-try-on/",
                   );
                   alert("Link copied to clipboard!");
                 }}
