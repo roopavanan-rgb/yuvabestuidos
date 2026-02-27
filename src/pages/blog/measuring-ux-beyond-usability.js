@@ -1,9 +1,37 @@
-// pages/blog/local-llm.js
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { FaTwitter, FaLinkedin, FaFacebook, FaLink } from "react-icons/fa";
 import { NextSeo } from "next-seo";
+import FaqSection from "@/components/FaqSection";
+
+const MeasuringUXFaqs = [
+  {
+    question: "What is emotional UX?",
+    answer:
+      "Emotional UX focuses on how users feel during interactions, not just whether tasks are completed successfully.",
+  },
+  {
+    question: "Why is usability alone no longer enough in UX design?",
+    answer:
+      "Usability ensures functionality, but emotional response drives retention, trust, and long-term engagement.",
+  },
+  {
+    question: "How can emotions be measured in UX research?",
+    answer:
+      "Through methods like emotion mapping, affective testing, sentiment analysis, and qualitative user feedback.",
+  },
+  {
+    question: "What industries benefit most from emotional UX design?",
+    answer:
+      "Fintech, wellness, gaming, education, and e-commerce benefit significantly because trust and engagement are emotionally driven.",
+  },
+  {
+    question: "How does Yuvabe Studios approach emotional UX?",
+    answer:
+      "Yuvabe Studios blends research, emotional intelligence, and design strategy to create experiences that feel meaningful while delivering measurable business impact.",
+  },
+];
 
 const images = [
   {
@@ -23,7 +51,7 @@ const images = [
   },
 ];
 
-export default function LocalLLM() {
+export default function MeasuringUX() {
   return (
     <div className="bg-gray-50 min-h-screen">
       <NextSeo
@@ -82,8 +110,8 @@ export default function LocalLLM() {
       {/* Meta Info */}
       <div className="max-w-6xl mx-auto px-6 text-black text-sm mb-10">
         <p>
-          Published on <span className="text-gray-800">October 28, 2025</span>{" "}
-          · 8 mins read
+          Published on <span className="text-gray-800">October 28, 2025</span> ·
+          8 mins read
         </p>
       </div>
 
@@ -104,10 +132,20 @@ export default function LocalLLM() {
         </p>
 
         {/* Author field */}
-        <p className="text-[16px] font-medium text-gray-500">
+        <p className="text-[16px] font-medium text-gray-500 mb-4">
           – By <span className="text-[#5829C7]">Priya</span>, UI/UX Mentor &
           Pratice Lead and <span className="text-[#5829C7]">Sagar</span>, UI/UX
           Design Lead, Yuvabe Studios
+        </p>
+
+        <h3 className="text-xl font-medium font-secondary text-gray-800">
+          Answer Summary:
+        </h3>
+        <p className="text-lg  text-black font-secondary mb-4">
+          Measuring UX beyond usability means understanding not just what users
+          do, but how they feel while interacting with digital products.
+          Emotional UX helps drive retention, trust, and advocacy by aligning
+          design decisions with human emotion and business outcomes.
         </p>
       </div>
 
@@ -132,13 +170,10 @@ export default function LocalLLM() {
           transition={{ duration: 0.6 }}
           className="prose prose-lg prose-indigo"
         >
-     
           {/* Introduction Section */}
           <section className=" rounded-2xl mb-12">
             <h2 className="text-xl font-medium text-[#5829C7] mb-4 font-secondary">
-              Clicks tell you <span className="text-[#000]">what happened</span>{" "}
-              <br />
-              Emotions tell you <span className="text-[#000]">Why</span>
+              Why Measuring UX Beyond Usability Matters
             </h2>
             <p className="text-lg leading-relaxed text-black font-secondary">
               In 2025, designing only for usability is like measuring music with
@@ -186,9 +221,9 @@ export default function LocalLLM() {
           {/* Why Run LLMs Locally Section */}
           <section className=" mb-12">
             <div className="mb-6">
-              <h3 className="text-xl font-medium font-secondary mb-4">
+              <h2 className="text-xl font-medium font-secondary mb-4">
                 The Business Impact of Emotional UX
-              </h3>
+              </h2>
               <p className="text-black mb-4">
                 Emotion isn&apos;t just a design flourish — it&apos;s a growth
                 driver. Data shows that:
@@ -216,9 +251,9 @@ export default function LocalLLM() {
             </div>
 
             <div className="mb-6">
-              <h3 className="text-xl font-medium mb-4">
+              <h2 className="text-xl font-medium mb-4">
                 Why Emotional Response Is Now a Core UX Metric
-              </h3>
+              </h2>
               <p className="text-black mb-4">
                 Think about your favorite apps. Chances are, what makes them
                 memorable isn&apos;t just their functionality — it&apos;s how
@@ -247,8 +282,7 @@ export default function LocalLLM() {
               </p>
             </div>
           </section>
-        
-        
+
           <section className=" py-8 px-4 md:px-12 lg:px-18">
             <div className="max-w-6xl mx-auto">
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
@@ -276,9 +310,9 @@ export default function LocalLLM() {
           {/* Inline Section Image */}
           <section className=" mb-12">
             <div className="mb-6">
-              <h3 className="text-xl font-medium font-secondary mb-4">
+              <h2 className="text-xl font-medium font-secondary mb-4">
                 Key reasons why emotional UX is becoming critical:
-              </h3>
+              </h2>
 
               <ul className="list-disc list-inside space-y-2 text-black font-secondary">
                 <li>
@@ -305,9 +339,9 @@ export default function LocalLLM() {
 
           <section className="max-w-6xl mx-auto  pb-12 text-gray-800">
             <header className="mb-10">
-              <h1 className="text-4xl font-semibold font-secondary mb-4">
-                Tools & Methods: Mapping and Measuring Emotion in UX
-              </h1>
+              <h2 className="text-4xl font-semibold font-secondary mb-4">
+                Tools and Methods for Measuring Emotional UX
+              </h2>
               <p className="text-lg leading-relaxed text-gray-600 font-secondary">
                 Quantifying feelings may sound abstract — but in modern UX
                 practice,
@@ -443,9 +477,9 @@ export default function LocalLLM() {
 
               {/* Callout Box */}
               <div className="border-2 border-gray-300 p-6 mt-10 shadow-sm max-w-2xl mx-auto">
-                <h3 className="text-xl font-semibold font-secondary mb-4">
-                  3 Quick Wins for Emotional UX
-                </h3>
+                <h2 className="text-xl font-semibold font-secondary mb-4">
+                  Quick Wins to Improve Emotional UX
+                </h2>
                 <ul className="list-disc list-inside font-secondary text-gray-700 space-y-2 mb-4">
                   <li>
                     <strong>Map Emotional Peaks:</strong> Run a short
@@ -473,7 +507,7 @@ export default function LocalLLM() {
 
           <section className="max-w-6xl mx-auto  pb-10 text-gray-800">
             <h2 className="text-3xl font-semibold mb-4 font-secondary">
-              Designing for Feelings: Real-World Examples
+              Designing for Feelings Across Different Domains
             </h2>
 
             <p className="text-gray-600 mb-8 font-secondary text-xl leading-relaxed">
@@ -586,16 +620,16 @@ export default function LocalLLM() {
 
               <ul className="list-disc list-inside text-gray-700 space-y-3 mb-6 font-secondary">
                 <li>
-                  <strong>Foundational Layer</strong> – Reliability, usability,
-                  accessibility.
+                  <strong>Foundational UX Layer</strong> – Reliability,
+                  usability, accessibility.
                 </li>
                 <li>
-                  <strong>Interaction Layer</strong> – Micro-interactions,
-                  feedback, clarity.
+                  <strong>Interaction and Feedback Layer Layer</strong> –
+                  Micro-interactions, feedback, clarity.
                 </li>
                 <li>
-                  <strong>Emotional Layer</strong> – Tone, atmosphere,
-                  personality, story.
+                  <strong>Emotional and Experiential Layer</strong> – Tone,
+                  atmosphere, personality, story.
                 </li>
               </ul>
 
@@ -619,10 +653,10 @@ export default function LocalLLM() {
                 differentiator between good design and great design.
               </p>
               <p className="text-gray-600 mb-4 font-secondary">
-                At <span className="font-semibold">Yuvabe Studios</span>, we&apos;re
-                pushing this frontier — blending design research, emotional
-                intelligence, and technology to build experiences that connect
-                deeply and convert consistently.
+                At <span className="font-semibold">Yuvabe Studios</span>,
+                we&apos;re pushing this frontier — blending design research,
+                emotional intelligence, and technology to build experiences that
+                connect deeply and convert consistently.
               </p>
               <p className="text-gray-600 font-secondary">
                 Whether you’re building a fintech platform, a meditation app, or
@@ -648,13 +682,11 @@ export default function LocalLLM() {
               <p className="text-gray-700 font-secondary font-medium">
                 Let’s design experiences people feel — not just use.{" "}
                 <Link
-              href="/contact"
-              className="text-indigo-600 underline hover:text-indigo-800 transition"
-            >
-                                Talk to our UI/UX experts today.
-
-            </Link>{" "}
-               
+                  href="/contact"
+                  className="text-indigo-600 underline hover:text-indigo-800 transition"
+                >
+                  Talk to our UI/UX experts today.
+                </Link>{" "}
               </p>
             </article>
 
@@ -698,6 +730,12 @@ export default function LocalLLM() {
             </article>
           </section>
 
+          <FaqSection
+            title="Frequently Asked Questions (FAQ)"
+            description="Here’s Few things you need to know about Measuring UX"
+            faqs={MeasuringUXFaqs}
+          />
+
           {/* Share Section */}
           <div className="border-t pt-6 mt-10">
             <h4 className="text-lg font-semibold text-gray-800 mb-4">
@@ -706,7 +744,7 @@ export default function LocalLLM() {
             <div className="flex flex-wrap gap-4">
               {/* Twitter/X */}
               <a
-                href="https://twitter.com/intent/tweet?url=https://yourdomain.com/blog/local-llm&text=Check%20out%20this%20article%20about%20Running%20LLMs%20Locally!"
+                href="https://twitter.com/intent/tweet?url=https://www.yuvabestudios.com/blog/measuring-ux-beyond-usability&text=Check%20out%20this%20article%20about%20Running%20LLMs%20Locally!"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center space-x-2 px-4 py-2 bg-black text-white rounded-lg hover:opacity-80 transition"
@@ -717,7 +755,7 @@ export default function LocalLLM() {
 
               {/* LinkedIn */}
               <a
-                href="https://www.linkedin.com/sharing/share-offsite/?url=https://yourdomain.com/blog/local-llm"
+                href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.yuvabestudios.com/blog/measuring-ux-beyond-usability"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center space-x-2 px-4 py-2 bg-blue-700 text-white rounded-lg hover:opacity-80 transition"
@@ -728,7 +766,7 @@ export default function LocalLLM() {
 
               {/* Facebook */}
               <a
-                href="https://www.facebook.com/sharer/sharer.php?u=https://yourdomain.com/blog/local-llm"
+                href="https://www.facebook.com/sharer/sharer.php?u=https://www.yuvabestudios.com/blog/measuring-ux-beyond-usability"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center space-x-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:opacity-80 transition"
@@ -741,7 +779,7 @@ export default function LocalLLM() {
               <button
                 onClick={() => {
                   navigator.clipboard.writeText(
-                    "https://yourdomain.com/blog/local-llm"
+                    "https://www.yuvabestudios.com/blog/measuring-ux-beyond-usability/",
                   );
                   alert("Link copied to clipboard!");
                 }}

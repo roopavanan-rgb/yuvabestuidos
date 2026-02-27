@@ -1,45 +1,73 @@
-// pages/blog/local-llm.js
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { FaTwitter, FaLinkedin, FaFacebook, FaLink } from "react-icons/fa";
 import { NextSeo } from "next-seo";
+import FaqSection from "@/components/FaqSection";
 
+const seoFaqs = [
+  {
+    question: "What is AEO (AI Engine Optimization)?",
+    answer:
+      "AEO is the practice of optimizing content so AI tools and answer engines can understand, trust, and surface it as a direct answer.",
+  },
+  {
+    question: "Is SEO still relevant in the age of AI?",
+    answer:
+      "Yes. SEO is evolving from keyword ranking to semantic authority, structured data, and brand trust.",
+  },
+  {
+    question: "What is the difference between SEO and AEO?",
+    answer:
+      "SEO focuses on ranking pages, while AEO focuses on being selected as the answer by AI systems.",
+  },
+  {
+    question: "How does Google SGE affect SEO strategy?",
+    answer:
+      "Google SGE prioritizes entity understanding, context, and trusted sources over traditional keyword-based ranking.",
+  },
+  {
+    question: "How does Yuvabe Studios approach SEO and AEO?",
+    answer:
+      "Yuvabe Studios blends technical SEO, semantic architecture, UX, and AI insights to help brands stay visible in AI-first search environments.",
+  },
+];
 export default function seo() {
   return (
     <div className="bg-gray-50 min-h-screen">
-    <NextSeo
-  title="Is SEO Still Relevant in the Age of AI & AEO? | Yuvabe Studios"
-  description="Discover why SEO is evolving — not dying — in the AI era. Learn how semantic structure, AEO, and trust signals define the new search game."
-  canonical="https://yuvabestudios.com/blog/seo-in-the-age-of-ai"
-  openGraph={{
-    url: "https://yuvabestudios.com/blog/seo-in-the-age-of-ai",
-    title: "Is SEO Still Relevant in the Age of AI & AEO? | Yuvabe Studios",
-    description:
-      "Discover why SEO is evolving — not dying — in the AI era. Learn how semantic structure, AEO, and trust signals define the new search game.",
-    images: [
-      {
-        url: "https://yuvabestudios.com/blog/marketing/aeo.png",
-        width: 1200,
-        height: 630,
-        alt: "SEO in AI Era",
-      },
-    ],
-    site_name: "Yuvabe Studios",
-  }}
-  twitter={{
-    handle: "@YuvabeStudios",
-    site: "@YuvabeStudios",
-    cardType: "summary_large_image",
-  }}
-  additionalMetaTags={[
-    {
-      name: "keywords",
-      content:
-        "AI SEO strategy, AEO, AI optimization, future of SEO 2025, semantic SEO, structured data, knowledge graph SEO, entity-based SEO, brand trust in AI search, Yuvabe Studios",
-    },
-  ]}
-/>
+      <NextSeo
+        title="Is SEO Still Relevant in the Age of AI & AEO? | Yuvabe Studios"
+        description="Discover why SEO is evolving — not dying — in the AI era. Learn how semantic structure, AEO, and trust signals define the new search game."
+        canonical="https://yuvabestudios.com/blog/seo-in-the-age-of-ai"
+        openGraph={{
+          url: "https://yuvabestudios.com/blog/seo-in-the-age-of-ai",
+          title:
+            "Is SEO Still Relevant in the Age of AI & AEO? | Yuvabe Studios",
+          description:
+            "Discover why SEO is evolving — not dying — in the AI era. Learn how semantic structure, AEO, and trust signals define the new search game.",
+          images: [
+            {
+              url: "https://yuvabestudios.com/blog/marketing/aeo.png",
+              width: 1200,
+              height: 630,
+              alt: "SEO in AI Era",
+            },
+          ],
+          site_name: "Yuvabe Studios",
+        }}
+        twitter={{
+          handle: "@YuvabeStudios",
+          site: "@YuvabeStudios",
+          cardType: "summary_large_image",
+        }}
+        additionalMetaTags={[
+          {
+            name: "keywords",
+            content:
+              "AI SEO strategy, AEO, AI optimization, future of SEO 2025, semantic SEO, structured data, knowledge graph SEO, entity-based SEO, brand trust in AI search, Yuvabe Studios",
+          },
+        ]}
+      />
 
       {/* Breadcrumbs */}
       <nav className="max-w-6xl mx-auto px-6 py-4 text-sm text-gray-600">
@@ -63,8 +91,8 @@ export default function seo() {
       {/* Meta Info */}
       <div className="max-w-6xl mx-auto px-6 text-black text-sm mb-4">
         <p>
-          Published on <span className="text-gray-800">November 4, 2025</span>{" "}
-          · 8 min read
+          Published on <span className="text-gray-800">November 4, 2025</span> ·
+          8 min read
         </p>
       </div>
 
@@ -85,9 +113,19 @@ export default function seo() {
         </p>
 
         {/* Author field */}
-        <p className="text-[16px] font-medium text-gray-500">
+        <p className="text-[16px] font-medium text-gray-500 mb-4">
           – By <span className="text-[#5829C7]">Priya</span>, Ui/Ux Mentor &
           Pratice Lead - Digital Marketing, Yuvabe Studios
+        </p>
+
+        <h3 className="text-xl font-medium font-secondary text-gray-800">
+          Answer Summary:
+        </h3>
+        <p className="text-lg  text-black font-secondary mb-4">
+          Measuring UX beyond usability means understanding not just what users
+          do, but how they feel while interacting with digital products.
+          Emotional UX helps drive retention, trust, and advocacy by aligning
+          design decisions with human emotion and business outcomes.
         </p>
       </div>
 
@@ -135,7 +173,7 @@ export default function seo() {
             <div className="max-w-4xl mx-auto h-auto px-6  py-6">
               <div className="relative w-full h-[200px] md:h-[500px]  overflow-hidden ">
                 <Image
-                  src="/blog/seo-banner.png"
+                  src="/blog/marketing/seo-banner.png"
                   alt="SEO to AEO FUnnel"
                   fill
                   className="object-contain"
@@ -612,6 +650,12 @@ export default function seo() {
             </article>
           </section>
 
+          <FaqSection
+            title="Frequently Asked Questions (FAQ)"
+            description="Here’s Few things you need to know about SEO in the Age of AI"
+            faqs={seoFaqs}
+          />
+
           {/* Share Section */}
           <div className="border-t pt-6 my-10 ">
             <h4 className="text-lg font-semibold text-gray-800 mb-4">
@@ -620,7 +664,7 @@ export default function seo() {
             <div className="flex flex-wrap gap-4">
               {/* Twitter/X */}
               <a
-                href="https://twitter.com/intent/tweet?url=https://yourdomain.com/blog/local-llm&text=Check%20out%20this%20article%20about%20Running%20LLMs%20Locally!"
+                href="https://twitter.com/intent/tweet?url=https://www.yuvabestudios.com/blog/seo-in-the-age-of-ai/&text=Check%20out%20this%20article%20about%20Running%20LLMs%20Locally!"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center space-x-2 px-4 py-2 bg-black text-white rounded-lg hover:opacity-80 transition"
@@ -631,7 +675,7 @@ export default function seo() {
 
               {/* LinkedIn */}
               <a
-                href="https://www.linkedin.com/sharing/share-offsite/?url=https://yourdomain.com/blog/local-llm"
+                href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.yuvabestudios.com/blog/seo-in-the-age-of-ai/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center space-x-2 px-4 py-2 bg-blue-700 text-white rounded-lg hover:opacity-80 transition"
@@ -642,7 +686,7 @@ export default function seo() {
 
               {/* Facebook */}
               <a
-                href="https://www.facebook.com/sharer/sharer.php?u=https://yourdomain.com/blog/local-llm"
+                href="https://www.facebook.com/sharer/sharer.php?u=https://www.yuvabestudios.com/blog/seo-in-the-age-of-ai/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center space-x-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:opacity-80 transition"
@@ -655,7 +699,7 @@ export default function seo() {
               <button
                 onClick={() => {
                   navigator.clipboard.writeText(
-                    "https://yourdomain.com/blog/local-llm"
+                    "https://www.yuvabestudios.com/blog/seo-in-the-age-of-ai/",
                   );
                   alert("Link copied to clipboard!");
                 }}

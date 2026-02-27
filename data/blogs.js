@@ -7,7 +7,7 @@ export const blogs = [
       "The Overlooked Security Flaw in Front-End Animations You Need to Know",
     subheading:
       "Motion design makes interfaces feel alive — but if implemented carelessly, it can also expose user behavior, states, and data. Here’s how to secure your animations and build safer UIs.",
-    image: "/blog/dev/banner.png",
+    image: "/blog/securityflaw.png",
     author: "Roopan R",
     readingTime: "Published on November 18, 2025 · 10 minute read",
     category: "Design & Development",
@@ -17,7 +17,7 @@ export const blogs = [
     title: "The Rise of Local AI: Running LLMs on Your Device",
     subheading:
       "Running LLMs locally isn’t just about saving costs — it’s about privacy, speed, and control. Here’s how this shift is reshaping the AI landscape.",
-    image: "/blog/llm.jpg",
+    image: "/blog/rise-of-local-ai.png",
     author: "Thamarai Kannan",
     readingTime: "Published on November 11, 2025 · 8 minute read",
     category: "AI/ML",
@@ -38,7 +38,7 @@ export const blogs = [
     title: "From Clicks to Emotions: Measuring UX Beyond Usability",
     subheading:
       "Why the future of great design lies not just in what users do, but in how they feel",
-    image: "/blog/ui-design.png",
+    image: "/blog/clicks-to-emotions.png",
     author: "Sagar",
     readingTime: "Published on October 28, 2025 · 8 minute read",
     category: "Design & Development",
@@ -48,7 +48,7 @@ export const blogs = [
     title: "Future of Fashion: How to Spot Viral Trends Before They Explode",
     subheading:
       "“The art of beauty lives in the glow of your skin, the play of color, the shine of your hair, and the memory of your scent.”",
-    image: "/blog/marketresearch/beauty-banner.png",
+    image: "/blog/viral-trends.png",
     author: "Arthi",
     readingTime: "Published on October 21, 2025 · 8 minute read",
     category: "Market Research",
@@ -58,7 +58,7 @@ export const blogs = [
     title: "Exploring Hugging Face: The AI Platform Democratizing Innovation",
     subheading:
       "A Platform That Changed How We Build AI: Hugging Face is transforming AI from a niche for experts into a playground where anyone can build, experiment, and innovate.",
-    image: "/blog/hugging-face.webp",
+    image: "/blog/hugging-face.png",
     author: "Abinesh Kumar",
     readingTime: "Published on October 14, 2025 · 8 minute read",
     category: "AI/ML",
@@ -68,7 +68,7 @@ export const blogs = [
     title: "Building an AI-Powered Object Detection System in Flutter",
     subheading:
       "From self-driving cars to smart shopping apps, object detection is quietly powering the world around us — and now, you can build it into your own app.",
-    image: "/blog/flutter-banner.png",
+    image: "/blog/object-Detection-System.png",
     author: "Hariprasath",
     readingTime: "Published on October 7, 2025 · 7 minute read",
     category: "AI/ML",
@@ -78,7 +78,7 @@ export const blogs = [
     title: "Creating Marketing Copy That Converts",
     subheading:
       "How small tweaks in copy can make a big impact on your audience",
-    image: "/blog/marketing/blog3-banner.png",
+    image: "/blog/marketing-copy.png",
     author: "Anjali",
     readingTime: "Published on September 30, 2025 · 8 minute read",
     category: "Digital Marketing",
@@ -88,7 +88,7 @@ export const blogs = [
     title: "The Future of Fashion Shopping: Virtual Try-On with AI and AR",
     subheading:
       "From online shopping to metaverse fashion, Virtual Try-On (VTO) is reshaping how we interact with clothing.",
-    image: "/blog/fashion-banner.jpg",
+    image: "/blog/future-of-Fashion.png",
     author: "Keerthana",
     readingTime: "Published on September 23, 2025 · 7 minute read",
     category: "AI/ML",
@@ -99,7 +99,7 @@ export const blogs = [
       "Code Smarter, Not Harder: How LLMs Are Transforming Everyday Development",
     subheading:
       "LLMs are changing the game — turning hours of manual coding into minutes of smart automation.",
-    image: "/blog/code-generation-banner.png",
+    image: "/blog/code-smarter.png",
     author: "Mohamed Safiq S",
     readingTime: "Published on September 16, 2025 · 7 minute read",
     category: "AI/ML",
@@ -110,7 +110,7 @@ export const blogs = [
       "Mastering Social Media Marketing for Local Businesses in 2025: Strategy and Tools",
     subheading:
       "How local brands can thrive in the digital-first era by embracing strategic storytelling, AI tools, and hyper-local engagement.",
-    image: "/blog/marketing/social-media.png",
+    image: "/blog/socialmedia-marketing.png",
     author: "Balaji",
     readingTime: "Published on September 9, 2025 · 8 minute read",
     category: "Digital Marketing",
@@ -120,7 +120,7 @@ export const blogs = [
     title: "Content Pillars: Why Every Brand Needs Them",
     subheading:
       "How clarity and consistency in content can transform your marketing strategy",
-    image: "/blog/marketing/content-pillars.png",
+    image: "/blog/content-pillars.png",
     author: "Anjali",
     readingTime: "Published on September 2, 2025 · 8 minute read",
     category: "Digital Marketing",
@@ -131,7 +131,7 @@ export const blogs = [
       "From Data to Connection: Why Smart Segmentation Drives Real Marketing ROI",
     subheading:
       "Trying to reach everyone with the same message is like tossing spaghetti at the wall and hoping something sticks.",
-    image: "/blog/marketresearch/data-to-connection.png",
+    image: "/blog/data-to-connection.png",
     author: "Velmurugan",
     readingTime: "Published on August 26, 2025 · 8 minute read",
     category: "Market Research",

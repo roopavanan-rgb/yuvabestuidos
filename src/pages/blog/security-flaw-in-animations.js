@@ -1,11 +1,39 @@
-// pages/blog/local-llm.js
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { FaTwitter, FaLinkedin, FaFacebook, FaLink } from "react-icons/fa";
 import { NextSeo } from "next-seo";
+import FaqSection from "@/components/FaqSection";
 
-export default function LocalLLM() {
+const securityflawFaqs = [
+  {
+    question: "What is a front-end timing side-channel attack?",
+    answer:
+      "A timing side-channel attack occurs when an attacker infers sensitive information by measuring how long UI animations or responses take, even without accessing backend data.",
+  },
+  {
+    question: "How can animations leak sensitive user data?",
+    answer:
+      "If animations differ in speed or duration based on outcomes like valid or invalid input, attackers can detect those differences and infer private states.",
+  },
+  {
+    question: "Are timing side-channel vulnerabilities common in modern UIs?",
+    answer:
+      "Yes. They often appear unintentionally in validation flows, loaders, skeleton screens, and role-based UI transitions.",
+  },
+  {
+    question: "How can developers prevent animation-based data leaks?",
+    answer:
+      "By normalizing animation durations, padding validation responses, debouncing input checks, and ensuring timing parity across all UI states.",
+  },
+  {
+    question: "Does reducing motion solve animation security issues?",
+    answer:
+      "No. Even reduced-motion modes must maintain consistent timing. Security comes from uniform behavior, not removing animation entirely.",
+  },
+];
+
+export default function SecurityFlaw() {
   return (
     <div className="bg-gray-50 min-h-screen">
       <NextSeo
@@ -14,7 +42,8 @@ export default function LocalLLM() {
         canonical="https://yuvabestudios.com/blog/local-llm"
         openGraph={{
           url: "https://yuvabestudios.com/blog/security-flaw-in-animations",
-          title: "Front-End Animation Security: Prevent Data Leaks in React & Next.js",
+          title:
+            "Front-End Animation Security: Prevent Data Leaks in React & Next.js",
           description:
             "Learn how front-end animations can unintentionally leak sensitive data and how to secure your React & Next.js UI with best practices and hardened patterns",
           images: [
@@ -86,9 +115,20 @@ export default function LocalLLM() {
         </p>
 
         {/* Author field */}
-        <p className="text-[16px] font-medium text-gray-500">
+        <p className="text-[16px] font-medium text-gray-500 mb-4">
           – By <span className="text-[#5829C7]">Roopan R</span>, Front End
           Developer, Yuvabe Studios
+        </p>
+
+        <h3 className="text-xl font-medium font-secondary text-gray-800">
+          Answer Summary:
+        </h3>
+        <p className="text-lg  text-black font-secondary mb-4">
+          Front-end animations can unintentionally expose sensitive user states
+          through timing differences known as side-channel leaks. By
+          standardizing animation durations, padding responses, and enforcing
+          timing parity, teams can design motion-rich interfaces that remain
+          secure, accessible, and trustworthy.
         </p>
       </div>
 
@@ -116,7 +156,7 @@ export default function LocalLLM() {
           {/* Introduction Section */}
           <section className=" rounded-2xl mb-8 font-secondary">
             <h2 className="text-3xl   mb-4 text-[#5829C7] font-medium font-primary">
-              Why This Conversation Matters
+              Why Front-End Animation Security Matters
             </h2>
             <p className="text-lg leading-relaxed text-black font-secondary">
               Motion design gives life to modern interfaces — the button that
@@ -164,7 +204,7 @@ export default function LocalLLM() {
           <section className=" mb-12">
             <div className="mb-6">
               <h3 className="text-3xl font-medium font-primary text-[#5829C7] mb-4 ">
-                The Risk, in One Minute
+                How Motion Design Can Leak Sensitive Information
               </h3>
               <p className="text-black mb-4 font-secondary">
                 In front-end design, what you don&apos;t notice can still expose
@@ -215,7 +255,7 @@ export default function LocalLLM() {
           <section className=" mb-8">
             <div className="mb-6">
               <h3 className="text-3xl font-medium font-primary text-[#5829C7] mb-4 ">
-                Threat Model (Front-End Edition)
+                Threat Model for Front-End Timing Side-Channels
               </h3>
               <p className="text-black mb-4 font-secondary">
                 Timing is often the <strong>invisible threat vector </strong> in
@@ -234,9 +274,9 @@ export default function LocalLLM() {
 
               <ul className="list-disc list-inside space-y-2 text-black font-secondary">
                 <li>
-                  <strong>What attackers can do:</strong> They measure the time
-                  between a user&apos;s action and the visual response. Using
-                  browser APIs like{" "}
+                  <strong>What Attackers Can Observe:</strong> They measure the
+                  time between a user&apos;s action and the visual response.
+                  Using browser APIs like{" "}
                   <span className="text-green-600 font-semibold">
                     MutationObserver
                   </span>{" "}
@@ -251,13 +291,15 @@ export default function LocalLLM() {
                   </strong>
                 </li>
                 <li>
-                  <strong>What they can&apos;t do: </strong> They can&apos;t
-                  directly read private data — but by correlating timing
-                  variations, they can infer internal logic from outside your
-                  codebase.
+                  <strong>
+                    Why Timing Side-Channels Exist in the Front End:{" "}
+                  </strong>{" "}
+                  They can&apos;t directly read private data — but by
+                  correlating timing variations, they can infer internal logic
+                  from outside your codebase.
                 </li>
                 <li>
-                  <strong>Why it happens:</strong>
+                  <strong>Security by Design at Yuvabe Studios: </strong>
                   Front-end code runs visibly and asynchronously. If success and
                   error paths differ in animation duration, load timing, or
                   frame pacing, they create detectable patterns that can be
@@ -293,7 +335,7 @@ export default function LocalLLM() {
           {/* Real world leak patterns */}
           <section className="mb-12">
             <h2 className="text-3xl font-medium font-primary text-[#5829C7] mb-6">
-              7 Real-World Leak Patterns You Might Be Overlooking
+              Real-World Animation Timing Leaks in Modern UIs
             </h2>
 
             <p className="mb-4 font-secondary">
@@ -315,7 +357,7 @@ export default function LocalLLM() {
             <ul className="space-y-6 font-secondary">
               <li>
                 <strong>
-                  1. Inline Validation with Outcome-Linked Animation
+                  1. Inline Validation and Outcome-Based Animation
                 </strong>
                 <br />
                 <span className="text-green-600 font-semibold">
@@ -378,7 +420,7 @@ export default function LocalLLM() {
 
               <li>
                 <strong>
-                  4. Conditional Rendering for Success vs. Error States
+                  4. Conditional Rendering for Success vs Error States
                 </strong>
                 <br />
                 <span className="text-green-600 font-semibold">
@@ -418,7 +460,7 @@ export default function LocalLLM() {
               </li>
 
               <li>
-                <strong>6. OTP Auto-Advance</strong>
+                <strong>6. OTP Auto-Advance Patterns</strong>
                 <br />
                 <span className="text-green-600 font-semibold">
                   ✓ What happens:
@@ -438,7 +480,7 @@ export default function LocalLLM() {
               </li>
 
               <li>
-                <strong>7. Role-Based Animations</strong>
+                <strong>7. Role-Based Motion Differences</strong>
                 <br />
                 <span className="text-green-600 font-semibold">
                   ✓ What happens:
@@ -482,7 +524,7 @@ export default function LocalLLM() {
           <section className="mb-12">
             <div className="mb-6">
               <h3 className="text-3xl font-medium font-primary text-[#5829C7] mb-4 ">
-                Hardened Animation Patterns (React / Next.js)
+                Hardened Animation Patterns for Secure Front-End Design
               </h3>
               <p className="text-black mb-6">
                 Front-end animations can leak sensitive information if timing
@@ -497,9 +539,9 @@ export default function LocalLLM() {
                   className="object-contain"
                 />
               </div>
-              <h4 className="text-xl font-medium text-[#5829C7] mt-6 mb-2 font-secondary ">
+              <h3 className="text-xl font-medium text-[#5829C7] mt-6 mb-2 font-secondary ">
                 1. Use Consistent Animation Durations
-              </h4>
+              </h3>
 
               <p className="text-black font-secondary mb-4">
                 Different animation speeds can unintentionally reveal outcomes
@@ -539,7 +581,7 @@ export default function LocalLLM() {
 
 .input-error {
   color: red;
-}`
+}`,
                     )
                   }
                   className="absolute top-2 right-2 bg-black text-white text-xs px-2 py-1 rounded hover:bg-gray-600"
@@ -564,7 +606,7 @@ export default function LocalLLM() {
                     navigator.clipboard.writeText(
                       `<div className={\`input-feedback \${isValid ? 'input-success' : 'input-error'}\`}>
   {message}
-</div>`
+</div>`,
                     )
                   }
                   className="absolute top-2 right-2 bg-black text-white text-xs px-2 py-1 rounded hover:bg-gray-600"
@@ -573,9 +615,9 @@ export default function LocalLLM() {
                 </button>
               </div>
 
-              <h4 className="text-xl font-medium text-[#5829C7] mt-6 mb-2 font-secondary">
-                2️. Debounce & Pad Validation Responses
-              </h4>
+              <h3 className="text-xl font-medium text-[#5829C7] mt-6 mb-2 font-secondary">
+                2️. Debouncing and Padding Validation Responses
+              </h3>
 
               <p className="text-black font-secondary mb-4">
                 Instant feedback can leak data via response timing. Attackers
@@ -621,7 +663,7 @@ function useDebounced(value: string, delay = 300) {
   }, [value, delay]);
 
   return debouncedValue;
-}`
+}`,
                       )
                     }
                     className="absolute top-2 right-2 bg-black text-white text-xs px-2 py-1 rounded hover:bg-gray-600"
@@ -663,7 +705,7 @@ const duration = Date.now() - start;
 const MIN_DELAY = 500;
 
 if (duration < MIN_DELAY)
-  await new Promise(r => setTimeout(r, MIN_DELAY - duration));`
+  await new Promise(r => setTimeout(r, MIN_DELAY - duration));`,
                     )
                   }
                   className="absolute top-2 right-2 bg-black text-white text-xs px-2 py-1 rounded hover:bg-gray-600"
@@ -672,9 +714,9 @@ if (duration < MIN_DELAY)
                 </button>
               </div>
 
-              <h4 className="text-xl font-medium text-[#5829C7] mt-6 mb-2 font-secondary">
-                3. Delay or Pad State Changes Using React Hooks
-              </h4>
+              <h3 className="text-xl font-medium text-[#5829C7] mt-6 mb-2 font-secondary">
+                3. Delaying State Changes in React Hooks
+              </h3>
 
               <p className="text-black font-secondary mb-4">
                 Even local UI state changes (like showing a success or error
@@ -726,7 +768,7 @@ function SafeValidation({ isValid }: { isValid: boolean }) {
       {showResult ? (isValid ? 'Valid!' : 'Error!') : 'Checking...'}
     </div>
   );
-}`
+}`,
                     )
                   }
                   className="absolute top-2 right-2 bg-black text-white text-xs px-2 py-1 rounded hover:bg-gray-600"
@@ -735,16 +777,16 @@ function SafeValidation({ isValid }: { isValid: boolean }) {
                 </button>
               </div>
 
-              <h4 className="text-xl font-medium text-[#5829C7] mt-6 mb-2 font-secondary">
-                4. Test UI Parity for Timing Differences
-              </h4>
+              <h3 className="text-xl font-medium text-[#5829C7] mt-6 mb-2 font-secondary">
+                4. Enforcing UI Timing Parity
+              </h3>
 
               <p className="text-black font-secondary mb-4">
                 Even small differences in animations or state updates can leak
                 information. Review success and error flows with DevTools, and
                 use automated tests to ensure parity across outcomes.
               </p>
- 
+
               <div className="mb-4 font-secondary">
                 <p className="font-semibold mb-2">How to implement:</p>
                 <ul className="list-disc pl-5 space-y-2 text-black">
@@ -784,104 +826,149 @@ function SafeValidation({ isValid }: { isValid: boolean }) {
               </div>
             </div>
             {/* Conclusion */}
-            
           </section>
 
           <section className="mb-12 font-secondary text-black">
+            {/* Main Heading */}
+            <h2 className="text-3xl font-medium font-primary text-[#5829C7] mb-6">
+              Testing and Validating Animation Timing Parity
+            </h2>
 
-  {/* Main Heading */}
-  <h2 className="text-3xl font-medium font-primary text-[#5829C7] mb-6">
-    Testing & Validation: How to Prove Your UI Is Safe
-  </h2>
+            {/* Automated & Manual Testing */}
+            <div className="mb-6">
+              <ul className="list-disc pl-5 space-y-3">
+                <li>
+                  <span className="font-semibold">
+                    Automated Timing Probes –
+                  </span>
+                  Use <code className="text-green-700">MutationObserver</code>{" "}
+                  or similar tools to monitor DOM changes and ensure consistent
+                  timing for sensitive flows.
+                </li>
 
-  {/* Automated & Manual Testing */}
-  <div className="mb-6">
-    <ul className="list-disc pl-5 space-y-3">
-      <li>
-        <span className="font-semibold">Automated Timing Probes –</span>  
-        Use <code className="text-green-700">MutationObserver</code> or similar tools
-        to monitor DOM changes and ensure consistent timing for sensitive flows.
-      </li>
+                <li>
+                  <span className="font-semibold">
+                    Frame Timeline Inspection –
+                  </span>
+                  Analyze animations in Chrome Performance to detect unintended
+                  differences between success and error states.
+                </li>
 
-      <li>
-        <span className="font-semibold">Frame Timeline Inspection –</span>  
-        Analyze animations in Chrome Performance to detect unintended differences 
-        between success and error states.
-      </li>
+                <li>
+                  <span className="font-semibold">
+                    Network Padding Verification –
+                  </span>
+                  Confirm that server responses are padded to constant durations
+                  to prevent timing leaks.
+                </li>
 
-      <li>
-        <span className="font-semibold">Network Padding Verification –</span>  
-        Confirm that server responses are padded to constant durations to prevent timing leaks.
-      </li>
+                <li>
+                  <span className="font-semibold">
+                    Accessibility Parity Checks –
+                  </span>
+                  Test reduced-motion modes and ARIA live regions to ensure
+                  feedback timing is consistent across users.
+                </li>
+              </ul>
+            </div>
 
-      <li>
-        <span className="font-semibold">Accessibility Parity Checks –</span>  
-        Test reduced-motion modes and ARIA live regions to ensure feedback timing is consistent across users.
-      </li>
-    </ul>
-  </div>
+            {/* Accessibility & Privacy Guardrails */}
+            <h3 className="text-xl font-semibold mt-8 mb-3 text-[#5829C7]">
+              Accessibility and Privacy Guardrails for Motion Design
+            </h3>
 
-  {/* Accessibility & Privacy Guardrails */}
-  <h3 className="text-xl font-semibold mt-8 mb-3 text-[#5829C7]">Accessibility & Privacy Guardrails</h3>
+            <ul className="list-disc pl-5 space-y-2">
+              <li>
+                Respect <code>prefers-reduced-motion</code> while maintaining
+                timing parity.
+              </li>
+              <li>Use ARIA polite live regions for consistent feedback.</li>
+              <li>Avoid focus or cursor cues that differ based on outcomes.</li>
+              <li>
+                Ensure motion-reduced users receive the same constant-time
+                experience.
+              </li>
+            </ul>
 
-  <ul className="list-disc pl-5 space-y-2">
-    <li>Respect <code>prefers-reduced-motion</code> while maintaining timing parity.</li>
-    <li>Use ARIA polite live regions for consistent feedback.</li>
-    <li>Avoid focus or cursor cues that differ based on outcomes.</li>
-    <li>Ensure motion-reduced users receive the same constant-time experience.</li>
-  </ul>
+            {/* Hardened Animation Design Checklist */}
+            <h3 className="text-xl font-semibold mt-8 mb-3 text-[#5829C7]">
+              Hardened Animation Design Checklist
+            </h3>
 
-  {/* Hardened Animation Design Checklist */}
-  <h3 className="text-xl font-semibold mt-8 mb-3 text-[#5829C7]">Hardened Animation Design Checklist</h3>
+            <ul className="list-disc pl-5 space-y-2">
+              <li>
+                Normalize animation duration and easing for success and error
+                states.
+              </li>
+              <li>Debounce and pad network responses and local validations.</li>
+              <li>
+                Move heavy computations (e.g., password hashing, strength
+                checks) to Web Workers.
+              </li>
+              <li>
+                Delay disclosure of sensitive information such as email
+                existence or user role.
+              </li>
+              <li>
+                Maintain a constant skeleton loader visibility for all users.
+              </li>
+              <li>Ensure motion-reduced modes still follow timing parity.</li>
+              <li>Test time-to-feedback consistency across all UI states.</li>
+            </ul>
 
-  <ul className="list-disc pl-5 space-y-2">
-    <li>Normalize animation duration and easing for success and error states.</li>
-    <li>Debounce and pad network responses and local validations.</li>
-    <li>Move heavy computations (e.g., password hashing, strength checks) to Web Workers.</li>
-    <li>Delay disclosure of sensitive information such as email existence or user role.</li>
-    <li>Maintain a constant skeleton loader visibility for all users.</li>
-    <li>Ensure motion-reduced modes still follow timing parity.</li>
-    <li>Test time-to-feedback consistency across all UI states.</li>
-  </ul>
+            {/* Common Pitfalls */}
+            <h3 className="text-xl font-semibold mt-8 mb-3 text-[#5829C7]">
+              Common Animation Security Pitfalls to Avoid
+            </h3>
 
-  {/* Common Pitfalls */}
-  <h3 className="text-xl font-semibold mt-8 mb-3 text-[#5829C7]">Common Pitfalls to Avoid</h3>
+            <ul className="list-disc pl-5 space-y-2">
+              <li>Different keyframe lengths for success vs error.</li>
+              <li>
+                Skeleton loaders ending early for cached or returning users.
+              </li>
+              <li>Revealing existence hints in real-time inputs.</li>
+              <li>
+                Performing password hashing or heavy logic on the main thread.
+              </li>
+              <li>Animations that expose feature flags or user roles.</li>
+            </ul>
 
-  <ul className="list-disc pl-5 space-y-2">
-    <li>Different keyframe lengths for success vs error.</li>
-    <li>Skeleton loaders ending early for cached or returning users.</li>
-    <li>Revealing existence hints in real-time inputs.</li>
-    <li>Performing password hashing or heavy logic on the main thread.</li>
-    <li>Animations that expose feature flags or user roles.</li>
-  </ul>
+            {/* Conclusion */}
+            <h3 className="text-xl font-semibold mt-8 mb-3 text-[#5829C7]">
+              Conclusion: Designing Secure and Trustworthy Motion
+            </h3>
 
-  {/* Conclusion */}
-  <h3 className="text-xl font-semibold mt-8 mb-3 text-[#5829C7]">Conclusion</h3>
+            <p className="mb-4">
+              Animations should delight — not disclose. Treat timing as
+              sensitive data: normalize it, encapsulate validation in
+              constant-time envelopes, and rigorously test for parity. Following
+              these principles ensures your front-end is as secure as it is
+              seamless.
+            </p>
 
-  <p className="mb-4">
-    Animations should delight — not disclose. Treat timing as sensitive data: normalize it, 
-    encapsulate validation in constant-time envelopes, and rigorously test for parity. 
-    Following these principles ensures your front-end is as secure as it is seamless.
-  </p>
+            <p className="font-semibold text-black">
+              💡 Have a project that needs secure and seamless front-end
+              experiences?
+              <br />
+              Partner with{" "}
+              <a
+                href="https://yuvabestudios.com/contact"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-bold underline hover:text-[#3e1e8f]"
+              >
+                Yuvabe Studios
+              </a>{" "}
+              to bring cutting-edge UI, animation, and performance best
+              practices to life.
+            </p>
+          </section>
 
- <p className="font-semibold text-black">
-  💡 Have a project that needs secure and seamless front-end experiences?
-  <br />
-  Partner with{" "}
-  <a
-    href="https://yuvabestudios.com/contact"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="font-bold underline hover:text-[#3e1e8f]"
-  >
-    Yuvabe Studios
-  </a>{" "}
-  to bring cutting-edge UI, animation, and performance best practices to life.
-</p>
-
-
-</section>
-
+          <FaqSection
+            title="Frequently Asked Questions (FAQ)"
+            description="Here’s Few things you need to know about Front end Attack"
+            faqs={securityflawFaqs}
+          />
 
           {/* Share Section */}
           <div className="border-t pt-6 mt-10">
@@ -891,7 +978,7 @@ function SafeValidation({ isValid }: { isValid: boolean }) {
             <div className="flex flex-wrap gap-4">
               {/* Twitter/X */}
               <a
-                href="https://twitter.com/intent/tweet?url=https://yourdomain.com/blog/local-llm&text=Check%20out%20this%20article%20about%20Running%20LLMs%20Locally!"
+                href="https://twitter.com/intent/tweet?url=https://www.yuvabestudios.com/blog/security-flaw-in-animations&text=Check%20out%20this%20article%20about%20Running%20LLMs%20Locally!"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center space-x-2 px-4 py-2 bg-black text-white rounded-lg hover:opacity-80 transition"
@@ -902,7 +989,7 @@ function SafeValidation({ isValid }: { isValid: boolean }) {
 
               {/* LinkedIn */}
               <a
-                href="https://www.linkedin.com/sharing/share-offsite/?url=https://yourdomain.com/blog/local-llm"
+                href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.yuvabestudios.com/blog/security-flaw-in-animations/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center space-x-2 px-4 py-2 bg-blue-700 text-white rounded-lg hover:opacity-80 transition"
@@ -913,7 +1000,7 @@ function SafeValidation({ isValid }: { isValid: boolean }) {
 
               {/* Facebook */}
               <a
-                href="https://www.facebook.com/sharer/sharer.php?u=https://yourdomain.com/blog/local-llm"
+                href="https://www.facebook.com/sharer/sharer.php?u=https://www.yuvabestudios.com/blog/security-flaw-in-animations/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center space-x-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:opacity-80 transition"
@@ -926,7 +1013,7 @@ function SafeValidation({ isValid }: { isValid: boolean }) {
               <button
                 onClick={() => {
                   navigator.clipboard.writeText(
-                    "https://yourdomain.com/blog/local-llm"
+                    "https://www.yuvabestudios.com/blog/security-flaw-in-animations/",
                   );
                   alert("Link copied to clipboard!");
                 }}
