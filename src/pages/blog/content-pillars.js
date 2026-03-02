@@ -3,43 +3,72 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { FaTwitter, FaLinkedin, FaFacebook, FaLink } from "react-icons/fa";
-import { NextSeo } from "next-seo"; 
+import { NextSeo } from "next-seo";
+import FaqSection from "@/components/FaqSection";
 
-export default function LocalLLM() {
+const ContentPillarFaqs = [
+  {
+    question: "What are content pillars in marketing?",
+    answer:
+      "Content pillars are core themes that define what a brand talks about consistently across its content, helping maintain clarity, focus, and alignment with business goals.",
+  },
+  {
+    question: "How many content pillars should a brand have?",
+    answer:
+      "Most brands perform best with 3–5 content pillars. This balance allows flexibility without diluting the brand message.",
+  },
+  {
+    question: "Why are content pillars important for brand consistency?",
+    answer:
+      "They ensure every piece of content supports a unified narrative, improving brand recognition and trust across platforms.",
+  },
+  {
+    question: "Are content pillars the same as a content calendar?",
+    answer:
+      "No. Content pillars define what you talk about, while a content calendar defines when and where you publish.",
+  },
+  {
+    question: "Do small brands and startups need content pillars?",
+    answer:
+      "Yes. Content pillars help small teams stay focused, reduce planning fatigue, and build a strong brand identity early.",
+  },
+];
+
+export default function ContentPillar() {
   return (
     <div className="bg-gray-50 min-h-screen">
-    <NextSeo
-  title="Content Pillars: Why Every Brand Needs Them | Yuvabe Studios"
-  description="Learn why content pillars matter, how to define them, and how they make your brand’s message consistent, clear, and impactful."
-  canonical="https://yuvabestudios.com/blog/content-pillars"
-  openGraph={{
-    url: "https://yuvabestudios.com/blog/content-pillars",
-    title: "Content Pillars: Why Every Brand Needs Them | Yuvabe Studios",
-    description:
-      "Learn why content pillars matter, how to define them, and how they make your brand’s message consistent, clear, and impactful.",
-    images: [
-      {
-        url: "https://yuvabestudios.com/blog/marketing/content-pillars.png",
-        width: 1200,
-        height: 630,
-        alt: "Content Pillars for Brand Strategy",
-      },
-    ],
-    site_name: "Yuvabe Studios",
-  }}
-  twitter={{
-    handle: "@YuvabeStudios",
-    site: "@YuvabeStudios",
-    cardType: "summary_large_image",
-  }}
-  additionalMetaTags={[
-    {
-      name: "keywords",
-      content:
-        "content pillars, brand storytelling, content marketing strategy, social media content planning, brand consistency",
-    },
-  ]}
-/>
+      <NextSeo
+        title="Content Pillars: Why Every Brand Needs Them | Yuvabe Studios"
+        description="Learn why content pillars matter, how to define them, and how they make your brand’s message consistent, clear, and impactful."
+        canonical="https://yuvabestudios.com/blog/content-pillars"
+        openGraph={{
+          url: "https://yuvabestudios.com/blog/content-pillars",
+          title: "Content Pillars: Why Every Brand Needs Them | Yuvabe Studios",
+          description:
+            "Learn why content pillars matter, how to define them, and how they make your brand’s message consistent, clear, and impactful.",
+          images: [
+            {
+              url: "https://yuvabestudios.com/blog/marketing/content-pillars.png",
+              width: 1200,
+              height: 630,
+              alt: "Content Pillars for Brand Strategy",
+            },
+          ],
+          site_name: "Yuvabe Studios",
+        }}
+        twitter={{
+          handle: "@YuvabeStudios",
+          site: "@YuvabeStudios",
+          cardType: "summary_large_image",
+        }}
+        additionalMetaTags={[
+          {
+            name: "keywords",
+            content:
+              "content pillars, brand storytelling, content marketing strategy, social media content planning, brand consistency",
+          },
+        ]}
+      />
 
       {/* Breadcrumbs */}
       <nav className="max-w-6xl mx-auto px-6 py-4 text-sm text-gray-600">
@@ -85,9 +114,19 @@ export default function LocalLLM() {
         </p>
 
         {/* Author field */}
-        <p className="text-[16px] font-medium text-gray-500">
+        <p className="text-[16px] font-medium text-gray-500 mb-4">
           – By <span className="text-[#5829C7]">Anjali </span>, Marketing
           Associate, Yuvabe Studios
+        </p>
+        <h3 className="text-xl font-medium font-secondary text-gray-800">
+          Answer Summary:
+        </h3>
+        <p className="text-lg  text-black font-secondary mb-2">
+          Content pillars are core themes that guide a brand’s storytelling
+          across platforms. By defining 3–5 clear content pillars, brands can
+          create consistent, focused, and meaningful content that improves
+          engagement, strengthens brand recall, and supports long-term marketing
+          growth.
         </p>
       </div>
 
@@ -99,7 +138,7 @@ export default function LocalLLM() {
           transition={{ duration: 0.6 }}
           className="prose prose-lg prose-indigo"
         >
-          <section className="max-w-6xl mx-auto pt-4 pb-16 space-y-6">
+          <section className="max-w-6xl mx-auto  pb-16 space-y-6">
             {/* Intro */}
             <div>
               <h2 className="font-secondary text-xl md:text-3xl font-semibold text-gray-900 mb-4">
@@ -142,15 +181,15 @@ export default function LocalLLM() {
 
             {/* Types of content pillars */}
             <div>
-              <h3 className="font-secondary text-xl md:text-3xl font-semibold text-gray-900 mb-4">
-                Types of Content Pillars
-              </h3>
+              <h2 className="font-secondary text-xl md:text-3xl font-semibold text-gray-900 mb-4">
+                Types of Content Pillars Every Brand Can Use
+              </h2>
 
               <div className="space-y-4 font-secondary text-gray-700 leading-relaxed">
                 {/* Educational */}
                 <div>
                   <h4 className="font-semibold text-lg text-gray-900 mb-2 font-secondary">
-                    1. Educational Pillars
+                    1. Educational Content Pillars
                   </h4>
                   <p>
                     Designed to teach, guide, or inform your audience. They
@@ -171,7 +210,7 @@ export default function LocalLLM() {
                 {/* Inspirational */}
                 <div>
                   <h4 className="font-semibold text-lg text-gray-900 mb-2 font-secondary">
-                    2. Inspirational Pillars
+                    2. Inspirational Content Pillars
                   </h4>
                   <p>
                     These stories spark emotion — they inspire belief in your
@@ -192,7 +231,7 @@ export default function LocalLLM() {
                 {/* Community */}
                 <div>
                   <h4 className="font-semibold text-lg text-gray-900 mb-2">
-                    3. Community & Engagement Pillars
+                    3. Community & Engagement Content Pillars
                   </h4>
                   <p>
                     Focuses on conversation and participation — not just
@@ -213,7 +252,7 @@ export default function LocalLLM() {
                 {/* Promotional */}
                 <div>
                   <h4 className="font-semibold text-lg text-gray-900 mb-2">
-                    4. Promotional Pillars
+                    4. Promotional Content Pillars
                   </h4>
                   <p>
                     These directly highlight your product, service, or offering
@@ -234,7 +273,7 @@ export default function LocalLLM() {
                 {/* Thought Leadership */}
                 <div>
                   <h4 className="font-semibold text-lg text-gray-900 mb-2">
-                    5. Thought Leadership Pillars
+                    5. Thought Leadership Content Pillars
                   </h4>
                   <p>
                     These position your brand as an expert in your field,
@@ -254,7 +293,7 @@ export default function LocalLLM() {
                 {/* Cultural */}
                 <div>
                   <h4 className="font-semibold text-lg text-gray-900 mb-2">
-                    6. Cultural or Lifestyle Pillars
+                    6. Cultural Content or Lifestyle Pillars
                   </h4>
                   <p>
                     Align your brand with a lifestyle, movement, or cultural
@@ -685,7 +724,7 @@ export default function LocalLLM() {
 
             {/* Section 2 — How to Define */}
             <h2 className="font-secondary text-xl md:text-3xl font-semibold mt-12 mb-2">
-              How to Define Your Brand&apso;s Content Pillars
+              How to Define Your Brand&apos;s Content Pillars
             </h2>
 
             <p className="text-lg font-secondary mb-2">
@@ -814,16 +853,23 @@ export default function LocalLLM() {
                   Ready to turn your content from scattered posts into a
                   cohesive brand narrative?{" "}
                   <Link
-              href="/contact"
-              className="text-indigo-600 underline hover:text-indigo-800 transition"
-            >
-Book a strategy consultation with our content marketing team            </Link>{" "}
-               
+                    href="/contact"
+                    className="text-indigo-600 underline hover:text-indigo-800 transition"
+                  >
+                    Book a strategy consultation with our content marketing
+                    team{" "}
+                  </Link>{" "}
                   to build a pillar-driven system that drives real growth.
                 </p>
               </div>
             </div>
           </section>
+
+          <FaqSection
+            title="Frequently Asked Questions (FAQ)"
+            description="Here’s Few things you need to know about Code Generation with LLMs"
+            faqs={ContentPillarFaqs}
+          />
 
           {/* Share Section */}
           <div className="border-t pt-6 my-10 ">
@@ -833,7 +879,7 @@ Book a strategy consultation with our content marketing team            </Link>{
             <div className="flex flex-wrap gap-4">
               {/* Twitter/X */}
               <a
-                href="https://twitter.com/intent/tweet?url=https://yourdomain.com/blog/local-llm&text=Check%20out%20this%20article%20about%20Running%20LLMs%20Locally!"
+                href="https://twitter.com/intent/tweet?url=https://www.yuvabestudios.com/blog/content-pillars/&text=Check%20out%20this%20article%20about%20Running%20LLMs%20Locally!"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center space-x-2 px-4 py-2 bg-black text-white rounded-lg hover:opacity-80 transition"
@@ -844,7 +890,7 @@ Book a strategy consultation with our content marketing team            </Link>{
 
               {/* LinkedIn */}
               <a
-                href="https://www.linkedin.com/sharing/share-offsite/?url=https://yourdomain.com/blog/local-llm"
+                href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.yuvabestudios.com/blog/content-pillars/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center space-x-2 px-4 py-2 bg-blue-700 text-white rounded-lg hover:opacity-80 transition"
@@ -855,7 +901,7 @@ Book a strategy consultation with our content marketing team            </Link>{
 
               {/* Facebook */}
               <a
-                href="https://www.facebook.com/sharer/sharer.php?u=https://yourdomain.com/blog/local-llm"
+                href="https://www.facebook.com/sharer/sharer.php?u=https://www.yuvabestudios.com/blog/content-pillars/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center space-x-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:opacity-80 transition"
@@ -868,7 +914,7 @@ Book a strategy consultation with our content marketing team            </Link>{
               <button
                 onClick={() => {
                   navigator.clipboard.writeText(
-                    "https://yourdomain.com/blog/local-llm"
+                    "https://www.yuvabestudios.com/blog/content-pillars/",
                   );
                   alert("Link copied to clipboard!");
                 }}
