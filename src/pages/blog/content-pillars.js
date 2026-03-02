@@ -867,7 +867,7 @@ export default function ContentPillar() {
 
           <FaqSection
             title="Frequently Asked Questions (FAQ)"
-            description="Here’s Few things you need to know about Code Generation with LLMs"
+            description="Here’s Few things you need to know about Content Pillars "
             faqs={ContentPillarFaqs}
           />
 

@@ -5,7 +5,7 @@ import Image from "next/image";
 import { FaTwitter, FaLinkedin, FaFacebook, FaLink } from "react-icons/fa";
 import { NextSeo } from "next-seo";
 
-export default function LocalLLM() {
+export default function SocialMediaMarketing() {
   return (
     <div className="bg-gray-50 min-h-screen">
       <NextSeo
@@ -37,7 +37,7 @@ export default function LocalLLM() {
           {
             name: "keywords",
             content:
-              "local social media strategy, hyper-local marketing 2025, AI content tools for SMEs, Instagram marketing for local shops, social media trends for businesses 2025",
+              "social media marketing for local businesses, local social media strategy,social media marketing 2025, hyper-local marketing 2025, AI content tools for SMEs, Instagram marketing for local shops, social media trends for businesses 2025",
           },
         ]}
       />
@@ -207,7 +207,7 @@ export default function LocalLLM() {
             {/* Section Title */}
             <div>
               <h2 className="font-secondary text-xl md:text-3xl font-semibold text-gray-900 mb-2">
-                The Opportunity vs. The Challenge
+                The Opportunity vs the Challenge for Local Businesses
               </h2>
               <p className="font-secondary text-gray-700 leading-relaxed text-lg">
                 The shift to digital brings immense potential — but also
@@ -231,9 +231,9 @@ export default function LocalLLM() {
 
             {/* What's Working in 2025 */}
             <div>
-              <h3 className="font-secondary text-xl md:text-3xl font-semibold text-gray-900 mb-6">
-                What&apos;s Working in 2025: 4 Game-Changing Tactics
-              </h3>
+              <h2 className="font-secondary text-xl md:text-3xl font-semibold text-gray-900 mb-6">
+                What&apos;s Working in 2025 for Local Social Media Marketing
+              </h2>
 
               <div className="space-y-8 font-secondary text-gray-700 leading-relaxed">
                 <div>
@@ -295,9 +295,9 @@ export default function LocalLLM() {
 
             {/* Step-by-Step Strategy */}
             <div>
-              <h3 className="font-secondary text-xl md:text-3xl font-semibold text-gray-900 mb-6">
-                Step-by-Step Strategy to Own Your Local Digital Space
-              </h3>
+              <h2 className="font-secondary text-xl md:text-3xl font-semibold text-gray-900 mb-6">
+                Step-by-Step Social Media Strategy for Local Businesses
+              </h2>
 
               <div className="font-secondary text-gray-700 leading-relaxed space-y-6">
                 <div>
@@ -381,9 +381,9 @@ export default function LocalLLM() {
 
           {/* Inline Section Image */}
           <div className="bg-blue-50 border-l-4 border-blue-400 p-6 rounded-xl shadow-sm">
-            <h3 className="font-secondary text-lg md:text-2xl font-semibold text-gray-900 mb-4">
-              3 Quick Wins for Local Businesses
-            </h3>
+            <h2 className="font-secondary text-lg md:text-2xl font-semibold text-gray-900 mb-4">
+              Quick Wins for Local Businesses on Social Media
+            </h2>
 
             <ul className="font-secondary list-disc list-inside text-xl  text-gray-700 leading-relaxed">
               <li>
@@ -401,9 +401,9 @@ export default function LocalLLM() {
             </ul>
           </div>
 
-          <section className="max-w-4xl mx-auto px-6 py-10">
+          <section className="max-w-5xl mx-auto px-6 py-10">
             <h2 className="font-secondary text-xl md:text-3xl font-semibold text-gray-900 mb-4">
-              The Yuvabe Studios recommended toolkit
+              Recommended Social Media Tools for Local Businesses
             </h2>
 
             <div className="overflow-x-auto">
@@ -425,7 +425,7 @@ export default function LocalLLM() {
                 <tbody>
                   <tr>
                     <td className="border border-gray-300 px-4 py-2">
-                      Scheduling
+                      Scheduling Tools
                     </td>
                     <td className="border border-gray-300 px-4 py-2">
                       Buffer, Later, Hootsuite
@@ -437,7 +437,7 @@ export default function LocalLLM() {
 
                   <tr>
                     <td className="border border-gray-300 px-4 py-2">
-                      Content Creation
+                      Content Creation Tools
                     </td>
                     <td className="border border-gray-300 px-4 py-2">
                       ChatGPT, Jasper
@@ -448,7 +448,9 @@ export default function LocalLLM() {
                   </tr>
 
                   <tr>
-                    <td className="border border-gray-300 px-4 py-2">Design</td>
+                    <td className="border border-gray-300 px-4 py-2">
+                      Design Tools
+                    </td>
                     <td className="border border-gray-300 px-4 py-2">
                       Canva, Adobe Express
                     </td>
@@ -459,7 +461,7 @@ export default function LocalLLM() {
 
                   <tr>
                     <td className="border border-gray-300 px-4 py-2">
-                      Analytics
+                      Analytics Tools
                     </td>
                     <td className="border border-gray-300 px-4 py-2">
                       Google Analytics + Native
@@ -485,7 +487,8 @@ export default function LocalLLM() {
             {/* --- FAQ Section --- */}
             <div>
               <h2 className="font-secondary text-xl md:text-3xl font-semibold text-gray-900 mb-6">
-                FAQ: People Also Ask
+                Frequently Asked Questions About Social Media Marketing for
+                Local Businesses
               </h2>
 
               <div className="font-secondary text-gray-700 space-y-6 leading-relaxed">
@@ -494,8 +497,9 @@ export default function LocalLLM() {
                     Q: How often should a local business post on social media?
                   </p>
                   <p className="text-[16px]">
-                    A: Consistency matters more than volume. 2–3 high-quality
-                    posts/week is a strong baseline.
+                    A: Consistency matters more than volume. Posting 2–3
+                    high-quality times per week is enough to build engagement
+                    and visibility.
                   </p>
                 </div>
 
@@ -504,9 +508,10 @@ export default function LocalLLM() {
                     Q: Which platform works best for small businesses?
                   </p>
                   <p>
-                    A: Instagram and Facebook are essential; WhatsApp is
-                    powerful for community engagement; TikTok is ideal for food
-                    & youth audiences.
+                    A: Instagram and Facebook are essential for most local
+                    brands, while WhatsApp supports community engagement and
+                    TikTok works well for food, fashion, and youth-driven
+                    businesses.
                   </p>
                 </div>
 
@@ -515,8 +520,21 @@ export default function LocalLLM() {
                     Q: Can AI really help me manage social media?
                   </p>
                   <p>
-                    A: Absolutely. From scheduling to captioning to analytics,
-                    AI tools can cut manual effort by 50–70%.
+                    A: Yes. AI tools can assist with scheduling, caption
+                    writing, analytics, and FAQs, reducing manual effort by
+                    50–70%.
+                  </p>
+                </div>
+
+                <div>
+                  <p className="font-semibold font-secondary text-xl">
+                    Q: Is social media necessary if my business already has
+                    local customers?
+                  </p>
+                  <p>
+                    A: Yes. Social media acts as your digital storefront,
+                    helping new customers discover you and existing customers
+                    stay engaged and loyal.
                   </p>
                 </div>
               </div>
@@ -560,7 +578,7 @@ export default function LocalLLM() {
             <div className="flex flex-wrap gap-4">
               {/* Twitter/X */}
               <a
-                href="https://twitter.com/intent/tweet?url=https://yourdomain.com/blog/local-llm&text=Check%20out%20this%20article%20about%20Running%20LLMs%20Locally!"
+                href="https://twitter.com/intent/tweet?url=https://www.yuvabestudios.com/blog/social-media-marketing-for-local-business/&text=Check%20out%20this%20article%20about%20Running%20LLMs%20Locally!"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center space-x-2 px-4 py-2 bg-black text-white rounded-lg hover:opacity-80 transition"
@@ -571,7 +589,7 @@ export default function LocalLLM() {
 
               {/* LinkedIn */}
               <a
-                href="https://www.linkedin.com/sharing/share-offsite/?url=https://yourdomain.com/blog/local-llm"
+                href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.yuvabestudios.com/blog/social-media-marketing-for-local-business/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center space-x-2 px-4 py-2 bg-blue-700 text-white rounded-lg hover:opacity-80 transition"
@@ -582,7 +600,7 @@ export default function LocalLLM() {
 
               {/* Facebook */}
               <a
-                href="https://www.facebook.com/sharer/sharer.php?u=https://yourdomain.com/blog/local-llm"
+                href="https://www.facebook.com/sharer/sharer.php?u=https://www.yuvabestudios.com/blog/social-media-marketing-for-local-business/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center space-x-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:opacity-80 transition"
@@ -595,7 +613,7 @@ export default function LocalLLM() {
               <button
                 onClick={() => {
                   navigator.clipboard.writeText(
-                    "https://yourdomain.com/blog/local-llm"
+                    "https://www.yuvabestudios.com/blog/social-media-marketing-for-local-business/",
                   );
                   alert("Link copied to clipboard!");
                 }}
