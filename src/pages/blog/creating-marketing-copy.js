@@ -1,9 +1,41 @@
-// pages/blog/local-llm.js
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { FaTwitter, FaLinkedin, FaFacebook, FaLink } from "react-icons/fa";
 import { NextSeo } from "next-seo";
+import { ArticleJsonLd } from "next-seo";
+import FaqSection from "@/components/FaqSection";
+import { BreadcrumbJsonLd } from "next-seo";
+import { FAQPageJsonLd } from "next-seo";
+
+const MarketingCopyFaqs = [
+  {
+    question: "What is marketing copywriting?",
+    answer:
+      "Marketing copywriting is the practice of writing persuasive content designed to encourage readers to take action, such as clicking, subscribing, or purchasing.",
+  },
+  {
+    question: "How does copywriting increase conversions?",
+    answer:
+      "Good copy addresses audience needs, highlights benefits, builds trust, and uses clear calls-to-action that guide users toward the next step.",
+  },
+  {
+    question: "What types of copywriting should brands focus on?",
+    answer:
+      "Most brands benefit from a mix of brand copy, SEO copywriting, social media copy, email marketing copy, and conversion-focused ad copy.",
+  },
+  {
+    question: "Do small changes in copy really make a difference?",
+    answer:
+      "Yes. Small tweaks in tone, headlines, CTAs, or structure can significantly impact engagement and conversion rates.",
+  },
+  {
+    question: "How does Yuvabe Studios approach copywriting?",
+    answer:
+      "Yuvabe Studios combines audience research, storytelling, testing, and AI-assisted tools with human creativity to craft copy that connects emotionally and converts effectively.",
+  },
+];
+
 export default function coremarketing() {
   return (
     <div className="bg-gray-50 min-h-screen">
@@ -36,9 +68,47 @@ export default function coremarketing() {
           {
             name: "keywords",
             content:
-              "copywriting tips, brand storytelling, persuasive writing, marketing copy examples, content strategy",
+              "marketing copy that converts, copywriting strategies, conversion-focused copy, copywriting tips, brand storytelling, persuasive writing, marketing copy examples, content strategy",
           },
         ]}
+      />
+
+      <ArticleJsonLd
+        type="BlogPosting"
+        url="https://yuvabestudios.com/blog/creating-marketing-copy"
+        title="Creating Marketing Copy That Converts"
+        images={["https://yuvabestudios.com/blog/marketing/blog3-banner.png"]}
+        datePublished="2025-09-30"
+        dateModified="2025-09-30"
+        authorName="Anjali"
+        publisherName="Yuvabe Studios"
+      />
+
+      <BreadcrumbJsonLd
+        itemListElements={[
+          {
+            position: 1,
+            name: "Home",
+            item: "https://yuvabestudios.com/",
+          },
+          {
+            position: 2,
+            name: "Blog",
+            item: "https://yuvabestudios.com/blog",
+          },
+          {
+            position: 3,
+            name: "Creating Marketing Copy",
+            item: "https://yuvabestudios.com/blog/creating-marketing-copy",
+          },
+        ]}
+      />
+
+      <FAQPageJsonLd
+        mainEntity={MarketingCopyFaqs.map((faq) => ({
+          questionName: faq.question,
+          acceptedAnswerText: faq.answer,
+        }))}
       />
 
       {/* Breadcrumbs */}
@@ -69,7 +139,7 @@ export default function coremarketing() {
       </div>
 
       {/* Title */}
-      <div className="max-w-6xl mx-auto px-6 mb-12">
+      <div className="max-w-6xl mx-auto px-6 ">
         <motion.h1
           className="text-3xl md:text-5xl font-semibold text-black leading-tight font-secondary"
           initial={{ opacity: 0, y: 30 }}
@@ -84,9 +154,19 @@ export default function coremarketing() {
         </p>
 
         {/* Author field */}
-        <p className="text-[16px] font-medium text-gray-500">
+        <p className="text-[16px] font-medium text-gray-500 mb-4">
           – By <span className="text-[#5829C7]">Anjali </span>, Marketing
           Associate, Yuvabe Studios
+        </p>
+
+        <h3 className="text-xl font-medium font-secondary text-gray-800">
+          Answer Summary:
+        </h3>
+        <p className="text-lg  text-black font-secondary mb-2">
+          Marketing copy that converts focuses on clarity, emotional connection,
+          and action. By understanding the audience, highlighting value, using
+          storytelling, and testing continuously, brands can turn everyday words
+          into persuasive messages that drive clicks, sign-ups, and sales.
         </p>
       </div>
 
@@ -101,7 +181,7 @@ export default function coremarketing() {
           {/* Introduction Section */}
           <section className=" rounded-2xl mb-12">
             <h2 className="text-xl md:text-3xl font-medium text-[#000] mb-4">
-              What is Copywriting, Anyway?
+              What Is Copywriting and Why It Matters?
             </h2>
             <p className="text-lg leading-relaxed text-black font-secondary">
               Copywriting isn&apos;t just “writing fancy words.” It&apos;s
@@ -122,12 +202,12 @@ export default function coremarketing() {
             </p>
           </section>
 
-          {/* Why Run LLMs Locally Section */}
+          {/* Flavors of Copywriting Section */}
           <section className=" mb-12">
             <div className="mb-6">
-              <h3 className="text-xl font-medium mb-4">
+              <h2 className="text-xl font-medium mb-4">
                 Different Flavors of Copywriting
-              </h3>
+              </h2>
               <p className="text-black mb-4">
                 <strong>Brand Copywriting: </strong> Tells your story. Makes
                 people say, “I get this brand!”
@@ -166,16 +246,16 @@ export default function coremarketing() {
 
           <section className="max-w-6xl mx-auto  pb-12 text-gray-800">
             <header className="mb-6">
-              <h1 className="text-4xl font-semibold mb-4">
+              <h2 className="text-4xl font-semibold mb-4">
                 Core Copywriting Tricks That Work
-              </h1>
+              </h2>
             </header>
 
             {/* 1. Emotion Mapping Workshops */}
             <article className="mb-8">
-              <h2 className="text-2xl font-semibold mb-4">
+              <h3 className="text-2xl font-semibold mb-4">
                 1. Know Your Audience{" "}
-              </h2>
+              </h3>
               <p className="text-gray-600 font-secondary mb-4 text-xl">
                 Knowing your audience means more than just demographics.
                 It&apos;s about understanding their motivations, challenges, and
@@ -216,9 +296,9 @@ export default function coremarketing() {
             </article>
 
             <article className="mb-16">
-              <h2 className="text-2xl font-semibold mb-4">
+              <h3 className="text-2xl font-semibold mb-4">
                 2. Use the Right Tone
-              </h2>
+              </h3>
               <p className="text-gray-600 font-secondary mb-4 text-xl">
                 Tone is the personality of your writing—it sets the mood and
                 builds trust. A casual, funny tone works for a young, social
@@ -256,9 +336,9 @@ export default function coremarketing() {
             </article>
 
             <article className="mb-16">
-              <h2 className="text-2xl font-semibold mb-4">
+              <h3 className="text-2xl font-semibold mb-4">
                 3. Highlight Your Unique Value
-              </h2>
+              </h3>
               <p className="text-gray-600 font-secondary mb-4 text-xl">
                 Your audience doesn&apos;t automatically know why you&apos;re
                 special. Clear, compelling copy shows why you&apos;re different
@@ -333,9 +413,9 @@ export default function coremarketing() {
             </article>
 
             <article className="mb-16">
-              <h2 className="text-2xl font-semibold mb-4">
+              <h3 className="text-2xl font-semibold mb-4">
                 5. Address Pain Points
-              </h2>
+              </h3>
               <p className="text-gray-600 font-secondary mb-4 text-xl">
                 People buy solutions to their problems, not products. Effective
                 copy identifies a challenge your audience faces and presents
@@ -407,9 +487,9 @@ export default function coremarketing() {
             </article>
 
             <article className="mb-8">
-              <h2 className="text-2xl font-semibold mb-4">
+              <h3 className="text-2xl font-semibold mb-4">
                 7. Clear & Crisp Language
-              </h2>
+              </h3>
               <p className="text-gray-600 font-secondary mb-4 text-xl">
                 Good copy gets to the point. Avoid fluff or jargon that slows
                 down reading. Every word should serve a purpose —i nform,
@@ -443,9 +523,9 @@ export default function coremarketing() {
             </article>
 
             <article className="mb-8">
-              <h2 className="text-2xl font-semibold mb-4">
+              <h3 className="text-2xl font-semibold mb-4">
                 8. Test Everything
-              </h2>
+              </h3>
               <p className="text-gray-600 font-secondary mb-4 text-xl">
                 What works for one audience might flop for another. Testing
                 headlines, CTAs, formats, and placements helps you see what
@@ -479,9 +559,9 @@ export default function coremarketing() {
             </article>
 
             <article className="mb-8">
-              <h2 className="text-2xl font-semibold mb-4">
+              <h3 className="text-2xl font-semibold mb-4">
                 9. Use Numbers & Stats
-              </h2>
+              </h3>
               <p className="text-gray-600 font-secondary mb-4 text-xl">
                 Numbers make your copy believable. People trust data, and
                 concrete results are more persuasive than vague promises.
@@ -549,7 +629,7 @@ export default function coremarketing() {
             </article>
 
             <article className="mb-8">
-              <h2 className="text-2xl font-semibold mb-4">11. Power Words</h2>
+              <h3 className="text-2xl font-semibold mb-4">11. Power Words</h3>
               <p className="text-gray-600 font-secondary mb-4 text-xl">
                 Certain words trigger emotion or urgency. Words like instantly,
                 proven, limited, or exclusive capture attention and drive
@@ -582,9 +662,9 @@ export default function coremarketing() {
             </article>
 
             <article className="mb-4">
-              <h2 className="text-2xl font-semibold mb-4">
+              <h3 className="text-2xl font-semibold mb-4">
                 12. Repeat Key Points
-              </h2>
+              </h3>
               <p className="text-gray-600 font-secondary mb-4 text-xl">
                 Repetition reinforces your message and helps it stick. Highlight
                 benefits and calls-to-action multiple times throughout your
@@ -676,28 +756,54 @@ export default function coremarketing() {
               {/* Second Section */}
               <div className="mt-10">
                 <h2 className="text-xl md:text-3xl font-semibold  mb-4">
-                  Copywriting in the Age of AI: Why the Human Touch Still Wins
+                  Copywriting in the Age of AI
                 </h2>
                 <p className="text-gray-700 text-md leading-relaxed font-secondary">
-                  Even as tools like ChatGPT, Jasper, Copy.ai, and Grammarly
-                  make it faster than ever to generate captions, headlines, or
-                  full blog drafts, the role of a copywriter hasn&apos;t
-                  disappeared — it has become more strategic. AI can produce
-                  words at scale, but it cannot sense cultural nuance, emotional
-                  timing, brand voice and personality the way a human can. At
-                  Yuvabe Studios, we use AI to accelerate execution, but
+                  Even as tools like{" "}
+                  <a
+                    href="https://chat.openai.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 underline"
+                  >
+                    ChatGPT
+                  </a>
+                  ,{" "}
+                  <a
+                    href="https://www.jasper.ai"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 underline"
+                  >
+                    Jasper
+                  </a>
+                  ,{" "}
+                  <a
+                    href="https://www.copy.ai"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 underline"
+                  >
+                    Copy.ai
+                  </a>
+                  , and Grammarly make it faster than ever to generate captions,
+                  headlines, or full blog drafts, the role of a copywriter
+                  hasn&apos;t disappeared — it has become more strategic. AI can
+                  produce words at scale, but it cannot sense cultural nuance,
+                  emotional timing, brand voice and personality the way a human
+                  can. At Yuvabe Studios, we use AI to accelerate execution, but
                   it&apos;s human creativity that shapes the narrative, injects
                   personality, and transforms generic output into messaging that
                   actually resonates. In a world overflowing with AI-generated
                   content, authenticity and emotional clarity — not speed or
-                  volume — that converts.
+                  volume — are what truly convert.
                 </p>
               </div>
 
               {/* Third Section */}
               <div className="mt-10">
                 <h2 className="text-xl md:text-3xl font-semibold  mb-4">
-                  3 Quick Ways to Measure Your Copy&apos;s Superpowers
+                  How to Measure Whether Your Copy Is Working
                 </h2>
                 <ul className="space-y-4 text-gray-700 text-md font-secondary leading-relaxed list-disc list-inside">
                   <li>
@@ -755,6 +861,12 @@ export default function coremarketing() {
             </div>
           </section>
 
+          <FaqSection
+            title="Frequently Asked Questions (FAQ)"
+            description="Here’s Few things you need to know about Marketing Copy "
+            faqs={MarketingCopyFaqs}
+          />
+
           {/* Share Section */}
           <div className="border-t pt-6 mt-10">
             <h4 className="text-lg font-semibold text-gray-800 mb-4">
@@ -763,7 +875,7 @@ export default function coremarketing() {
             <div className="flex flex-wrap gap-4">
               {/* Twitter/X */}
               <a
-                href="https://twitter.com/intent/tweet?url=https://yourdomain.com/blog/local-llm&text=Check%20out%20this%20article%20about%20Running%20LLMs%20Locally!"
+                href="https://twitter.com/intent/tweet?url=https://www.yuvabestudios.com/blog/creating-marketing-copy&text=Check%20out%20this%20article%20about%20Running%20LLMs%20Locally!"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center space-x-2 px-4 py-2 bg-black text-white rounded-lg hover:opacity-80 transition"
@@ -774,7 +886,7 @@ export default function coremarketing() {
 
               {/* LinkedIn */}
               <a
-                href="https://www.linkedin.com/sharing/share-offsite/?url=https://yourdomain.com/blog/local-llm"
+                href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.yuvabestudios.com/blog/creating-marketing-copy/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center space-x-2 px-4 py-2 bg-blue-700 text-white rounded-lg hover:opacity-80 transition"
@@ -785,7 +897,7 @@ export default function coremarketing() {
 
               {/* Facebook */}
               <a
-                href="https://www.facebook.com/sharer/sharer.php?u=https://yourdomain.com/blog/local-llm"
+                href="https://www.facebook.com/sharer/sharer.php?u=https://www.yuvabestudios.com/blog/creating-marketing-copy/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center space-x-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:opacity-80 transition"
@@ -798,7 +910,7 @@ export default function coremarketing() {
               <button
                 onClick={() => {
                   navigator.clipboard.writeText(
-                    "https://yourdomain.com/blog/local-llm"
+                    "https://www.yuvabestudios.com/blog/creating-marketing-copy/",
                   );
                   alert("Link copied to clipboard!");
                 }}
