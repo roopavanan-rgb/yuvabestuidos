@@ -36,6 +36,7 @@
     "react-owl-carousel": "^2.3.3",
     "react-slick": "^0.30.2",
     "react-spring": "^9.7.4",
+    "resend": "^6.9.3",
     "slick-carousel": "^1.8.1",
     "swiper": "^11.2.10",
     "three": "^0.171.0"

@@ -1,15 +1,6 @@
-import nodemailer from "nodemailer";
+import { Resend } from "resend";
 
-/* -----------------------------------
-   Create transporter ONCE (faster)
-------------------------------------*/
-const transporter = nodemailer.createTransport({
-  service: "gmail",
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS,
-  },
-});
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
@@ -31,7 +22,7 @@ export default async function handler(req, res) {
     }
 
     /* ---------------------------
-       VERIFY CAPTCHA (SERVER SIDE)
+       VERIFY CAPTCHA
     ----------------------------*/
     const verifyRes = await fetch(
       "https://www.google.com/recaptcha/api/siteverify",
@@ -52,29 +43,35 @@ export default async function handler(req, res) {
       });
     }
 
-    /* ---------------------------
-       1️⃣ ADMIN EMAIL (TO YUVABE)
-    ----------------------------*/
-    await transporter.sendMail({
-      from: `"Yuvabe Website" <${process.env.EMAIL_USER}>`,
-      to: process.env.EMAIL_USER,
-      replyTo: email,
+    /* ===========================
+       1️⃣ ADMIN EMAIL (TO SALES)
+       =========================== */
+    const adminResponse = await resend.emails.send({
+      from: "Yuvabe Sales Team <sales@mail.yuvabe.com>",
+      to: ["roopavanan@yuvabe.com"],
+      reply_to: email,
       subject: `New Contact from ${name}`,
       html: `
         <h2>New Contact Form Submission</h2>
         <p><b>Name:</b> ${name}</p>
         <p><b>Email:</b> ${email}</p>
         <p><b>Phone:</b> ${phone}</p>
+        <p><b>Message:</b></p>
         <p>${message}</p>
       `,
     });
 
-    /* ---------------------------
+    if (adminResponse.error) {
+      console.error("Admin Email Error:", adminResponse.error);
+      return res.status(500).json({ error: "Failed to send admin email" });
+    }
+
+    /* ===========================
        2️⃣ USER AUTO REPLY
-    ----------------------------*/
-    await transporter.sendMail({
-      from: `"Yuvabe Studios" <${process.env.EMAIL_USER}>`,
-      to: email,
+       =========================== */
+    const userResponse = await resend.emails.send({
+      from: "Yuvabe Studios <noreply@mail.yuvabe.com>",
+      to: [email],
       subject: "Thank you for contacting Yuvabe Studios 🙌",
       html: `
       <div style="text-align:center;">
@@ -137,9 +134,13 @@ export default async function handler(req, res) {
       `,
     });
 
+    if (userResponse.error) {
+      console.error("User Email Error:", userResponse.error);
+    }
+
     return res.status(200).json({ success: true });
   } catch (error) {
-    console.error("MAIL ERROR:", error);
-    return res.status(500).json({ error: "Mail failed" });
+    console.error("RESEND ERROR:", error);
+    return res.status(500).json({ error: "Failed to send email" });
   }
 }
