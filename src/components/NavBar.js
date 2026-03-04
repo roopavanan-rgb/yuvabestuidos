@@ -380,7 +380,7 @@ const NavBar = () => {
                 {/* Thank You Message */}
                 {success && (
                   <p className="text-green-600 text-lg mt-4 text-center font-semibold">
-                    Message sent successfully. We'll contact you soon!
+                    Message sent successfully. We&apos;ll contact you soon!
                   </p>
                 )}
               </form>
