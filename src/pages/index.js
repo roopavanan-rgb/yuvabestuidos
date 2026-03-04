@@ -53,7 +53,7 @@ export default function Home() {
             "Transform your business with Yuvabe Studios: digital marketing, AI/ML solutions, brand design, and research services. Human-centric innovation from Auroville, India.",
           images: [
             {
-              url: "https://yuvabestudios.com/images/profile/logo.png",
+              url: "https://www.yuvabestudios.com/images/profile/icon.png",
               width: 1200,
               height: 630,
               alt: "Yuvabe Studios Open Graph Image",
@@ -93,7 +93,7 @@ export default function Home() {
                   "@id": "https://yuvabestudios.com/#organization",
                   name: "Yuvabe Studios",
                   url: "https://yuvabestudios.com",
-                  logo: "https://yuvabestudios.com/images/profile/logo.png",
+                  logo: "https://www.yuvabestudios.com/images/profile/icon.png",
                   description:
                     "Yuvabe Studios is a human-centric creative agency based in Auroville, offering digital marketing, design, AI/ML solutions, and research services to help organizations build meaningful, future-ready digital experiences.",
                   email: ["sales@yuvabe.com", "info@yuvabe.com"],
@@ -122,10 +122,11 @@ export default function Home() {
                   },
                   brand: {
                     "@type": "Brand",
-                    logo: "https://yuvabestudios.com/images/profile/logo.png",
+                    logo: "https://www.yuvabestudios.com/images/profile/logo.png",
                     brandColor: ["#5829c7", "#ffca2d"],
                     alternateName: "Yuvabe",
-                    image: "https://yuvabestudios.com/images/profile/logo.png",
+                    image:
+                      "https://www.yuvabestudios.com/images/profile/logo.png",
                   },
                   sameAs: [
                     "https://www.linkedin.com/company/yuvabe-studios/",
@@ -139,7 +140,8 @@ export default function Home() {
                   "@id": "https://yuvabestudios.com/#localbusiness",
                   name: "Yuvabe Studios",
                   url: "https://yuvabestudios.com",
-                  image: "https://yuvabestudios.com/images/profile/logo.png",
+                  image:
+                    "https://www.yuvabestudios.com/images/profile/logo.png",
                   address: {
                     "@type": "PostalAddress",
                     streetAddress: "Kottakarai Road",

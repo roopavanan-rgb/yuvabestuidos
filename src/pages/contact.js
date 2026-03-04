@@ -96,7 +96,7 @@ const Contact = () => {
         />
         <meta
           property="og:image"
-          content="https://yuvabestudios.com/images/yb-icon.png"
+          content="https://www.yuvabestudios.com/images/profile/icon.png"
         />
         <meta property="og:url" content="https://yuvabestudios.com/contact" />
         <meta property="og:type" content="website" />
@@ -108,7 +108,7 @@ const Contact = () => {
         />
         <meta
           name="twitter:image"
-          content="https://yuvabestudios.com/images/contact-banner.jpg"
+          content="https://www.yuvabestudios.com/images/profile/icon.png"
         />
 
         {/* JSON LS SCHEMA */}
@@ -229,6 +229,11 @@ const Contact = () => {
                 sitekey="6Ldk_XUsAAAAAOEKKzOGmR5DoPYd0TxK2qwDb3tm"
                 onChange={handleCaptchaChange}
               />
+              {loading && (
+                <p className="text-blue-600 text-sm text-center">
+                  Sending your message...
+                </p>
+              )}
 
               {/* Conditional Submit Button */}
               <div>
@@ -236,10 +241,41 @@ const Contact = () => {
                   <button
                     type="submit"
                     disabled={loading}
-                    className="w-full flex justify-between items-center bg-transparent border-2 border-violet-600 text-violet-800 font-semibold py-3 rounded-lg hover:bg-violet-200 transition"
+                    className={`w-full flex justify-between items-center border-2 border-violet-600 font-semibold py-3 rounded-lg transition
+  ${
+    loading
+      ? "bg-gray-300 text-gray-500 cursor-not-allowed"
+      : "bg-transparent text-violet-800 hover:bg-violet-200"
+  }`}
                   >
-                    <span className="ml-4">Send</span>
-                    <FiSend className="mr-4" />
+                    <span className="ml-4">
+                      {loading ? "Sending..." : "Send"}
+                    </span>
+
+                    {loading ? (
+                      <svg
+                        className="animate-spin mr-4 h-5 w-5 text-gray-600"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                      >
+                        <circle
+                          className="opacity-25"
+                          cx="12"
+                          cy="12"
+                          r="10"
+                          stroke="currentColor"
+                          strokeWidth="4"
+                        ></circle>
+                        <path
+                          className="opacity-75"
+                          fill="currentColor"
+                          d="M4 12a8 8 0 018-8v8H4z"
+                        ></path>
+                      </svg>
+                    ) : (
+                      <FiSend className="mr-4" />
+                    )}
                   </button>
                 ) : (
                   <button
@@ -254,8 +290,8 @@ const Contact = () => {
 
               {/* Thank You Message */}
               {success && (
-                <p className="text-green-600 text-lg mt-4">
-                  Thanks for your message! We’ll get back to you shortly.
+                <p className="text-green-600 text-lg mt-4 text-center font-semibold">
+                  Message sent successfully. We'll contact you soon!
                 </p>
               )}
             </form>

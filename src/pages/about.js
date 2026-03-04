@@ -55,7 +55,7 @@ const AboutPage = () => {
             "Learn more about Yuvabe Studios, a digital agency that combines innovation and sustainability to create impactful solutions.",
           images: [
             {
-              url: "https://yuvabestudios.com/images/profile/logo.png",
+              url: "https://www.yuvabestudios.com/images/profile/icon.png",
               width: 1200,
               height: 630,
               alt: "Yuvabe Studios About Us",

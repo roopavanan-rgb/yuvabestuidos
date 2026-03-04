@@ -6,7 +6,6 @@ import { FiMenu, FiX, FiSend } from "react-icons/fi";
 import { AiOutlineClose } from "react-icons/ai";
 import Image from "next/image";
 import ReCAPTCHA from "react-google-recaptcha";
-import { useForm, ValidationError } from "@formspree/react";
 
 const MotionLink = motion(Link);
 
@@ -16,7 +15,16 @@ const NavBar = () => {
   const [isContactFormOpen, setIsContactFormOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [captchaDone, setCaptchaDone] = useState(false);
-  const [state, handleSubmit] = useForm("meoqwqra");
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [captchaToken, setCaptchaToken] = useState(null);
 
   const navLinks = ["/", "/about", "/work", "/career", "/contact", "/blogs"];
 
@@ -45,7 +53,56 @@ const NavBar = () => {
     visible: { opacity: 1, y: 0 },
   };
 
-  const handleCaptchaChange = () => setCaptchaDone(true);
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleCaptchaChange = (token) => {
+    setCaptchaDone(true);
+    setCaptchaToken(token);
+  };
+  const submitForm = async (e) => {
+    e.preventDefault();
+
+    if (!captchaDone) {
+      alert("Please complete the reCAPTCHA.");
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...form,
+          captchaToken,
+        }),
+      });
+
+      if (!res.ok) throw new Error();
+
+      setSuccess(true);
+      setTimeout(() => {
+        setIsContactFormOpen(false);
+        setSuccess(false);
+        setCaptchaDone(false);
+      }, 2500);
+      setForm({
+        name: "",
+        email: "",
+        phone: "",
+        message: "",
+      });
+    } catch (error) {
+      alert("Something went wrong.");
+    }
+
+    setLoading(false);
+  };
 
   return (
     <>
@@ -199,14 +256,7 @@ const NavBar = () => {
               {/* Right Section with Form */}
               <form
                 className="space-y-4 p-8 w-full rounded-lg border-2 border-violet-200 rounded-bl-lg rounded-br-lg rounded-tl-lg bg-white shadow-xl opacity-l-75"
-                onSubmit={(e) => {
-                  if (captchaDone) {
-                    handleSubmit(e);
-                  } else {
-                    e.preventDefault();
-                    alert("Please complete the reCAPTCHA.");
-                  }
-                }}
+                onSubmit={submitForm}
               >
                 <div>
                   <label className="block text-sm font-medium text-gray-700">
@@ -214,15 +264,12 @@ const NavBar = () => {
                   </label>
                   <input
                     type="text"
-                    name="user_name"
+                    name="name"
                     placeholder="John Carter"
+                    value={form.name}
+                    onChange={handleChange}
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500"
                     required
-                  />
-                  <ValidationError
-                    prefix="Name"
-                    field="name"
-                    errors={state.errors}
                   />
                 </div>
                 <div>
@@ -231,15 +278,12 @@ const NavBar = () => {
                   </label>
                   <input
                     type="email"
-                    name="user_email"
+                    name="email"
+                    value={form.email}
+                    onChange={handleChange}
+                    required
                     placeholder="john@example.com"
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500"
-                    required
-                  />
-                  <ValidationError
-                    prefix="Email"
-                    field="email"
-                    errors={state.errors}
                   />
                 </div>
                 <div>
@@ -248,14 +292,10 @@ const NavBar = () => {
                   </label>
                   <input
                     type="text"
-                    name="user_phone"
-                    placeholder="(123) 456 - 789"
+                    name="phone"
+                    value={form.phone}
+                    onChange={handleChange}
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500"
-                  />
-                  <ValidationError
-                    prefix="Phone"
-                    field="phone"
-                    errors={state.errors}
                   />
                 </div>
 
@@ -266,27 +306,65 @@ const NavBar = () => {
                   <textarea
                     name="message"
                     rows="4"
-                    placeholder="Your message..."
+                    value={form.message}
+                    onChange={handleChange}
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500"
                     required
                   ></textarea>
                 </div>
 
                 <ReCAPTCHA
-                  sitekey="6LduyJQqAAAAAFUf1YGFhoKAppjYnpeBhR2rYUQr" // Replace with your reCAPTCHA site key
+                  sitekey="6Ldk_XUsAAAAAOEKKzOGmR5DoPYd0TxK2qwDb3tm"
                   onChange={handleCaptchaChange}
                 />
+
+                {loading && (
+                  <p className="text-blue-600 text-sm text-center">
+                    Sending your message...
+                  </p>
+                )}
 
                 {/* Conditional Submit Button */}
                 <div>
                   {captchaDone ? (
                     <button
                       type="submit"
-                      disabled={state.submitting}
-                      className="w-full flex justify-between items-center bg-transparent border-2 border-violet-600 text-violet-800 font-semibold py-3 rounded-lg hover:bg-violet-200 transition"
+                      disabled={loading}
+                      className={`w-full flex justify-between items-center border-2 border-violet-600 font-semibold py-3 rounded-lg transition
+  ${
+    loading
+      ? "bg-gray-300 text-gray-500 cursor-not-allowed"
+      : "bg-transparent text-violet-800 hover:bg-violet-200"
+  }`}
                     >
-                      <span className="ml-4">Send</span>
-                      <FiSend className="mr-4" />
+                      <span className="ml-4">
+                        {loading ? "Sending..." : "Send"}
+                      </span>
+
+                      {loading ? (
+                        <svg
+                          className="animate-spin mr-4 h-5 w-5 text-gray-600"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                        >
+                          <circle
+                            className="opacity-25"
+                            cx="12"
+                            cy="12"
+                            r="10"
+                            stroke="currentColor"
+                            strokeWidth="4"
+                          ></circle>
+                          <path
+                            className="opacity-75"
+                            fill="currentColor"
+                            d="M4 12a8 8 0 018-8v8H4z"
+                          ></path>
+                        </svg>
+                      ) : (
+                        <FiSend className="mr-4" />
+                      )}
                     </button>
                   ) : (
                     <button
@@ -300,9 +378,9 @@ const NavBar = () => {
                 </div>
 
                 {/* Thank You Message */}
-                {state.succeeded && (
-                  <p className="text-green-600 text-lg mt-4 text-center">
-                    We’ll get back to you shortly.
+                {success && (
+                  <p className="text-green-600 text-lg mt-4 text-center font-semibold">
+                    Message sent successfully. We'll contact you soon!
                   </p>
                 )}
               </form>

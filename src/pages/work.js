@@ -57,7 +57,7 @@ export default function WorkPage() {
             "Discover Yuvabe Studios' top projects that highlight creativity and innovation in digital marketing, web design, and AI/ML.",
           images: [
             {
-              url: "https://yuvabestudios.com/images/profile/logo.png",
+              url: "https://www.yuvabestudios.com/images/profile/icon.png",
               width: 1200,
               height: 630,
               alt: "Yuvabe Studios Portfolio",

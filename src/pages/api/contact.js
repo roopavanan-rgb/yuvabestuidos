@@ -47,8 +47,8 @@ export default async function handler(req, res) {
        1️⃣ ADMIN EMAIL (TO SALES)
        =========================== */
     const adminResponse = await resend.emails.send({
-      from: "Yuvabe Sales Team <sales@mail.yuvabe.com>",
-      to: ["roopavanan@yuvabe.com"],
+      from: "Yuvabe Studios <noreply@mail.yuvabe.com>",
+      to: ["sales@yuvabe.com"],
       reply_to: email,
       subject: `New Contact from ${name}`,
       html: `
@@ -70,12 +70,12 @@ export default async function handler(req, res) {
        2️⃣ USER AUTO REPLY
        =========================== */
     const userResponse = await resend.emails.send({
-      from: "Yuvabe Studios <noreply@mail.yuvabe.com>",
+      from: "Yuvabe Sales Team <sales@mail.yuvabe.com>",
       to: [email],
       subject: "Thank you for contacting Yuvabe Studios 🙌",
       html: `
       <div style="text-align:center;">
-        <img src="https://yuvabestudios.com/images/yb-icon.png" width="120" />
+        <img src="https://www.yuvabestudios.com/images/profile/logo.png" width="200" />
         <h2>Thank you for contacting Yuvabe Studios!</h2>
       </div>
 
@@ -123,7 +123,7 @@ export default async function handler(req, res) {
           <tr>
             <td style="padding-top:30px;border-top:1px solid #1f2937;">
               <p style="margin:0;color:#9ca3af;font-size:13px;">
-                — Yuvabe Studios Team<br/>
+                — Yuvabe Studios Sales Team<br/>
                 Auroville, Tamil Nadu
               </p>
             </td>
