@@ -74,64 +74,84 @@ export default async function handler(req, res) {
       to: [email],
       subject: "Thank you for contacting Yuvabe Studios 🙌",
       html: `
-      <div style="text-align:center;">
-        <img src="https://www.yuvabestudios.com/images/profile/logo.png" width="200" />
-        <h2>Thank you for contacting Yuvabe Studios!</h2>
-      </div>
+<div style="background:#f5f7fb;padding:40px 20px;font-family:Arial,Helvetica,sans-serif;">
 
-      <div style="background:#0f172a;padding:40px 20px;font-family:Arial,sans-serif;">
-        <table align="center" width="100%" style="max-width:600px;background:#111827;border-radius:12px;padding:30px;color:#e5e7eb;">
-          
-          <tr>
-            <td style="text-align:center;padding-bottom:20px;">
-              <h1 style="margin:0;color:#ffffff;font-size:22px;">Yuvabe Studios</h1>
-              <p style="margin:5px 0 0;color:#9ca3af;font-size:14px;">
-                Digital • Design • AI • Innovation
-              </p>
-            </td>
-          </tr>
+  <table align="center" width="100%" style="max-width:600px;background:#ffffff;border-radius:10px;padding:40px;border:1px solid #e5e7eb;">
 
-          <tr>
-            <td>
-              <h2 style="color:#ffffff;">
-                Hi ${name}, thanks for reaching out! 🙌
-              </h2>
-              <p style="color:#d1d5db;line-height:1.6;">
-                We've received your message and our team will get back to you shortly.
-              </p>
-            </td>
-          </tr>
+    <!-- Logo -->
+    <tr>
+      <td style="text-align:center;padding-bottom:25px;">
+        <img src="https://www.yuvabestudios.com/images/profile/logo.png" width="180" alt="Yuvabe Studios" />
+      </td>
+    </tr>
 
-          <tr>
-            <td style="background:#020617;border-radius:8px;padding:15px;">
-              <p style="margin:0;color:#9ca3af;font-size:13px;">Your Message:</p>
-              <p style="margin:8px 0 0;color:#e5e7eb;">"${message}"</p>
-            </td>
-          </tr>
+    <!-- Heading -->
+    <tr>
+      <td style="text-align:center;padding-bottom:20px;">
+        <h1 style="margin:0;color:#111827;font-size:24px;font-weight:600;">
+          Thank you for contacting Yuvabe Studios
+        </h1>
+        <p style="margin-top:8px;color:#6b7280;font-size:14px;">
+          Digital • Design • AI • Innovation
+        </p>
+      </td>
+    </tr>
 
-          <tr>
-            <td style="padding-top:25px;">
-              <a href="https://yuvabestudios.com/"
-                 style="display:inline-block;background:#7c3aed;color:white;
-                 text-decoration:none;padding:12px 18px;border-radius:6px;
-                 font-size:14px;font-weight:bold;">
-                Visit Yuvabe Studios
-              </a>
-            </td>
-          </tr>
+    <!-- Greeting -->
+    <tr>
+      <td style="padding-top:10px;">
+        <p style="color:#374151;font-size:15px;line-height:1.6;margin:0;">
+          Hi <strong>${name}</strong>,
+        </p>
 
-          <tr>
-            <td style="padding-top:30px;border-top:1px solid #1f2937;">
-              <p style="margin:0;color:#9ca3af;font-size:13px;">
-                — Yuvabe Studios Sales Team<br/>
-                Auroville, Tamil Nadu
-              </p>
-            </td>
-          </tr>
+        <p style="color:#374151;font-size:15px;line-height:1.6;margin-top:10px;">
+          Thank you for reaching out to <strong>Yuvabe Studios</strong>. 
+          We have successfully received your message and our team will review it shortly. 
+          One of our specialists will get back to you as soon as possible.
+        </p>
+      </td>
+    </tr>
 
-        </table>
-      </div>
-      `,
+    <!-- Message box -->
+    <tr>
+      <td style="padding-top:25px;">
+        <div style="background:#f9fafb;border:1px solid #e5e7eb;border-radius:8px;padding:18px;">
+          <p style="margin:0;color:#6b7280;font-size:13px;">Your Message</p>
+          <p style="margin-top:8px;color:#111827;font-size:14px;line-height:1.6;">
+            "${message}"
+          </p>
+        </div>
+      </td>
+    </tr>
+
+    <!-- CTA -->
+    <tr>
+      <td style="padding-top:30px;text-align:center;">
+        <a href="https://yuvabestudios.com/"
+          style="display:inline-block;background:#2563eb;color:#ffffff;
+          text-decoration:none;padding:12px 22px;border-radius:6px;
+          font-size:14px;font-weight:600;">
+          Visit Our Website
+        </a>
+      </td>
+    </tr>
+
+    <!-- Footer -->
+    <tr>
+      <td style="padding-top:35px;border-top:1px solid #e5e7eb;text-align:center;">
+        <p style="margin:0;color:#6b7280;font-size:13px;">
+          Yuvabe Studios Sales Team
+        </p>
+        <p style="margin:5px 0 0;color:#9ca3af;font-size:12px;">
+          Auroville, Tamil Nadu, India
+        </p>
+      </td>
+    </tr>
+
+  </table>
+
+</div>
+`,
     });
 
     if (userResponse.error) {
