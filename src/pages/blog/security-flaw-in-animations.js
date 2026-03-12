@@ -2,8 +2,8 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { FaTwitter, FaLinkedin, FaFacebook, FaLink } from "react-icons/fa";
-import { NextSeo } from "next-seo";
 import FaqSection from "@/components/FaqSection";
+import BlogSEO from "@/components/seo/BlogSEO";
 
 const securityflawFaqs = [
   {
@@ -36,40 +36,16 @@ const securityflawFaqs = [
 export default function SecurityFlaw() {
   return (
     <div className="bg-gray-50 min-h-screen">
-      <NextSeo
+      <BlogSEO
         title="Front-End Animation Security: Prevent Data Leaks in React & Next.js"
         description="Learn how front-end animations can unintentionally leak sensitive data and how to secure your React & Next.js UI with best practices and hardened patterns"
-        canonical="https://yuvabestudios.com/blog/local-llm"
-        openGraph={{
-          url: "https://yuvabestudios.com/blog/security-flaw-in-animations",
-          title:
-            "Front-End Animation Security: Prevent Data Leaks in React & Next.js",
-          description:
-            "Learn how front-end animations can unintentionally leak sensitive data and how to secure your React & Next.js UI with best practices and hardened patterns",
-          images: [
-            {
-              url: "https://yuvabestudios.com/blog/dev/banner.png",
-              width: 1200,
-              height: 630,
-              alt: "security flaw in front-end animations",
-            },
-          ],
-          site_name: "Yuvabe Studios",
-        }}
-        twitter={{
-          handle: "@YuvabeStudios",
-          site: "@YuvabeStudios",
-          cardType: "summary_large_image",
-        }}
-        additionalMetaTags={[
-          {
-            name: "keywords",
-            content:
-              "front-end animation security, React UI security, Next.js animation leak, secure front-end, data privacy in UI, constant-time animations, front-end best practices",
-          },
-        ]}
+        slug="security-flaw-in-animations"
+        image="https://yuvabestudios.com/blog/dev/banner.png"
+        author="Rooban R"
+        role="Front End Developer"
+        date="2025-11-18"
+        readTime="8"
       />
-
       {/* Breadcrumbs */}
       <nav className="max-w-6xl mx-auto px-6 py-4 text-sm text-gray-600">
         <ul className="flex space-x-2">
@@ -116,7 +92,7 @@ export default function SecurityFlaw() {
 
         {/* Author field */}
         <p className="text-[16px] font-medium text-gray-500 mb-4">
-          – By <span className="text-[#5829C7]">Roopan R</span>, Front End
+          – By <span className="text-[#5829C7]">Rooban R</span>, Front End
           Developer, Yuvabe Studios
         </p>
 

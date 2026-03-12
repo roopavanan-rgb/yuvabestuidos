@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { FaTwitter, FaLinkedin, FaFacebook, FaLink } from "react-icons/fa";
-import { NextSeo } from "next-seo";
+import BlogSEO from "@components/seo/BlogSEO";
 import FaqSection from "@/components/FaqSection";
 
 const virtualtryonFaqs = [
@@ -37,37 +37,15 @@ const virtualtryonFaqs = [
 export default function VirtualTryOn() {
   return (
     <div className="bg-gray-50 min-h-screen">
-      <NextSeo
+      <BlogSEO
         title="Build a Virtual Try-On App with Next.js & Pixelcut API"
         description="Build a Virtual Try-On app using Next.js and Pixelcut API. Try garments digitally, enhance e-commerce, and boost engagement in fashion tech."
-        canonical="https://yuvabestudios.com/blog/future-of-fashion"
-        openGraph={{
-          url: "https://yuvabestudios.com/blog/future-of-fashion",
-          title: "Build a Virtual Try-On App with Next.js & Pixelcut API",
-          description:
-            "Build a Virtual Try-On app using Next.js and Pixelcut API. Try garments digitally, enhance e-commerce, and boost engagement in fashion tech.",
-          images: [
-            {
-              url: "https://yuvabestudios.com/blog/fashion-banner.jpg",
-              width: 1200,
-              height: 630,
-              alt: "Virtual Try-On Next.js App",
-            },
-          ],
-          site_name: "Yuvabe Studios",
-        }}
-        twitter={{
-          handle: "@YuvabeStudios",
-          site: "@YuvabeStudios",
-          cardType: "summary_large_image",
-        }}
-        additionalMetaTags={[
-          {
-            name: "keywords",
-            content:
-              "Virtual try-on API, Pixelcut fashion AI, Next.js AI apps, AI fitting room, e-commerce try-on technology, AR shopping",
-          },
-        ]}
+        slug="future-of-fashion"
+        image="https://yuvabestudios.com/blog/fashion-banner.jpg"
+        author="Keerthana"
+        role="AI/ML Developer"
+        date="2025-09-23"
+        readTime="7"
       />
 
       {/* Breadcrumbs */}

@@ -3,7 +3,8 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { FaTwitter, FaLinkedin, FaFacebook, FaLink } from "react-icons/fa";
-import { NextSeo } from "next-seo";
+import BlogSEO from "@/components/seo/BlogSEO";
+
 import FaqSection from "@/components/FaqSection";
 
 const localFaqs = [
@@ -32,37 +33,15 @@ const localFaqs = [
 export default function LocalLLM() {
   return (
     <div className="bg-gray-50 min-h-screen">
-      <NextSeo
+      <BlogSEO
         title="Run LLMs Locally with Ollama | On-Device AI Tutorial"
         description="Learn how to run LLMs locally with Ollama and other tools. Explore private, offline AI for low-latency performance and local AI model deployment."
-        canonical="https://yuvabestudios.com/blog/local-llm"
-        openGraph={{
-          url: "https://yuvabestudios.com/blog/local-llm",
-          title: "Run LLMs Locally with Ollama | On-Device AI Tutorial",
-          description:
-            "Learn how to run LLMs locally with Ollama and other tools. Explore private, offline AI for low-latency performance and local AI model deployment.",
-          images: [
-            {
-              url: "https://yuvabestudios.com/blog/llm.jpg",
-              width: 1200,
-              height: 630,
-              alt: "Run LLMs Locally with Ollama",
-            },
-          ],
-          site_name: "Yuvabe Studios",
-        }}
-        twitter={{
-          handle: "@YuvabeStudios",
-          site: "@YuvabeStudios",
-          cardType: "summary_large_image",
-        }}
-        additionalMetaTags={[
-          {
-            name: "keywords",
-            content:
-              "private AI models,local AI inference,edge AI for LLMs,AI without internet,LLMs on personal devices, local AI for businesses, local large language models, offline AI models, local AI, on-device AI, run LLMs locally, Ollama tutorial, private AI, offline AI, low latency AI, local AI models, Hugging Face Transformers local, self-hosted AI models, LLaMA local AI",
-          },
-        ]}
+        slug="local-llm"
+        image="https://yuvabestudios.com/blog/llm.jpg"
+        author="Thamarai Kannan"
+        role="AI/ML Developer"
+        date="2025-11-11"
+        readTime="8"
       />
 
       {/* Breadcrumbs */}

@@ -3,39 +3,24 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { FaTwitter, FaLinkedin, FaFacebook, FaLink } from "react-icons/fa";
-import { NextSeo } from "next-seo";
-
+import BlogSEO from "@/components/seo/BlogSEO";
 
 export default function LocalLLM() {
   return (
-    
     <div className="bg-white min-h-screen">
-    <NextSeo
-      title="From Data to Connection: Why Smart Segmentation Drives Real Marketing ROI"
-      description="Discover how smart customer segmentation boosts engagement, ROI, and conversions with personalized marketing strategies."
-      canonical="https://yuvabestudios.com/"
-      openGraph={{
-        url: "https://yuvabestudios.com/",
-        title: "From Data to Connection: Why Smart Segmentation Drives Real Marketing ROI",
-        description:
-          "Discover how smart customer segmentation boosts engagement, ROI, and conversions with personalized marketing strategies.",
-        images: [
-          {
-            url: "https://yuvabestudios.com/blog/marketresearch/data-to-connection.png",
-            width: 1200,
-            height: 630,
-            alt: "Smart Segmentation Marketing ROI",
-          },
-        ],
-      }}
-      additionalMetaTags={[
-        {
-          name: "keywords",
-          content:
-            "smart segmentation, customer segmentation, marketing ROI, personalized marketing, targeted marketing, Gen Z marketing, audience segmentation",
-        },
-      ]}
-    />
+      <>
+        <BlogSEO
+          title="From Data to Connection: Why Smart Segmentation Drives Real Marketing ROI"
+          description="Discover how smart customer segmentation boosts engagement, ROI, and conversions with personalized marketing strategies."
+          slug="data-to-connection"
+          image="https://yuvabestudios.com/blog/marketresearch/data-to-connection.png"
+          author="Velmurgan"
+          role="Market Researcher"
+          date="2025-08-26"
+          readTime="8"
+        />
+      </>
+
       {/* Breadcrumbs */}
       <nav className="max-w-6xl mx-auto px-6 py-4 text-sm text-gray-600">
         <ul className="flex space-x-2">
@@ -58,8 +43,8 @@ export default function LocalLLM() {
       {/* Meta Info */}
       <div className="max-w-6xl mx-auto px-6 text-black text-sm mb-4">
         <p>
-          Published on <span className="text-gray-800">August 26, 2025</span>{" "}
-          · 8 min read
+          Published on <span className="text-gray-800">August 26, 2025</span> ·
+          8 min read
         </p>
       </div>
 
@@ -357,7 +342,7 @@ export default function LocalLLM() {
             {/* Insert Image */}
             <div className="relative w-full h-64 md:h-96 mb-6">
               <Image
-                src="/blog/marketresearch/genz-spotlight.png" 
+                src="/blog/marketresearch/genz-spotlight.png"
                 alt="Gen Z Segmentation"
                 fill
                 className="object-contain rounded-lg"
@@ -400,8 +385,12 @@ export default function LocalLLM() {
               peer and influencer recommendations, with 68% trusting influencer
               content over traditional ads.
             </p>
-                <p className="text-gray-700 text-lg mb-6">
-              These insights demonstrate why micro-segmentation within Gen Z delivers superior marketing outcomes: by precisely aligning brand experiences with their multifaceted identities and digital lifestyles, brands can transform routine transactions into emotional, lasting connections.
+            <p className="text-gray-700 text-lg mb-6">
+              These insights demonstrate why micro-segmentation within Gen Z
+              delivers superior marketing outcomes: by precisely aligning brand
+              experiences with their multifaceted identities and digital
+              lifestyles, brands can transform routine transactions into
+              emotional, lasting connections.
             </p>
           </section>
 
@@ -410,22 +399,27 @@ export default function LocalLLM() {
             <h2 className="text-2xl md:text-3xl font-medium mb-4">
               The ROI of Connection
             </h2>
-          
+
             <ul className="list-disc list-inside space-y-2 text-gray-700 text-lg mb-6">
               <li>
-                Segmented marketing isn’t just a tactic; it’s a strategic growth driver with measurable impact:
+                Segmented marketing isn’t just a tactic; it’s a strategic growth
+                driver with measurable impact:
               </li>
               <li>
-               Marketing campaigns resonate more, boosting engagement and ROI (Return on Investment) by up to 77%
+                Marketing campaigns resonate more, boosting engagement and ROI
+                (Return on Investment) by up to 77%
               </li>
               <li>
-                Product development aligns with real customer needs, reducing acquisition costs by 30%
+                Product development aligns with real customer needs, reducing
+                acquisition costs by 30%
               </li>
               <li>
-                Sales teams focus pitches on the right prospects, improving efficiency by 55%
+                Sales teams focus pitches on the right prospects, improving
+                efficiency by 55%
               </li>
               <li>
-                Customer loyalty strengthens as 75% of satisfied customers stay loyal when brands meet their segmented needs
+                Customer loyalty strengthens as 75% of satisfied customers stay
+                loyal when brands meet their segmented needs
               </li>
             </ul>
             <p className="text-gray-700 text-md mb-4">
@@ -585,7 +579,7 @@ export default function LocalLLM() {
               <button
                 onClick={() => {
                   navigator.clipboard.writeText(
-                    "https://yourdomain.com/blog/local-llm"
+                    "https://yourdomain.com/blog/local-llm",
                   );
                   alert("Link copied to clipboard!");
                 }}

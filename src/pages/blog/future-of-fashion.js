@@ -3,43 +3,20 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { FaTwitter, FaLinkedin, FaFacebook, FaLink } from "react-icons/fa";
-import { NextSeo } from "next-seo";
+import BlogSEO from "@/components/seo/BlogSEO";
 
 export default function FutureOfFashion() {
   return (
     <div className="bg-gray-50 min-h-screen">
-      <NextSeo
+      <BlogSEO
         title="Predict Viral Fashion Trends with AI | Yuvabe Studios Trend Forecasting"
         description="Learn how brands use AI-powered trend detection to spot fashion movements like Cool Girl Aesthetic and Fiji Fashion 3-6 months early. Data-driven framework + real case studies."
-        canonical="https://yuvabestudios.com/blog/future-of-beauty"
-        openGraph={{
-          url: "https://yuvabestudios.com/blog/future-of-beauty",
-          title:
-            "Predict Viral Fashion Trends with AI | Yuvabe Studios Trend Forecasting",
-          description:
-            "Learn how brands use AI-powered trend detection to spot fashion movements like Cool Girl Aesthetic and Fiji Fashion 3-6 months early. Data-driven framework + real case studies.",
-          images: [
-            {
-              url: "https://yuvabestudios.com/blog/marketresearch/beauty-banner.png",
-              width: 1200,
-              height: 630,
-              alt: "AI Fashion Trend Forecasting",
-            },
-          ],
-          site_name: "Yuvabe Studios",
-        }}
-        twitter={{
-          handle: "@YuvabeStudios",
-          site: "@YuvabeStudios",
-          cardType: "summary_large_image",
-        }}
-        additionalMetaTags={[
-          {
-            name: "keywords",
-            content:
-              "Fashion trend forecasting, predict viral trends, AI fashion analytics, TikTok trend prediction, fashion market research, social listening for fashion brands",
-          },
-        ]}
+        slug="future-of-beauty"
+        image="https://yuvabestudios.com/blog/marketresearch/beauty-banner.png"
+        author="Arthi"
+        role="Market Researcher"
+        date="2025-10-21"
+        readTime="8"
       />
 
       {/* Breadcrumbs */}

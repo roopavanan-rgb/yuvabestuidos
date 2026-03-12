@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { FaTwitter, FaLinkedin, FaFacebook, FaLink } from "react-icons/fa";
-import { NextSeo } from "next-seo";
+import BlogSEO from "@components/seo/BlogSEO";
 import FaqSection from "@/components/FaqSection";
 
 const objectdetectionFaqs = [
@@ -32,37 +32,15 @@ const objectdetectionFaqs = [
 export default function objectdetection() {
   return (
     <div className="bg-gray-50 min-h-screen">
-      <NextSeo
+      <BlogSEO
         title="Build an AI Object Detection App with Flutter & FastAPI"
         description="Learn how to build an AI-powered object detection app using Flutter & FastAPI. Capture, classify, and display objects in real time."
-        canonical="https://yuvabestudios.com/blog/object-detection-system-in-flutter"
-        openGraph={{
-          url: "https://yuvabestudios.com/blog/flutter-banner",
-          title: "Build an AI Object Detection App with Flutter & FastAPI",
-          description:
-            "Learn how to build an AI-powered object detection app using Flutter & FastAPI. Capture, classify, and display objects in real time.",
-          images: [
-            {
-              url: "https://yuvabestudios.com/blog/flutter-banner.png",
-              width: 1200,
-              height: 630,
-              alt: "AI Object Detection Flutter App",
-            },
-          ],
-          site_name: "Yuvabe Studios",
-        }}
-        twitter={{
-          handle: "@YuvabeStudios",
-          site: "@YuvabeStudios",
-          cardType: "summary_large_image",
-        }}
-        additionalMetaTags={[
-          {
-            name: "keywords",
-            content:
-              "AI object detection, Flutter AI app, FastAPI machine learning, Florence-2 model, Yuvabe Studios AI, real-time object detection Flutter, Flutter camera AI, AI-powered apps",
-          },
-        ]}
+        slug="object-detection-system-in-flutter"
+        image="https://yuvabestudios.com/blog/flutter-banner.png"
+        author="Hariprasath"
+        role="AI/ML Developer"
+        date="2025-10-07"
+        readTime="7"
       />
 
       {/* Breadcrumbs */}

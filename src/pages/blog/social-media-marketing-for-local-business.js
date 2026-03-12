@@ -8,38 +8,15 @@ import { NextSeo } from "next-seo";
 export default function SocialMediaMarketing() {
   return (
     <div className="bg-gray-50 min-h-screen">
-      <NextSeo
+      <BlogSEO
         title="Mastering Social Media Marketing for Local Businesses in 2025 | Yuvabe Studios"
         description="Expert insights and actionable strategies for local businesses to win with social media, AI tools, and hyper-local engagement."
-        canonical="https://yuvabestudios.com/blog/local-social-media-marketing-2025"
-        openGraph={{
-          url: "https://yuvabestudios.com/blog/local-social-media-marketing-2025",
-          title:
-            "Mastering Social Media Marketing for Local Businesses in 2025 | Yuvabe Studios",
-          description:
-            "Expert insights and actionable strategies for local businesses to win with social media, AI tools, and hyper-local engagement.",
-          images: [
-            {
-              url: "https://yuvabestudios.com/blog/marketing/social-media.png",
-              width: 1200,
-              height: 630,
-              alt: "Social Media Marketing for Local Businesses",
-            },
-          ],
-          site_name: "Yuvabe Studios",
-        }}
-        twitter={{
-          handle: "@YuvabeStudios",
-          site: "@YuvabeStudios",
-          cardType: "summary_large_image",
-        }}
-        additionalMetaTags={[
-          {
-            name: "keywords",
-            content:
-              "social media marketing for local businesses, local social media strategy,social media marketing 2025, hyper-local marketing 2025, AI content tools for SMEs, Instagram marketing for local shops, social media trends for businesses 2025",
-          },
-        ]}
+        slug="local-social-media-marketing-2025"
+        image="https://yuvabestudios.com/blog/marketing/social-media.png"
+        author="Balaji"
+        role="Digital Marketing Associate"
+        date="2025-09-09"
+        readTime="8"
       />
 
       {/* Breadcrumbs */}

@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { FaTwitter, FaLinkedin, FaFacebook, FaLink } from "react-icons/fa";
-import { NextSeo } from "next-seo";
+import BlogSEO from "@/components/seo/BlogSEO";
 import FaqSection from "@/components/FaqSection";
 
 const codegenerationFaqs = [
@@ -37,38 +37,18 @@ const codegenerationFaqs = [
 export default function CodeGenerationLLMs() {
   return (
     <div className="bg-gray-50 min-h-screen">
-      <NextSeo
-        title="Boost Coding Efficiency with LLMs & GitHub Copilot"
-        description="Boost coding efficiency with LLMs & GitHub Copilot. Automate tasks, prototype apps, debug errors, and code smarter with AI-assisted development."
-        canonical="https://yuvabestudios.com/blog/code-generation-LLMs"
-        openGraph={{
-          url: "https://yuvabestudios.com/blog/code-generation-LLMs",
-          title: "Boost Coding Efficiency with LLMs & GitHub Copilot",
-          description:
-            "Boost coding efficiency with LLMs & GitHub Copilot. Automate tasks, prototype apps, debug errors, and code smarter with AI-assisted development.",
-          images: [
-            {
-              url: "https://yuvabestudios.com/blog/code-generation-banner.png",
-              width: 1200,
-              height: 630,
-              alt: "LLMs & GitHub Copilot for AI Coding",
-            },
-          ],
-          site_name: "Yuvabe Studios",
-        }}
-        twitter={{
-          handle: "@YuvabeStudios",
-          site: "@YuvabeStudios",
-          cardType: "summary_large_image",
-        }}
-        additionalMetaTags={[
-          {
-            name: "keywords",
-            content:
-              "Code generation with LLMs, GitHub Copilot examples, AI-assisted programming, AI code generation tools, LLMs for developers, FastAPI CRUD with AI, AI debugging assistant, Automating boilerplate code, AI in software development, Large language models coding",
-          },
-        ]}
-      />
+      <>
+        <BlogSEO
+          title="Boost Coding Efficiency with LLMs & GitHub Copilot"
+          description="Boost coding efficiency with LLMs & GitHub Copilot. Automate tasks, prototype apps, debug errors, and code smarter with AI-assisted development."
+          slug="code-generation-LLMs"
+          image="https://yuvabestudios.com/blog/code-generation-banner.png"
+          author="Mohamed Safiq S"
+          role="AI/ML Developer"
+          date="2025-09-16"
+          readTime="7"
+        />
+      </>
 
       {/* Breadcrumbs */}
       <nav className="max-w-6xl mx-auto px-6 py-4 text-sm text-gray-600">

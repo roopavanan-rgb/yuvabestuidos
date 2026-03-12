@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { FaTwitter, FaLinkedin, FaFacebook, FaLink } from "react-icons/fa";
-import { NextSeo } from "next-seo";
+import BlogSEO from "@/components/seo/BlogSEO";
 import FaqSection from "@/components/FaqSection";
 
 const MeasuringUXFaqs = [
@@ -54,38 +54,15 @@ const images = [
 export default function MeasuringUX() {
   return (
     <div className="bg-gray-50 min-h-screen">
-      <NextSeo
+      <BlogSEO
         title="From Clicks to Emotions: Measuring UX Beyond Usability | Yuvabe Studios"
         description="Discover why emotional UX is the new frontier. Learn methods like emotion mapping & affective testing to design experiences that truly connect."
-        canonical="https://yuvabestudios.com/blog/measuring-ux-beyond-usability"
-        openGraph={{
-          url: "https://yuvabestudios.com/blog/measuring-ux-beyond-usability",
-          title:
-            "From Clicks to Emotions: Measuring UX Beyond Usability | Yuvabe Studios",
-          description:
-            "Discover why emotional UX is the new frontier. Learn methods like emotion mapping & affective testing to design experiences that truly connect.",
-          images: [
-            {
-              url: "https://yuvabestudios.com/blog/ui-design.png",
-              width: 1200,
-              height: 630,
-              alt: "Emotional UX Design Insights",
-            },
-          ],
-          site_name: "Yuvabe Studios",
-        }}
-        twitter={{
-          handle: "@YuvabeStudios",
-          site: "@YuvabeStudios",
-          cardType: "summary_large_image",
-        }}
-        additionalMetaTags={[
-          {
-            name: "keywords",
-            content:
-              "emotional UX, emotion mapping, UX design metrics, affective testing, sentiment analysis UX, emotional design strategies, measuring user emotion, functional vs emotional UX, UI/UX trends 2025, Yuvabe Studios design",
-          },
-        ]}
+        slug="measuring-ux-beyond-usability"
+        image="https://yuvabestudios.com/blog/ui-design.png"
+        author="Priya & Sagar"
+        role="UI/UX Leadership Team"
+        date="2025-10-28"
+        readTime="8"
       />
 
       {/* Breadcrumbs */}

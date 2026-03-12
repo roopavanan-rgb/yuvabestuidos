@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { FaTwitter, FaLinkedin, FaFacebook, FaLink } from "react-icons/fa";
-import { NextSeo } from "next-seo";
+import BlogSEO from "@/components/seo/BlogSEO";
 import FaqSection from "@/components/FaqSection";
 
 const ContentPillarFaqs = [
@@ -37,38 +37,18 @@ const ContentPillarFaqs = [
 export default function ContentPillar() {
   return (
     <div className="bg-gray-50 min-h-screen">
-      <NextSeo
-        title="Content Pillars: Why Every Brand Needs Them | Yuvabe Studios"
-        description="Learn why content pillars matter, how to define them, and how they make your brand’s message consistent, clear, and impactful."
-        canonical="https://yuvabestudios.com/blog/content-pillars"
-        openGraph={{
-          url: "https://yuvabestudios.com/blog/content-pillars",
-          title: "Content Pillars: Why Every Brand Needs Them | Yuvabe Studios",
-          description:
-            "Learn why content pillars matter, how to define them, and how they make your brand’s message consistent, clear, and impactful.",
-          images: [
-            {
-              url: "https://yuvabestudios.com/blog/marketing/content-pillars.png",
-              width: 1200,
-              height: 630,
-              alt: "Content Pillars for Brand Strategy",
-            },
-          ],
-          site_name: "Yuvabe Studios",
-        }}
-        twitter={{
-          handle: "@YuvabeStudios",
-          site: "@YuvabeStudios",
-          cardType: "summary_large_image",
-        }}
-        additionalMetaTags={[
-          {
-            name: "keywords",
-            content:
-              "content pillars, brand storytelling, content marketing strategy, social media content planning, brand consistency",
-          },
-        ]}
-      />
+      <>
+        <BlogSEO
+          title="Content Pillars: Why Every Brand Needs Them"
+          description="Learn why content pillars matter, how to define them, and how they make your brand’s message consistent, clear, and impactful."
+          slug="content-pillars"
+          image="https://yuvabestudios.com/blog/marketing/content-pillars.png"
+          author="Anjali"
+          role="Marketing Associate"
+          date="2025-09-02"
+          readTime="8"
+        />
+      </>
 
       {/* Breadcrumbs */}
       <nav className="max-w-6xl mx-auto px-6 py-4 text-sm text-gray-600">

@@ -63,39 +63,19 @@ const huggingfaceFaqs = [
 export default function huggingface() {
   return (
     <div className="bg-gray-50 min-h-screen">
-      <NextSeo
-        title="Exploring Hugging Face: The AI Platform Democratizing Innovation"
-        description="Discover Hugging Face: the open-source AI hub powering NLP, vision, audio, and more. Learn how it simplifies AI for beginners and businesses alike."
-        canonical="https://yuvabestudios.com/blog/hugging-face"
-        openGraph={{
-          url: "https://yuvabestudios.com/blog/hugging-face",
-          title:
-            "Exploring Hugging Face: The AI Platform Democratizing Innovation",
-          description:
-            "Discover Hugging Face: the open-source AI hub powering NLP, vision, audio, and more. Learn how it simplifies AI for beginners and businesses alike.",
-          images: [
-            {
-              url: "https://yuvabestudios.com/blog/hugging-face.webp",
-              width: 1200,
-              height: 630,
-              alt: "Run LLMs Locally with Ollama",
-            },
-          ],
-          site_name: "Yuvabe Studios",
-        }}
-        twitter={{
-          handle: "@YuvabeStudios",
-          site: "@YuvabeStudios",
-          cardType: "summary_large_image",
-        }}
-        additionalMetaTags={[
-          {
-            name: "keywords",
-            content:
-              "Hugging Face AI platform, Hugging Face tutorial, Hugging Face Transformers, Hugging Face Spaces, Hugging Face Hub, pre-trained AI models, open-source AI models, fine-tuning AI models, Yuvabe Studios AI",
-          },
-        ]}
-      />
+      <>
+        <BlogSEO
+          title="Exploring Hugging Face: The AI Platform Democratizing Innovation"
+          description="Discover Hugging Face: the open-source AI hub powering NLP, vision, audio, and more. Learn how it simplifies AI for beginners and businesses alike."
+          slug="hugging-face"
+          image="https://yuvabestudios.com/blog/hugging-face.webp"
+          author="Mohamed Safiq S"
+          role="AI/ML Developer"
+          date="2025-09-09"
+          readTime="7"
+        />
+      </>
+
       {/* Breadcrumbs */}
       <nav className="max-w-6xl mx-auto px-6 py-4 text-sm text-gray-600">
         <ul className="flex space-x-2">
@@ -276,7 +256,7 @@ export default function huggingface() {
             {/* Hero Image */}
             <div className="relative w-full h-72 overflow-hidden mb-8">
               <Image
-                src="/blog/hugging-face.webp"
+                src="/blog/hugging-face.jpg"
                 alt="Hugging Face Interface"
                 fill
                 className="object-cover"
