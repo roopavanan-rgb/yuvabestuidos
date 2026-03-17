@@ -159,7 +159,8 @@ const ageshift = () => {
           {/* Title */}
           <div className="text-start mb-8">
             <p className="text-black text-xl md:text-2xl lg:text-3xl font-semibold">
-              <span className="text-[#205B0B]">●</span> check out Ageshift app onboarding process
+              <span className="text-[#205B0B]">●</span> check out Ageshift app
+              onboarding process
             </p>
           </div>
 
@@ -169,7 +170,7 @@ const ageshift = () => {
             <div className="overflow-hidden">
               <Image
                 src="/images/work/ageshift/onboarding1.png"
-                alt="Snapshot 1"
+                alt="Snapshot "
                 width={305}
                 height={660}
                 className="object-cover rounded-lg"
@@ -287,8 +288,7 @@ const ageshift = () => {
             {/* Title */}
             <h2 className="text-xl md:text-2xl font-semibold text-black mb-12 text-center">
               <span className="text-[#5ec838]">●</span> Take a look at the{" "}
-             Ageshift
-              website
+              Ageshift website
             </h2>
 
             {/* Positioned Images */}
