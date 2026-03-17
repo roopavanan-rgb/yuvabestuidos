@@ -3,8 +3,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { FaTwitter, FaLinkedin, FaFacebook, FaLink } from "react-icons/fa";
-import { NextSeo } from "next-seo";
-
+import BlogSEO from "@/components/seo/BlogSEO";
 export default function SocialMediaMarketing() {
   return (
     <div className="bg-gray-50 min-h-screen">
