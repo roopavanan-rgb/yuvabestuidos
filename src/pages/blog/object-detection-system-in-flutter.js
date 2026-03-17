@@ -1,4 +1,3 @@
-// pages/blog/local-llm.js
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
