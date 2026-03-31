@@ -50,7 +50,7 @@ export  const jobs = [
     experience: "Minimum 2 years (UI/UX or product design experience)",
   },
   {
-    title: "Digital Marketing & Performance Specialist (Remote/Auroville)",
+    title: "Digital Marketing & Performance Specialist (Remote/Onsite)",
     category: "Design & Marketing",
     focus: " Performance Marketing",
     description:
@@ -80,17 +80,82 @@ export  const jobs = [
     "Nice-to-Haves": [
       "Portfolio demonstrating end-to-end campaign ownership (targeting, setup, budgeting, optimization, and scaling), along with lead generation results, performance metrics (CPL, ROAS, CTR), and optimization approach.",
     ],
-    benefits: [
-      "Competitive salary, aligned with skills and experience",
-      "Flexible, outcome-focused work environment",
-      "Exposure to diverse campaigns across industries",
-      "Access to mentorship and learning resources",
-      "Work from Auroville in a collaborative environment",
-      "eBike and free lunch",
-      "Direct access to team, mentors, and real-time learning ",
-    ],
+    benefits: {
+      remote: [
+        "Competitive salary aligned with skills and experience",
+        "Flexible, outcome-focused work environment",
+        "Exposure to diverse campaigns across industries",
+        "Access to mentorship and learning resources",
+      ],
+      inPerson: [
+        "Competitive salary aligned with skills and experience",
+        "Work from Auroville in a collaborative environment",
+        "Direct access to team, mentors, and real-time learning",
+        "eBike and free lunch",
+      ],
+    },
     experience: " 2–3 years (Hands-on campaign and analytics experience)",
   },
+
+  // Marketing Content
+  {
+  title: "Content Strategist & Creator",
+  category: "Design & Marketing",
+  focus: "Content Strategy & Marketing",
+
+  description:
+    "Yuvabe Studios is looking for a Content Strategist & Creator to plan and execute content across digital platforms. Based in Auroville, this role focuses on storytelling, education, and meaningful communication across Yuvabe initiatives and partner projects. You will work closely with designers, marketing teams, and program leads to create content that builds awareness, communicates clearly, and drives engagement. This role combines strategy and execution, with full ownership of content from idea to output.",
+
+  responsibilities: [
+    "Develop and execute content strategies and calendars across platforms like Instagram and LinkedIn.",
+    "Create engaging content including posts, captions, blogs, and campaign narratives.",
+    "Use AI tools for research, ideation, structuring, and optimization while maintaining quality and originality.",
+    "Collaborate with designers and video editors to produce visual and multimedia content.",
+    "Ensure consistency in messaging, tone, and brand voice across all content.",
+    "Monitor content performance and optimize based on engagement insights and analytics.",
+    "Support marketing campaigns through storytelling and content execution.",
+    "Work independently with ownership while handling team and client communication when required."
+  ],
+
+  requirements: [
+    "1+ year of experience in content strategy, content marketing, or social media management.",
+    "Strong writing skills with the ability to create clear, engaging, and structured content.",
+    "Familiarity with AI tools such as ChatGPT, Claude, or Perplexity for content workflows.",
+    "Experience managing content calendars and platform formats (posts, carousels, reels/shorts, LinkedIn).",
+    "Ability to simplify complex ideas into engaging and accessible content.",
+    "Basic understanding of content performance metrics and audience engagement.",
+    "Ability to work independently with ownership and communicate effectively with teams and clients.",
+    "Willingness to work from Auroville and be part of the Yuvabe ecosystem."
+  ],
+
+  niceToHaves: [
+    "Experience with Canva, Figma, or basic design tools.",
+    "Experience creating short-form video content.",
+    "Basic understanding of SEO and blog writing.",
+    "Experience in education, social impact, or creative fields."
+  ],
+
+  portfolioRequirement:
+    "Portfolio showcasing content strategy and execution across platforms, including social media posts, campaigns, or long-form content, along with examples of performance, growth, or engagement outcomes.",
+
+  benefits: {
+    remote: [
+      "Competitive salary aligned with skills and experience",
+      "Flexible, outcome-focused work environment",
+      "Exposure to diverse projects across education, design, and technology",
+      "Access to mentorship and creative growth opportunities"
+    ],
+    inPerson: [
+      "Competitive salary aligned with skills and experience",
+      "Work from Auroville in a collaborative, learning-focused environment",
+      "Exposure to projects across education, design, and technology",
+      "Access to mentorship and creative growth opportunities",
+      "eBike and free lunch"
+    ]
+  },
+
+  experience: "1+ year (Content strategy and execution experience)"
+},
   // JUNIOR DESIGNER
   {
     title: "Junior Designer",

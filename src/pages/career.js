@@ -326,11 +326,28 @@ function AccordionItem({ job }) {
               {/* LEFT always = Benefits */}
               <div className="lg:w-1/2">
                 <p className="font-semibold text-[#FFCA2D] mb-2">Benefits:</p>
-                <ul className="list-disc list-inside text-white ml-4 font-secondary">
-                  {job.benefits.map((item, i) => (
-                    <li key={i}>{item}</li>
-                  ))}
-                </ul>
+                {Array.isArray(job.benefits) ? (
+                  <ul className="list-disc list-inside text-white ml-4 font-secondary">
+                    {job.benefits.map((item, i) => (
+                      <li key={i}>{item}</li>
+                    ))}
+                  </ul>
+                ) : (
+                  <>
+                    <p className="text-[#FFCA2D] font-medium mt-1">Remote:</p>
+                    <ul className="list-disc list-inside text-white ml-4 font-secondary">
+                      {job.benefits.remote.map((item, i) => (
+                        <li key={i}>{item}</li>
+                      ))}
+                    </ul>
+                    <p className="text-[#FFCA2D] font-medium mt-2">In-Person (Auroville):</p>
+                    <ul className="list-disc list-inside text-white ml-4 font-secondary">
+                      {job.benefits.inPerson.map((item, i) => (
+                        <li key={i}>{item}</li>
+                      ))}
+                    </ul>
+                  </>
+                )}
               </div>
 
               {/* RIGHT = Nice to Have (only if exists) */}

@@ -45,11 +45,28 @@ export default function AccordionItem({ category, title, focus, experience, deta
           </ul>
 
           <h4 className="font-semibold mt-4">Benefits:</h4>
-          <ul className="list-disc ml-6 mt-2">
-            {details.benefits.map((item, index) => (
-              <li key={index}>{item}</li>
-            ))}
-          </ul>
+          {Array.isArray(details.benefits) ? (
+            <ul className="list-disc ml-6 mt-2">
+              {details.benefits.map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
+            </ul>
+          ) : (
+            <>
+              <p className="font-medium mt-2">Remote:</p>
+              <ul className="list-disc ml-6 mt-1">
+                {details.benefits.remote.map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
+              <p className="font-medium mt-3">In-Person (Auroville):</p>
+              <ul className="list-disc ml-6 mt-1">
+                {details.benefits.inPerson.map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
+            </>
+          )}
         </motion.div>
       )}
     </div>
