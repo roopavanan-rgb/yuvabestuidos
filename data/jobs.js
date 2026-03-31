@@ -1,5 +1,148 @@
 export  const jobs = [
   {
+    title: "UI/UX Designer (AI Focus)",
+    category: "Design & Marketing",
+    focus: "UI/UX & AI-Driven Design",
+    description:
+      "Yuvabe Studios is looking for a UI/UX Designer (AI Focus) who is passionate about creating meaningful digital experiences using modern design tools and AI-assisted workflows. Based in Auroville, a global township centered on collaboration and conscious living, this role focuses on designing user-centric, impactful digital products. You will work with a multidisciplinary team on real-world projects for startups, social enterprises, and global brands. This is a hands-on role for someone curious, adaptable, and excited to explore how AI enhances UI/UX design, product thinking, and creative workflows.",
+
+    responsibilities: [
+      "Design user-centric digital experiences across web and mobile, from wireframes to high-fidelity UI.",
+      "Translate research and briefs into user journeys, flows, prototypes, and scalable design systems while maintaining brand consistency.",
+      "Leverage AI tools for ideation, layout generation, rapid prototyping, design variations, and workflow optimization.",
+      "Create interactive prototypes, visual systems, and UI elements, exploring multiple design directions for validation.",
+      "Collaborate with developers, content teams, and stakeholders to deliver cohesive and high-quality digital products.",
+      "Continuously iterate designs using feedback, usability testing, analytics, and A/B testing.",
+      "Stay updated with UI/UX trends, emerging technologies, and AI-driven design workflows.",
+    ],
+
+    requirements: [
+      "Minimum 2 years of experience in UI/UX or product design (agency, startup, or product-based environment preferred).",
+      "Strong portfolio demonstrating UI/UX thinking, clean visual design, product work, and interactive prototypes.",
+      "Proficiency in tools like Figma and Adobe Creative Suite (Photoshop, Illustrator; After Effects is a plus).",
+      "Familiarity with AI-assisted design tools and workflows.",
+      "Strong understanding of user-centered design principles, usability, layout, typography, and visual hierarchy.",
+      "Ability to conduct UX research and apply insights within fast-paced sprint workflows.",
+      "Good communication skills and ability to collaborate in feedback-driven environments.",
+      "Willingness to work from Auroville as part of the Yuvabe ecosystem.",
+    ],
+
+    "Nice-to-Haves": [
+      "Experience with AI tools such as Firefly, Lovable, Claude, or similar.",
+      "Knowledge of motion design, micro-interactions, or animation.",
+      "Basic understanding of frontend concepts (HTML, CSS, responsive design).",
+      "Experience with design systems, accessibility, or inclusive design.",
+      "Interest in AI workflows, product design, or creative automation.",
+      "Exposure to impact-driven domains like education, sustainability, or social innovation.",
+      "Curiosity for emerging tools, AI workflows, and evolving design trends.",
+    ],
+
+    benefits: [
+      "Competitive compensation aligned with skills, experience, and growth potential.",
+      "Work from Auroville, a globally unique environment focused on creativity and collaboration.",
+      "Be part of a young, driven, and supportive multidisciplinary team.",
+      "Exposure to diverse projects across startups, global brands, and social impact initiatives.",
+      "Mentorship, learning opportunities, and space to grow both creatively and professionally.",
+      "A work culture rooted in Yuvabe’s ethos: Work. Serve. Evolve.",
+      "Balanced work environment that values long-term growth over burnout.",
+    ],
+
+    experience: "Minimum 2 years (UI/UX or product design experience)",
+  },
+  {
+    title: "Digital Marketing & Performance Specialist (Remote/Auroville)",
+    category: "Design & Marketing",
+    focus: " Performance Marketing",
+    description:
+      "Yuvabe Studios is looking for a Digital Marketing & Performance Specialist to plan, execute, and optimize digital campaigns across multiple channels.This is a flexible role, work remotely or from Auroville, a global experimental township focused on collaboration, learning, and conscious living.Marketing at Yuvabe is practical and outcome-driven. You will work on real campaigns across Yuvabe initiatives and client projects, with a strong focus on lead generation, performance metrics, and continuous optimization.You will collaborate with designers, content creators, and product teams to drive measurable growth, not just activity.",
+
+    responsibilities: [
+      "Plan and execute campaigns across Meta Ads (Facebook & Instagram), Google Ads (Search, Display, YouTube), Google My Business, and LinkedIn Ads.",
+      "Portfolio of past campaigns or work showcasing paid campaigns, lead generation results, performance metrics, and campaign insights.",
+      "Design clean, scalable API architectures and data flows.",
+      "Track, analyze, and improve performance using GA4, Looker Studio, and platform dashboards, optimizing key metrics such as CTR, CPA, cost per lead, conversion rate, and ROAS, and translating insights into actionable improvements.",
+      "Create and iterate ad creatives and variations using tools like Canva, Figma, or similar, while running A/B tests across creatives, audiences, and funnels.",
+      "Collaborate with content, design, and product teams to improve campaign assets, landing pages, and overall funnel performance.",
+      "Build and present performance reports, insights, and recommendations, while managing client communication when required.",
+      "Work independently with full ownership of campaigns and outcomes.",
+    ],
+    requirements: [
+      "2–3 years of experience in digital marketing and campaign management.",
+      "Hands-on experience with Meta Ads, Google Ads (Search, Display, YouTube), and LinkedIn Ads.",
+      "Proven experience in lead generation campaigns with measurable results.",
+      "Experience with GA4, Looker Studio, and performance analytics tools.",
+      "Strong understanding of CPC, CPA, CTR, cost per lead, ROAS, and conversion funnels.",
+      "Experience with A/B testing and campaign optimization.",
+      "Basic design skills to modify creatives and create ad variations independently.",
+      "Familiarity with AI tools in marketing workflows (research, ad copy, analysis, efficiency).",
+      "Ability to work independently with ownership and communicate effectively in client-facing situations.",
+    ],
+    "Nice-to-Haves": [
+      "Portfolio demonstrating end-to-end campaign ownership (targeting, setup, budgeting, optimization, and scaling), along with lead generation results, performance metrics (CPL, ROAS, CTR), and optimization approach.",
+    ],
+    benefits: [
+      "Competitive salary, aligned with skills and experience",
+      "Flexible, outcome-focused work environment",
+      "Exposure to diverse campaigns across industries",
+      "Access to mentorship and learning resources",
+      "Work from Auroville in a collaborative environment",
+      "eBike and free lunch",
+      "Direct access to team, mentors, and real-time learning ",
+    ],
+    experience: " 2–3 years (Hands-on campaign and analytics experience)",
+  },
+  // JUNIOR DESIGNER
+  {
+    title: "Junior Designer",
+    category: "Design & Marketing",
+    focus: " Designing",
+    description:
+      "We’re seeking a Junior Designer to join the Design & Marketing team at Yuvabe. This role is ideal for someone passionate about visual communication, digital design, and brand storytelling.Graphic design will be the primary responsibility, supporting the creation of engaging visual assets across digital and print platforms. The ideal candidate is creative, detail-oriented, and eager to learn in a collaborative environment. This position offers hands-on exposure to real-time campaigns, mentorship, and strong growth opportunities within the organisation.",
+
+    responsibilities: [
+      "Design engaging visuals for social media, marketing campaigns, and digital platforms.",
+      "Create posters, social media creatives, banners, presentations, and other brand assets.",
+      "Design pamphlets, brochures, print materials, and other marketing collaterals for campaigns and events.",
+      "Work on printables such as flyers, standees, certificates, and promotional materials.",
+      "Support basic product design and packaging design for marketing and branding needs.",
+      "Ensure all designs follow brand guidelines and maintain visual consistency across platforms.",
+      "Collaborate with the marketing and content teams to translate ideas into effective visual communication.",
+      "Assist in creating campaign creatives and marketing materials for digital promotions.",
+      "Support the video and content team with design assets such as thumbnails, overlays, and simple graphics.",
+      "Use AI-assisted design tools to support ideation, visual generation, and workflow efficiency where relevant.",
+      "Organise and maintain design files and asset libraries.",
+      "Stay updated with design trends, AI-powered creative tools, visual storytelling techniques, and digital content best practices.",
+    ],
+    requirements: [
+      "1–2 years of relevant experience in graphic design or visual communication (Freshers welcome).",
+      "Degree or certification in Graphic Design, Visual Communication, Media, or a related field.",
+      "Proficiency in design tools such as Adobe Illustrator, Photoshop, and Figma.",
+      "Basic understanding of AI-assisted design tools, layout design, typography, colour theory, and brand design principles.",
+      "Familiarity with AI tools for design support, including image generation, creative ideation, and workflow optimisation, is a plus.",
+      "Strong attention to detail with a good visual aesthetic and sense of composition.",
+      "Ability to create social media creatives, marketing materials, and print-ready designs.",
+      "Good understanding of branding and maintaining consistency across different platforms and formats.",
+      "Ability to work collaboratively in a team, take feedback constructively, and iterate on designs.",
+      "Strong communication skills and a proactive approach to problem-solving and execution.",
+    ],
+    "Nice-to-Haves": [
+      "Experience creating social media creatives and digital marketing assets.",
+      "Experience designing brochures, pamphlets, print collaterals, or product packaging.",
+      "Basic knowledge of motion graphics, video editing, or animation is an added advantage.",
+      "Understanding of brand communication and digital content strategy.",
+      "Experience working in a creative or marketing team environment.",
+      "Portfolio showcasing a range of design work including social media creatives, branding, print materials, and campaign assets.",
+    ],
+    benefits: [
+      "Competitive salary, aligned with skills and experience",
+      "Access to mentorship and learning resources",
+      "Work from Auroville in a collaborative environment",
+      "eBike and free lunch",
+      "Direct access to team, mentors, and real-time learning ",
+    ],
+    experience: " 1–2 years of relevant experience (Freshers welcome)",
+  },
+  {
     title: "Full Stack Developer",
     category: "AI/ML & Development",
     focus: " Development",
