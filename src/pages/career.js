@@ -1,10 +1,11 @@
 import { useState } from "react";
 import Head from "next/head";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { BsArrowUpRightCircle } from "react-icons/bs";
 import { FiFilter } from "react-icons/fi";
-import Link from "next/link";
 import { jobs } from "../../data/jobs";
+import { slugify } from "../../utils/slugify";
 
 export default function Careers() {
   const [selectedFilter, setSelectedFilter] = useState("All Jobs");
@@ -19,9 +20,7 @@ export default function Careers() {
   ];
 
   const filteredJobs = jobs.filter((job) => {
-    const categoryMatch =
-      selectedFilter === "All Jobs" || job.category === selectedFilter;
-    return categoryMatch;
+    return selectedFilter === "All Jobs" || job.category === selectedFilter;
   });
 
   return (
@@ -52,33 +51,6 @@ export default function Careers() {
                     "@id": "https://yuvabestudios.com/#organization",
                   },
                 },
-
-                // Example of one open role – duplicate & edit per job
-                {
-                  "@type": "JobPosting",
-                  "@id":
-                    "https://yuvabestudios.com/careers#job-digital-marketing-strategist",
-                  title: "Digital Marketing Strategist",
-                  description:
-                    "Yuvabe Studios is looking for a Digital Marketing Strategist to plan and execute performance campaigns, SEO, and content strategies for purpose-driven brands.",
-                  hiringOrganization: {
-                    "@id": "https://yuvabestudios.com/#organization",
-                  },
-                  employmentType: "FULL_TIME",
-                  jobLocation: {
-                    "@type": "Place",
-                    address: {
-                      "@type": "PostalAddress",
-                      streetAddress: "Kottakarai Road",
-                      addressLocality: "Puducherry",
-                      addressRegion: "Tamil Nadu",
-                      postalCode: "605111",
-                      addressCountry: "IN",
-                    },
-                  },
-                  validThrough: "2025-12-31T23:59:59+05:30",
-                },
-
                 {
                   "@type": "BreadcrumbList",
                   "@id": "https://yuvabestudios.com/careers#breadcrumb",
@@ -133,7 +105,6 @@ export default function Careers() {
               <FiFilter className="text-xl" />
             </button>
 
-            {/* Mobile Dropdown */}
             {isFilterOpen && (
               <div className="absolute top-full left-0 w-full mt-2 bg-white border border-gray-200 rounded-lg shadow-lg z-10 overflow-hidden">
                 {filters.map((filter) => (
@@ -176,7 +147,6 @@ export default function Careers() {
 
         {/* "How to Apply" Section */}
         <div className="flex flex-col md:flex-row items-start md:items-center bg-[#eae4f8] border-2 border-[#5829c7] p-4 rounded-lg mb-8 mx-4 md:mx-8 lg:mx-24">
-          {/* Left Section */}
           <div className="mb-4 md:mb-0 w-full md:w-2/3">
             <p className="text-[#5829c7] font-semibold mb-1 font-primary">
               How To Apply?
@@ -186,8 +156,6 @@ export default function Careers() {
               staying in Auroville for a minimum of 12 months
             </p>
           </div>
-
-          {/* Right Section */}
           <div className="w-full md:w-1/3 text-left md:text-right">
             <Link
               href="mailto:info@yuvabe.com"
@@ -201,11 +169,11 @@ export default function Careers() {
           </div>
         </div>
 
-        {/* Job Listings with Accordion Structure */}
+        {/* Job Cards */}
         <div className="space-y-4 px-2 md:px-8 lg:px-24">
           {filteredJobs.length > 0 ? (
             filteredJobs.map((job, index) => (
-              <AccordionItem key={index} job={job} />
+              <JobCard key={index} job={job} />
             ))
           ) : (
             <div className="text-center py-10">
@@ -220,153 +188,37 @@ export default function Careers() {
   );
 }
 
-function AccordionItem({ job }) {
-  const [isOpen, setIsOpen] = useState(false);
+function JobCard({ job }) {
+  const slug = slugify(job.title);
 
   return (
     <motion.div
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
-      className={`p-4 md:p-6 rounded-lg shadow-md transition-all duration-300 ${
-        isOpen ? "bg-gradient-to-br from-[#5829C7] to-[#5829C7]/60" : "bg-white"
-      }`}
     >
-      {/* Header */}
-      <div
-        className="flex justify-between items-center cursor-pointer"
-        onClick={() => setIsOpen(!isOpen)}
-      >
-        <div className="flex-1 min-w-[200px] mb-2 md:mb-0">
-          <p
-            className={`${
-              isOpen ? "text-white" : "text-violet-700"
-            } text-sm font-medium`}
-          >
-            {job.category}
-          </p>
-          <h3
-            className={`text-lg md:text-2xl font-semibold mt-2 ${
-              isOpen ? "text-[#FFD53E]" : "text-gray-900"
-            }`}
-          >
-            {job.title}
-          </h3>
-          {!isOpen && (
-            <p className="text-sm text-gray-600 mt-1">Focus: {job.focus}</p>
-          )}
-        </div>
-        <div className="text-end md:text-start ">
-          <div className="flex flex-col items-end">
-            <BsArrowUpRightCircle
-              className={`text-lg md:text-2xl ${
-                isOpen ? "text-[#FFCA2D]" : "text-[#757575]"
-              }`}
-            />
-          </div>
-
-          <p
-            className={`text-xs md:text-sm mt-1 ${
-              isOpen ? "text-[#FFCA2D]" : "text-[#757575]"
-            }`}
-          >
-            Minimum Experience
-          </p>
-          <p
-            className={`font-semibold ${
-              isOpen ? "text-[#FFCA2D]" : "text-[#5829C7]"
-            }`}
-          >
-            {job.experience}
-          </p>
-        </div>
-      </div>
-
-      {/* Expanded View */}
-      {isOpen && (
-        <motion.div
-          initial={{ height: 0 }}
-          animate={{ height: "auto" }}
-          transition={{ duration: 0.3 }}
-          className="mt-6"
-        >
-          <p className="text-white mb-4 md:mb-6 tracking-wide text-sm md:text-base font-secondary font-medium">
-            {" "}
-            <p className="font-semibold text-[#FFCA2D] mb-2">Description:</p>
-            {job.description}
-          </p>
-          <div className="space-y-10">
-            {/* Row 1 */}
-            <div className="flex flex-col lg:flex-row gap-6">
-              <div className="lg:w-1/2">
-                <p className="font-semibold text-[#FFCA2D] mb-2 ">
-                  Key Responsibilities:
-                </p>
-                <ul className="list-disc list-inside text-white ml-4 font-secondary">
-                  {job.responsibilities.map((item, i) => (
-                    <li key={i}>{item}</li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="lg:w-1/2">
-                <p className="font-semibold text-[#FFCA2D] mb-2">
-                  Requirements:
-                </p>
-                <ul className="list-disc list-inside text-white ml-4 font-secondary">
-                  {job.requirements.map((item, i) => (
-                    <li key={i}>{item}</li>
-                  ))}
-                </ul>
-              </div>
+      <Link href={`/career/${slug}`} className="block">
+        <div className="bg-white p-4 md:p-6 rounded-lg shadow-md hover:shadow-lg hover:border-[#5829C7] border-2 border-transparent transition-all duration-200 group">
+          <div className="flex justify-between items-center">
+            <div className="flex-1 min-w-0 mb-2 md:mb-0">
+              <p className="text-violet-700 text-sm font-medium">
+                {job.category}
+              </p>
+              <h3 className="text-lg md:text-2xl font-semibold mt-1 text-gray-900 group-hover:text-[#5829C7] transition-colors">
+                {job.title}
+              </h3>
+              <p className="text-sm text-gray-600 mt-1">Focus: {job.focus}</p>
             </div>
-
-            {/* Row 2 */}
-            <div className="flex flex-col lg:flex-row gap-6">
-              {/* LEFT always = Benefits */}
-              <div className="lg:w-1/2">
-                <p className="font-semibold text-[#FFCA2D] mb-2">Benefits:</p>
-                {Array.isArray(job.benefits) ? (
-                  <ul className="list-disc list-inside text-white ml-4 font-secondary">
-                    {job.benefits.map((item, i) => (
-                      <li key={i}>{item}</li>
-                    ))}
-                  </ul>
-                ) : (
-                  <>
-                    <p className="text-[#FFCA2D] font-medium mt-1">Remote:</p>
-                    <ul className="list-disc list-inside text-white ml-4 font-secondary">
-                      {job.benefits.remote.map((item, i) => (
-                        <li key={i}>{item}</li>
-                      ))}
-                    </ul>
-                    <p className="text-[#FFCA2D] font-medium mt-2">In-Person (Auroville):</p>
-                    <ul className="list-disc list-inside text-white ml-4 font-secondary">
-                      {job.benefits.inPerson.map((item, i) => (
-                        <li key={i}>{item}</li>
-                      ))}
-                    </ul>
-                  </>
-                )}
-              </div>
-
-              {/* RIGHT = Nice to Have (only if exists) */}
-              {job["Nice-to-Haves"]?.length > 0 && (
-                <div className="lg:w-1/2">
-                  <p className="font-semibold text-[#FFCA2D] mb-2">
-                    Nice to Have:
-                  </p>
-                  <ul className="list-disc list-inside text-white ml-4 font-secondary">
-                    {job["Nice-to-Haves"].map((item, i) => (
-                      <li key={i}>{item}</li>
-                    ))}
-                  </ul>
-                </div>
-              )}
+            <div className="text-end shrink-0 ml-4">
+              <p className="text-xs md:text-sm text-[#757575]">
+                Minimum Experience
+              </p>
+              <p className="font-semibold text-[#5829C7]">{job.experience}</p>
+              <BsArrowUpRightCircle className="text-lg md:text-2xl text-[#757575] group-hover:text-[#5829C7] transition-colors mt-2 ml-auto" />
             </div>
           </div>
-        </motion.div>
-      )}
+        </div>
+      </Link>
     </motion.div>
   );
 }

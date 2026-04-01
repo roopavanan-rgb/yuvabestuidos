@@ -77,9 +77,9 @@ export  const jobs = [
       "Familiarity with AI tools in marketing workflows (research, ad copy, analysis, efficiency).",
       "Ability to work independently with ownership and communicate effectively in client-facing situations.",
     ],
-    "Nice-to-Haves": [
+    "Nice-to-Haves": [],
+    portfolioRequirement:
       "Portfolio demonstrating end-to-end campaign ownership (targeting, setup, budgeting, optimization, and scaling), along with lead generation results, performance metrics (CPL, ROAS, CTR), and optimization approach.",
-    ],
     benefits: {
       remote: [
         "Competitive salary aligned with skills and experience",
@@ -138,21 +138,13 @@ export  const jobs = [
   portfolioRequirement:
     "Portfolio showcasing content strategy and execution across platforms, including social media posts, campaigns, or long-form content, along with examples of performance, growth, or engagement outcomes.",
 
-  benefits: {
-    remote: [
-      "Competitive salary aligned with skills and experience",
-      "Flexible, outcome-focused work environment",
-      "Exposure to diverse projects across education, design, and technology",
-      "Access to mentorship and creative growth opportunities"
-    ],
-    inPerson: [
-      "Competitive salary aligned with skills and experience",
-      "Work from Auroville in a collaborative, learning-focused environment",
-      "Exposure to projects across education, design, and technology",
-      "Access to mentorship and creative growth opportunities",
-      "eBike and free lunch"
-    ]
-  },
+  benefits: [
+    "Competitive salary aligned with skills and experience",
+    "Work from Auroville in a collaborative, learning-focused environment",
+    "Exposure to projects across education, design, and technology",
+    "Access to mentorship and creative growth opportunities",
+    "eBike and free lunch",
+  ],
 
   experience: "1+ year (Content strategy and execution experience)"
 },
@@ -194,7 +186,6 @@ export  const jobs = [
       "Experience creating social media creatives and digital marketing assets.",
       "Experience designing brochures, pamphlets, print collaterals, or product packaging.",
       "Basic knowledge of motion graphics, video editing, or animation is an added advantage.",
-      "Understanding of brand communication and digital content strategy.",
       "Experience working in a creative or marketing team environment.",
       "Portfolio showcasing a range of design work including social media creatives, branding, print materials, and campaign assets.",
     ],
